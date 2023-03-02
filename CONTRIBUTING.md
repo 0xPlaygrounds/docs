@@ -24,7 +24,7 @@ $ poe develop
 
 This will launch a development web server on `localhost:5500` which loads the locally built docs. The process will also watch the `docs` folder for any changes and will trigger a rebuild which reloads your page with your changes implemented.
 
-<details open>
+<details>
 <summary>Alternative to using `poe`</summary>
 <br>
 If you wish not use `poe`, you'll have to run the following and checkout the commands listed in the `pyproject.toml` under `[tool.poe.tasks]`.
