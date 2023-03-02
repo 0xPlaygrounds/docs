@@ -1,0 +1,10 @@
+__pycache__/
+dist/
+docs/build
+.coverage
+.python-version
+subgrounds.egg-info/
+*.log
+scratch/
+
+.DS_Store
