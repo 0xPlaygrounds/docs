@@ -20,7 +20,10 @@ A Pythonic data access layer for applications querying data from The Graph Netwo
 :link: getting_started
 :link-type: doc
 
-<h3 class='gradient-text' style='font-size: 24px'> Getting Started </h3>
+<h3 class='gradient-text card-heading'>
+Getting Started
+</h3>
+
 Start using Subgrounds in 5 minutes!
 ```
 
@@ -28,7 +31,10 @@ Start using Subgrounds in 5 minutes!
 :link: basics
 :link-type: doc
 
-<h3 class='gradient-text' style='font-size: 24px'> The Basics </h3>
+<h3 class='gradient-text card-heading'>
+The Basics
+</h3>
+
 Learn how to conjure simple queries
 ```
 
@@ -36,7 +42,10 @@ Learn how to conjure simple queries
 :link: examples
 :link-type: doc
 
-<h3 class='gradient-text' style='font-size: 24px'> Examples </h3>
+<h3 class='gradient-text card-heading'>
+Examples
+</h3>
+
 Checkout our curated list of community examples
 ```
 
@@ -44,7 +53,10 @@ Checkout our curated list of community examples
 :link: troubleshooting
 :link-type: doc
 
-<h3 class='gradient-text' style='font-size: 24px'> FAQ </h3>
+<h3 class='gradient-text card-heading'>
+FAQ
+</h3>
+
 Quick answers to your most burning questions
 ```
 ::::

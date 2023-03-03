@@ -30,8 +30,9 @@ html_favicon = "_assets/pg_icon.png"
 html_static_path = ["_static", "_assets"]
 html_css_files = [
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
-    "custom.css",
     "fonts.css",
+    "weights.css",
+    "custom.css",
 ]
 html_show_copyright = false
 html_show_sphinx = false
@@ -65,10 +66,10 @@ ogp_enable_meta_description = true
 # repository_branch = "master"  # TODO -> main
 # codemirror-theme = "ayu-mirage"
 
-# [tool.mudkip.override.html_theme_options]
-# sidebar_hide_name = true
-# light_logo = "pg_name_light.svg"
-# dark_logo = "pg_name_dark.svg"
+[tool.mudkip.override.html_theme_options]
+sidebar_hide_name = true
+light_logo = "pg-logotype-dark.svg"
+dark_logo = "pg-logotype-primary.svg"
 
 [tool.mudkip.override.html_theme_options.light_css_variables]
 color-foreground-primary = "#040019"
@@ -90,10 +91,10 @@ color-sidebar-search-background--focus = "var(--color-sidebar-item-background--h
 color-brand-primary = "#191F2E"
 color-brand-content = "#040019"
 
-font-stack = "Sofia Pro Light, sans-serif"
+font-stack = "sofia-pro, sans-serif"
 
 [tool.mudkip.override.html_theme_options.dark_css_variables]
-color-foreground-primary = "#F4F4F4"
+color-foreground-primary = "#E6E6E6"
 color-foreground-secondary = "#CCCCCC"
 color-foreground-muted = "#A9ACAC"
 
@@ -116,7 +117,7 @@ sd-color-card-background = "#191F2E"
 sd-color-card-border-hover = "#54DDF8"
 # sd-color-shadow = "#54DDF8"
 
-font-stack = "Sofia Pro Light, sans-serif"
+font-stack = "sofia-pro, sans-serif"
 
 [[tool.mudkip.override.html_theme_options.footer_icons]]
 name = "GitHub"

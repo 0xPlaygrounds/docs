@@ -23,7 +23,7 @@ body:not([data-theme=light]) .sidebar-brand-text {
 h1,
 .gradient-text,
 .sidebar-brand-text {
-    padding-bottom: 0.5%;
+    padding-bottom: 1%;
 }
 
 /* Card CSS */
