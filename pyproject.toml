@@ -71,6 +71,8 @@ line_color = "#040019"
 # codemirror-theme = "ayu-mirage"
 
 [tool.mudkip.override.html_theme_options]
+announcement = "✨ Checkout our brand new <a href='https://playgrounds.network/blog/subgrounds'>blog</a> ✨"
+
 sidebar_hide_name = true
 light_logo = "pg-logotype-dark.svg"
 dark_logo = "pg-logotype-primary.svg"
