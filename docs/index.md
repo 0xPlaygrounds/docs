@@ -11,17 +11,6 @@ A Pythonic data access layer for applications querying data from The Graph Netwo
 - **Automated**: Schema introspection and class generation, type checking and pagination is all handled automatically
 - **Schema-Driven**: Queries are built with `FieldPaths` while transformations are defined with `SyntheticFields`, as opposed to raw GraphQL and transforming raw data
 
-```{repl}
-#repl:hide-output
-from subgrounds import Subgrounds
-#repl:show-output
-
-sg = Subgrounds()
-subgraph = sg.load_subgraph("https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3")
-
-sg.query_df(subgraph.Query.pools)
-```
-
 ---
 
 ::::{grid} 1 2 2 2
