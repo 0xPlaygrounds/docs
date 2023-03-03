@@ -1,5 +1,6 @@
 ---
 hide-toc: true
+og-description: "A Pythonic data access layer for applications querying data from The Graph Network"
 ---
 
 # Subgrounds
