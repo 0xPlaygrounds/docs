@@ -1,11 +1,11 @@
 ---
 hide-toc: true
-og-description: "A Pythonic data access layer for applications querying data from The Graph Network"
+og-description: "An intuitive python library for interfacing with Subgraphs"
 ---
 
 # Subgrounds
 
-A Pythonic data access layer for applications querying data from The Graph Network.
+An intuitive python library for interfacing with Subgraphs.
 
 ## Features
 - **Simple**: Leverage a Pythonic API to easily build queries and transformations without the need for raw GraphQL manipulation.
