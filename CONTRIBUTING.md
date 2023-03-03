@@ -6,7 +6,7 @@ This project uses [poetry >= 1.2](https://python-poetry.org/docs/) to manage it'
 
 ```bash
 $ git clone https://github.com/0xPlaygrounds/docs && cd docs
-$ poetry install
+$ poetry install --no-root
 ```
 
 We also use a `poetry` plugin called `poethepoet` to aid in managing our frequently run tasks.

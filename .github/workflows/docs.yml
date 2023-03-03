@@ -55,7 +55,7 @@ jobs:
 
     - name: Install dependencies
       if: steps.cache-venv.outputs.cache-hit != 'true'
-      run: poetry install
+      run: poetry install --no-root
 
     #----------------------------------------------
     #  -----       build & deploy docs       -----
