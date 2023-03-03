@@ -15,7 +15,7 @@ If you run into problems during installation, see {ref}`Set up an isolated envir
 
 ## Simple example
 
-The following example grabs a uniswap-v3 subgraph and queries the top-level pools entity as a pandas `DataFrame`. 
+The following example grabs a aave-v2 subgraph and queries market name and their total value locked (in USD) from the the top-level markets entity into a pandas `DataFrame`.
 
 ```{repl}
 #repl:hide-output
