@@ -15,9 +15,11 @@ sphinxext-opengraph = "^0.8.1"
 sphinx-copybutton = "^0.5.1"
 sphinxcontrib-repl = "^0.4.1"
 subgrounds = {extras = ["dash"], version = "^1.0.3"}
+sphinxcontrib-sass = "^0.3.4"
 
 [tool.poe.tasks]
 develop = { shell = "mudkip develop" }
+clean = { shell = "mudkip clean" }
 generate-api-docs = { shell = "sphinx-apidoc --output docs/api subgrounds --separate --force" }
 
 [tool.mudkip]
@@ -26,13 +28,14 @@ preset = "furo"
 
 [tool.mudkip.override]
 html_title = "Playgrounds"
-html_favicon = "_assets/pg_icon.png"
-html_static_path = ["_static", "_assets"]
+html_favicon = "icon.png"
+html_static_path = ["_static"]
 html_css_files = [
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
-    "fonts.css",
-    "weights.css",
-    "custom.css",
+    "css/custom.css",
+    "css/fonts.css",
+    "css/weights.css",
+    "css/theming.css",
 ]
 html_show_copyright = false
 html_show_sphinx = false
@@ -43,6 +46,7 @@ pygments_style = "tango"
 pygments_dark_style = "material"
 
 extensions = [
+    "sphinxcontrib.sass",   # enables `.sass`/`.scss` support for CSS
     "sphinx_design",        # enables fancy design, like cards, etc
     "sphinxext.opengraph",  # provides social media cards + ranking info
     "sphinx_copybutton",    # adds copy buttons to raw code blocks
@@ -60,9 +64,16 @@ ogp_site_name = "Playgrounds Documentation"
 
 ogp_enable_meta_description = true
 
+# sass config
+sass_src_dir = "_styles"
+sass_out_dir = "_build/dist/_static/css"
+
+[tool.mudkip.override.sass_targets]
+"theming.scss" = "theming.css"
+
 [tool.mudkip.override.ogp_social_cards]
 enable = true
-image = "_static/pg-brandmark.png"
+image = "_static/assets/pg-brandmark.png"
 line_color = "#040019"
 
 # [tool.mudkip.override.thebe_config]
@@ -74,8 +85,8 @@ line_color = "#040019"
 announcement = "✨ Checkout our brand new <a href='https://playgrounds.network/blog/subgrounds'>blog</a> ✨"
 
 sidebar_hide_name = true
-light_logo = "pg-logotype-dark.svg"
-dark_logo = "pg-logotype-primary.svg"
+light_logo = "assets/pg-logotype-dark.svg"
+dark_logo = "assets/pg-logotype-primary.svg"
 
 [tool.mudkip.override.html_theme_options.light_css_variables]
 color-foreground-primary = "#040019"
@@ -98,6 +109,7 @@ color-brand-primary = "#191F2E"
 color-brand-content = "#040019"
 
 font-stack = "sofia-pro, sans-serif"
+# font-stack--monospace = "carbona-variable, monospace"
 
 [tool.mudkip.override.html_theme_options.dark_css_variables]
 color-foreground-primary = "#E6E6E6"
@@ -124,6 +136,7 @@ sd-color-card-border-hover = "#54DDF8"
 # sd-color-shadow = "#54DDF8"
 
 font-stack = "sofia-pro, sans-serif"
+# font-stack--monospace = "carbona-variable, monospace"
 
 [[tool.mudkip.override.html_theme_options.footer_icons]]
 name = "GitHub"

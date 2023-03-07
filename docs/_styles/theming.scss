@@ -1,0 +1,78 @@
+@mixin colors-dark-override {
+
+  h1,
+  .gradient-text,
+  .sidebar-brand-text {
+    background: linear-gradient(90deg, #54DDF8 0%, #0083CF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .sd-card {
+    box-shadow: 0px 2px 0px #54DDF8 !important;
+
+    &:hover {
+      background: #121621 !important
+    }
+  }
+
+  .highlight {
+    background: #191F2E;
+    box-shadow: inset 0px -3px 5px -3px rgba(0, 0, 0, 0.15);
+  }
+
+  .page-info {
+    &>.context {
+      color: var(--color-foreground-muted)
+    }
+
+    &>.title {
+      color: var(--color-foreground-primary)
+    }
+  }
+}
+
+@mixin colors-light-override {
+  .sd-card {
+    box-shadow: -4px -4px 18px -2px #E2FDF1, 4px 5px 15px rgba(0, 0, 0, 0.15) !important;
+
+    &:hover {
+      background: #E7FAFE !important
+    }
+  }
+
+  .highlight {
+    background: #B7F0FB;
+    box-shadow: inset 0px -3px 5px -3px rgba(0, 0, 0, 0.15);
+
+    // specific pygment color override
+    .s1 {
+      color: #0A40BD
+    }
+  }
+}
+
+// Enable dark-mode-overrides, if requested.
+[data-theme="dark"] {
+  @include colors-dark-override
+}
+
+// If "auto", uses media preference
+[data-theme="auto"] {
+  @media (prefers-color-scheme: dark) {
+    @include colors-dark-override
+  }
+}
+
+// Enable light-mode-overrides, if requested.
+[data-theme="light"] {
+  @include colors-light-override
+}
+
+// If "auto", uses media preference
+[data-theme="auto"] {
+  @media (prefers-color-scheme: light) {
+    @include colors-light-override
+  }
+}

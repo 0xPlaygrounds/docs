@@ -155,6 +155,11 @@
     font-family: "sofia-pro", sans-serif;
 }
 
-.tk-carbona-variable {
+.tk-carbona-variable,
+.highlight {
     font-family: "carbona-variable", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 150%;
+    font-feature-settings: 'ss01' on, 'ss03' on, 'calt' off;
 }
