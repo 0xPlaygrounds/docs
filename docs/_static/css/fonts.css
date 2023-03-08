@@ -149,6 +149,8 @@
     font-style: normal;
     font-weight: 400;
     font-stretch: normal;
+    font-feature-settings: "ss01" on, "ss03" on, "calt" off;
+    font-variation-settings: "slnt" 0, "MONO" 100, "wght" 400;
 }
 
 .tk-sofia-pro {
@@ -161,5 +163,6 @@
     font-weight: 500;
     letter-spacing: 0.04em;
     line-height: 150%;
-    font-feature-settings: 'ss01' on, 'ss03' on, 'calt' off;
+    font-feature-settings: "ss01" on, "ss03" on, "calt" off;
+    font-variation-settings: "slnt" 0, "MONO" 100, "wght" 400;
 }
