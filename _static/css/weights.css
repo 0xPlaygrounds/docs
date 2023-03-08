@@ -1,0 +1,65 @@
+h1 {
+    font-family: 'sofia-pro';
+    font-style: normal;
+    font-weight: 300;
+    /* font-size: 61px; */
+    line-height: 100%;
+    /* identical to box height, or 61px */
+
+    letter-spacing: -0.01em;
+}
+
+h2 {
+    font-family: 'sofia-pro';
+    font-style: normal;
+    font-weight: 300;
+    /* font-size: 27px; */
+    line-height: 130%;
+    /* identical to box height, or 61px */
+
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-family: 'sofia-pro';
+    font-style: normal;
+    font-weight: 500;
+    /* font-size: 21px; */
+    line-height: 135%;
+    /* or 28px */
+
+    letter-spacing: 0.02em;
+}
+
+body {
+    font-family: 'sofia-pro';
+    font-style: normal;
+    font-weight: 300;
+    /* font-size: 16px; */
+    line-height: 150%;
+    /* or 28px */
+
+    letter-spacing: 0.03em;
+}
+
+.card-heading {
+    font-family: 'sofia-pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    /* identical to box height */
+
+    letter-spacing: 0.1px;
+}
+
+.sd-card-body {
+    font-family: 'sofia-pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height, or 117% */
+
+    letter-spacing: 0.3px;
+}

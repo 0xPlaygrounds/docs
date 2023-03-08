@@ -1,0 +1,64 @@
+[data-theme="dark"] h1,
+[data-theme="dark"] .gradient-text,
+[data-theme="dark"] .sidebar-brand-text {
+  background: linear-gradient(90deg, #54DDF8 0%, #0083CF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+[data-theme="dark"] .sd-card {
+  box-shadow: 0px 2px 0px #54DDF8 !important; }
+  [data-theme="dark"] .sd-card:hover {
+    background: #121621 !important; }
+
+[data-theme="dark"] .highlight {
+  background: #191F2E;
+  box-shadow: inset 0px -3px 5px -3px rgba(0, 0, 0, 0.15); }
+
+[data-theme="dark"] .page-info > .context {
+  color: var(--color-foreground-muted); }
+
+[data-theme="dark"] .page-info > .title {
+  color: var(--color-foreground-primary); }
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] h1,
+  [data-theme="auto"] .gradient-text,
+  [data-theme="auto"] .sidebar-brand-text {
+    background: linear-gradient(90deg, #54DDF8 0%, #0083CF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  [data-theme="auto"] .sd-card {
+    box-shadow: 0px 2px 0px #54DDF8 !important; }
+    [data-theme="auto"] .sd-card:hover {
+      background: #121621 !important; }
+  [data-theme="auto"] .highlight {
+    background: #191F2E;
+    box-shadow: inset 0px -3px 5px -3px rgba(0, 0, 0, 0.15); }
+  [data-theme="auto"] .page-info > .context {
+    color: var(--color-foreground-muted); }
+  [data-theme="auto"] .page-info > .title {
+    color: var(--color-foreground-primary); } }
+
+[data-theme="light"] .sd-card {
+  box-shadow: -4px -4px 18px -2px #E2FDF1, 4px 5px 15px rgba(0, 0, 0, 0.15) !important; }
+  [data-theme="light"] .sd-card:hover {
+    background: #E7FAFE !important; }
+
+[data-theme="light"] .highlight {
+  background: #B7F0FB;
+  box-shadow: inset 0px -3px 5px -3px rgba(0, 0, 0, 0.15); }
+  [data-theme="light"] .highlight .s1 {
+    color: #0A40BD; }
+
+@media (prefers-color-scheme: light) {
+  [data-theme="auto"] .sd-card {
+    box-shadow: -4px -4px 18px -2px #E2FDF1, 4px 5px 15px rgba(0, 0, 0, 0.15) !important; }
+    [data-theme="auto"] .sd-card:hover {
+      background: #E7FAFE !important; }
+  [data-theme="auto"] .highlight {
+    background: #B7F0FB;
+    box-shadow: inset 0px -3px 5px -3px rgba(0, 0, 0, 0.15); }
+    [data-theme="auto"] .highlight .s1 {
+      color: #0A40BD; } }
