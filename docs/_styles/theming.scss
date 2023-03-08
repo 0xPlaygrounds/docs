@@ -1,5 +1,10 @@
 @mixin colors-dark-override {
 
+  .sidebar-drawer {
+    background: linear-gradient(180deg, hsl(222, 25%, 10%) 36.39%, #1A263D 100%) fixed !important;
+    will-change: transform; // this is hell
+  }
+
   h1,
   .gradient-text,
   .sidebar-brand-text {

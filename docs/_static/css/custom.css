@@ -1,7 +1,6 @@
 /* Sidebar stuff */
 .sidebar-drawer {
     width: 15em !important;
-    background-attachment: fixed;
     box-shadow: 5px 0px 10px -4px rgba(0, 0, 0, 0.25);
 }
 
@@ -31,6 +30,6 @@ h1,
 
 /* Logo Sizing */
 .sidebar-logo-container {
-    align-self: center;
-    width: 80%;
+    width: 65%;
+    padding-top: 0.4em;
 }
