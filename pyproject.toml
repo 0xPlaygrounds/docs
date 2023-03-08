@@ -109,7 +109,7 @@ color-brand-primary = "#191F2E"
 color-brand-content = "#040019"
 
 font-stack = "sofia-pro, sans-serif"
-# font-stack--monospace = "carbona-variable, monospace"
+font-stack--monospace = "carbona-variable, monospace"
 
 [tool.mudkip.override.html_theme_options.dark_css_variables]
 color-foreground-primary = "#E6E6E6"
@@ -136,7 +136,7 @@ sd-color-card-border-hover = "#54DDF8"
 # sd-color-shadow = "#54DDF8"
 
 font-stack = "sofia-pro, sans-serif"
-# font-stack--monospace = "carbona-variable, monospace"
+font-stack--monospace = "carbona-variable, monospace"
 
 [[tool.mudkip.override.html_theme_options.footer_icons]]
 name = "GitHub"
