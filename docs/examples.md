@@ -8,6 +8,32 @@ Explore subgrounds through projects created by our community!
 :gutter: 4
 
 ```{grid-item-card}
+:link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/Lido_Snapshot_Advanced_1.ipynb
+
+<h3 class='gradient-text card-heading'>
+Lido Protocol Snapshot
+</h3>
+
+Further exploration of Lido pools.
+
+Highlight: Subground's `SyntheticFields`
+
+<i>By: Tachi</i>
+```
+
+```{grid-item-card}
+:link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/Lido_Snapshot_2.ipynb
+
+<h3 class='gradient-text card-heading'>
+Lido Protocol Snapshot
+</h3>
+
+Exploring Lido financial data for the past 30 days.
+
+<i>By: Tachi</i>
+```
+
+```{grid-item-card}
 :link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/Lido_Snapshot.ipynb
 
 <h3 class='gradient-text card-heading'>
