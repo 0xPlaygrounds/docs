@@ -8,6 +8,34 @@ Explore subgrounds through projects created by our community!
 :gutter: 4
 
 ```{grid-item-card}
+:link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/RocketPool_x_LidoFi_Advanced.ipynb
+
+<h3 class='gradient-text card-heading'>
+RocketPool x Lido Cross Analysis
+</h3>
+
+Cross examination of RocketPool and Lido pool utilization and financials.
+
+Highlight: `Intermediate` `SyntheticFields` `Combined FieldPaths`
+
+<i>By: Tachi</i>
+```
+
+```{grid-item-card}
+:link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/RocketPool_Snapshot.ipynb
+
+<h3 class='gradient-text card-heading'>
+RocketPool Snapshot
+</h3>
+
+Exploration of RocketPool Financial daily snapshots.
+
+Highlight: `Beginner` `SyntheticFields`
+
+<i>By: Tachi</i>
+```
+
+```{grid-item-card}
 :link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/Lido_Snapshot_Advanced_1.ipynb
 
 <h3 class='gradient-text card-heading'>
@@ -16,7 +44,7 @@ Lido Protocol Snapshot
 
 Further exploration of Lido pools.
 
-Highlight: Subground's `SyntheticFields`
+Highlight: `Beginner` `SyntheticFields`
 
 <i>By: Tachi</i>
 ```
