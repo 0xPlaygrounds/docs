@@ -16,7 +16,7 @@ RocketPool x Lido Cross Analysis
 
 Cross examination of RocketPool and Lido pool utilization and financials.
 
-Highlight: `Intermediate` `SyntheticFields` `Combined FieldPaths`
+Highlight: `Intermediate` `SyntheticFields`
 
 <i>By: Tachi</i>
 ```

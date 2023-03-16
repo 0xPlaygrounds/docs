@@ -61,6 +61,7 @@ extensions = [
 ] 
 # myst_fence_as_directive = ["python", "mermaid"]
 myst_enable_extensions = ["substitution", "colon_fence"]
+autosectionlabel_prefix_document = true
 suppress_warnings = ["myst.header"]
 
 nitpicky = false
