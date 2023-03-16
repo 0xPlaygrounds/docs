@@ -1,6 +1,7 @@
-# Troubleshooting
+# Environment Setup
 
-(isolated_environment_setup)=
+By default, `pip` will install packages to your global environment. While this makes it easy to get started with using `subgrounds`, it can make it more difficult to maintain the proper versions for a specific project. 
+
 ## Set up an isolated environment (recommended setup)
 ### Pyenv
 Pyenv is a tool used to manage different versions of Python on a single operating system (follow this [guide](https://github.com/pyenv/pyenv#installation) for installation instructions). If you are having problems getting Python 3.10 to work, we recommend you use Pyenv to set it up.

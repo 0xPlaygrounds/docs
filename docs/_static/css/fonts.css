@@ -158,11 +158,17 @@
 }
 
 .tk-carbona-variable,
-.highlight {
-    font-family: "carbona-variable", sans-serif;
-    font-weight: 500;
+.highlight,
+.CodeMirror,
+code.literal {
+    font-family: "carbona-variable", sans-serif !important;
     letter-spacing: 0.04em;
     line-height: 150%;
     font-feature-settings: "ss01" on, "ss03" on, "calt" off;
     font-variation-settings: "slnt" 0, "MONO" 100, "wght" 400;
+}
+
+.tk-carbona-variable,
+.highlight {
+    font-weight: 600;
 }

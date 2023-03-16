@@ -1,0 +1,69 @@
+# Synthetic Fields
+
+One of Subgrounds' unique features is the ability to define schema-based (i.e.: pre-querying) transformations using {class}`~subgrounds.SyntheticField`s.
+
+{class}`~subgrounds.SyntheticField`s can be created using Python arithmetic operators on relative {class}`~subgrounds.FieldPath` (i.e.: {class}`~subgrounds.FieldPath`s starting from an entity and not the root `Query` object) and must be added to the entity which they enhance. Once added to an entity, {class}`~subgrounds.SyntheticField`s can be queried just like regular GraphQL fields.
+
+The example below demonstrates how to create a simple {class}`~subgrounds.SyntheticField` to calculate the swap price of `Swap` events stored on the Sushiswap subgraph:
+
+```{thebe-button}
+```
+
+```{code-block} python
+:class: thebe
+from subgrounds import Subgrounds
+sg = Subgrounds()
+
+sushiswap = sg.load_subgraph('https://api.thegraph.com/subgraphs/name/sushiswap/exchange')
+swap = sushiswap.Swap  # short hand for ease-of-use
+
+# Define a synthetic field named price1 (the swap price of token1,
+#   in terms of token0) on Swap entities
+swap.price1 = (
+    abs(swap.amount0Out - swap.amount0In)
+    / abs(swap.amount1Out - swap.amount1In)
+)
+
+# Build query to get the last 10 swaps of the WETH-USDC pair on Sushiswap 
+weth_usdc = sushiswap.Query.pair(id='0x397ff1542f962076d0bfe58ea045ffa2d347aca0')
+
+last_10_swaps = weth_usdc.swaps(
+    orderBy=swap.timestamp,
+    orderDirection='desc',
+    first=10
+)
+
+# Query swap prices using the `SyntheticField` price1 as if they were regular fields
+sg.query_df([
+    last_10_swaps.timestamp,
+    last_10_swaps.price1     # synthetic fields get used the same!
+])
+```
+
+{class}`~subgrounds.SyntheticField`s can *also* be created using the constructor, allowing for much more complex transformations.
+
+```{code-block} python
+:class: thebe
+from datetime import datetime
+from subgrounds.subgraph import SyntheticField
+
+# Create a SyntheticField on the Swap entity called `datetime`, which will format 
+# the timestamp field into something more human readable
+swap.datetime = SyntheticField(
+  lambda timestamp: str(datetime.fromtimestamp(timestamp)),
+  SyntheticField.STRING,
+  swap.timestamp
+)
+
+last_10_swaps = sushiswap.Query.swaps(
+  orderBy=swap.timestamp,
+  orderDirection='desc',
+  first=10,
+)
+
+sg.query_df([
+  last_10_swaps.datetime,
+  last_10_swaps.pair.token0.symbol,
+  last_10_swaps.pair.token1.symbol
+])
+```

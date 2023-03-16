@@ -1,7 +1,7 @@
 h1 {
     font-family: 'sofia-pro';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     /* font-size: 61px; */
     line-height: 100%;
     /* identical to box height, or 61px */
@@ -12,7 +12,7 @@ h1 {
 h2 {
     font-family: 'sofia-pro';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 500;
     /* font-size: 27px; */
     line-height: 130%;
     /* identical to box height, or 61px */
@@ -34,7 +34,7 @@ h3 {
 body {
     font-family: 'sofia-pro';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     /* font-size: 16px; */
     line-height: 150%;
     /* or 28px */
@@ -59,6 +59,15 @@ body {
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
+    /* identical to box height, or 117% */
+
+    letter-spacing: 0.3px;
+}
+
+.thebelab-button {
+    font-family: 'sofia-pro';
+    font-style: normal;
+    font-weight: 400;
     /* identical to box height, or 117% */
 
     letter-spacing: 0.3px;

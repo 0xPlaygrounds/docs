@@ -18,7 +18,7 @@ An intuitive python library for interfacing with Subgraphs.
 :gutter: 3
 
 ```{grid-item-card}
-:link: getting_started
+:link: getting_started/index
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
@@ -51,7 +51,7 @@ Checkout our curated list of community examples
 ```
 
 ```{grid-item-card}
-:link: troubleshooting
+:link: faq/index
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
@@ -69,10 +69,9 @@ Quick answers to your most burning questions
 :caption: Subgrounds
 :hidden:
 
-getting_started
-basics
+getting_started/index
 advanced
-troubleshooting
+faq/index
 examples
 API Reference <modules>
 ```
