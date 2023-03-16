@@ -94,7 +94,7 @@ repository_branch = "main"
 # codemirror-theme = "ayu-mirage"
 
 [tool.mudkip.override.html_theme_options]
-announcement = "✨ Checkout our brand new <a href='https://playgrounds.network/blog/subgrounds'>blog</a> ✨"
+announcement = "Checkout our upgraded <a href='/getting_started'>Getting Started</a> tutorial!"
 
 sidebar_hide_name = true
 light_logo = "assets/pg-logotype-dark.svg"

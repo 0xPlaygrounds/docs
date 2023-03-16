@@ -29,14 +29,14 @@ Start using Subgrounds in 5 minutes!
 ```
 
 ```{grid-item-card}
-:link: basics
+:link: advanced_topics/index
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
-The Basics
+Advanced Topics
 </h3>
 
-Learn how to conjure simple queries
+Learn how to conjure more complex queries
 ```
 
 ```{grid-item-card}
@@ -70,7 +70,7 @@ Quick answers to your most burning questions
 :hidden:
 
 getting_started/index
-advanced
+advanced_topics/index
 faq/index
 examples
 API Reference <modules>

@@ -3,21 +3,28 @@
 ::::{important}
 This documentation is ✨ interactive ✨, allowing you to easily test and experiment with subgrounds. By clicking the "Run Code" button below, a Python server will be launched in the background using Jupyter Notebook. This will give you access to a Python environment where you can execute and interact with subgrounds code in real-time.
 
-Once you click the button below, the code cells will visually change with 3 new buttons:
+Each code block acts like a cell within a Jupyter notebook which means they are **connected**. So {class}`~subgrounds.Subgrounds` created in an earlier cell can be reused in lower ones.
 
-- Run
-  - This executes the current cell
-- Restart
-  - This will restart the entire session
-- Restart & Run All
-  - This will restart the kernel and run every cell from top to bottom.
+Once you click the "Run Code" button, the code cells will visually change with 3 new buttons:
 
-*Note: Based on server load, interactivity might take a second.*
+| Command           | Description                                                         |
+| ----------------- | ------------------------------------------------------------------- |
+| Run               | This executes the current cell                                      |
+| Restart           | This will restart the kernel                                        |
+| Restart & Run All | This will restart the kernel and run every cell from top to bottom. |
+
+The *easiest* way to interact with the docs is via the "Restart & Run All" button as it ensures that all the python state is loaded corrected. Then you can feel free to edit a cell and click "Run" to play around as you please.
 
 ```{thebe-button}
 ```
 
 ::::
+
+```{warning}
+After you click "Run Code", interactivity will begin to hydrate the page and **This takes time**. In some cases, you might need to refresh the page and try again.
+
+This feature is best used on the **latest** Chrome-based browsers, feel free to report any issues on other browsers to our [Discord](https://discord.gg/v4r4zhBAh2).
+```
 
 
 ## Subgrounds
