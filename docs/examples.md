@@ -8,6 +8,18 @@ Explore subgrounds through projects created by our community!
 :gutter: 4
 
 ```{grid-item-card}
+:link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/Lido_Snapshot.ipynb
+
+<h3 class='gradient-text card-heading'>
+Lido Protocol Snapshot
+</h3>
+
+Exploring top level usage metrics for a given period (30 days).
+
+<i>By: Tachi</i>
+```
+
+```{grid-item-card}
 :link: https://github.com/RplusT/on-chain/blob/main/Votium%20Bribes%20Analysis.ipynb
 
 <h3 class='gradient-text card-heading'>
