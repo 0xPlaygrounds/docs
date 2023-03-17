@@ -62,8 +62,6 @@ jobs:
     - name: Build and deploy documentation
       if: |
         github.repository == '0xPlaygrounds/docs'
-        && github.event_name == 'push'
-        && github.ref == 'refs/heads/main'
       run: |
         git config --global user.name "github-actions"
         git config --global user.email "action@github.com"
