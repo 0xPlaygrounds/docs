@@ -85,7 +85,7 @@ curve_pools = curve.Query.liquidityPools(
     orderBy="totalValueLockedUSD",
     orderDirection="desc",
     where={
-        "createdAtBlockNumber_gt": 14720000
+        "createdBlockNumber_gt": 14720000
     }
 )
 ```
@@ -100,10 +100,16 @@ curve_pools = curve.Query.liquidityPools(
     orderBy=curve.LiquidityPool.totalValueLockedUSD,
     orderDirection="desc",
     where=[
-        curve.LiquidityPool.createdAtBlockNumber > 14720000
+        curve.LiquidityPool.createdBlockNumber > 14720000
     ]
 )
 ```
 ::::
 
 :::::
+
+```{warning}
+When using raw form instead of relative form, you lose out on any type validation. This means, errors will only surface when using `query` rather than surfacing when building the {class}`FieldPaths <subgrounds.FieldPath>`.
+
+We **highly** recommend sticking with relative form, even if it seems more verbose!
+```
