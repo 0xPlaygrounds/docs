@@ -1,8 +1,8 @@
 # Synthetic Fields
 
-One of Subgrounds' unique features is the ability to define schema-based (i.e.: pre-querying) transformations using {class}`~subgrounds.SyntheticField`s.
+One of Subgrounds' unique features is the ability to define schema-based (i.e.: pre-querying) transformations using {class}`SyntheticFields <subgrounds.SyntheticField>`.
 
-{class}`~subgrounds.SyntheticField`s can be created using Python arithmetic operators on relative {class}`~subgrounds.FieldPath` (i.e.: {class}`~subgrounds.FieldPath`s starting from an entity and not the root `Query` object) and must be added to the entity which they enhance. Once added to an entity, {class}`~subgrounds.SyntheticField`s can be queried just like regular GraphQL fields.
+{class}`SyntheticFields <subgrounds.SyntheticField>` can be created using Python arithmetic operators on relative {class}`~subgrounds.FieldPath` (i.e.: {class}`FieldPaths <subgrounds.FieldPath>` starting from an entity and not the root `Query` object) and must be added to the entity which they enhance. Once added to an entity, {class}`SyntheticFields <subgrounds.SyntheticField>` can be queried just like regular GraphQL fields.
 
 The example below demonstrates how to create a simple {class}`~subgrounds.SyntheticField` to calculate the swap price of `Swap` events stored on the Sushiswap subgraph:
 
@@ -40,7 +40,7 @@ sg.query_df([
 ])
 ```
 
-{class}`~subgrounds.SyntheticField`s can *also* be created using the constructor, allowing for much more complex transformations.
+{class}`SyntheticFields <subgrounds.SyntheticField>` can *also* be created using the constructor, allowing for much more complex transformations.
 
 ```{code-block} python
 :class: thebe
@@ -50,20 +50,20 @@ from subgrounds.subgraph import SyntheticField
 # Create a SyntheticField on the Swap entity called `datetime`, which will format 
 # the timestamp field into something more human readable
 swap.datetime = SyntheticField(
-  lambda timestamp: str(datetime.fromtimestamp(timestamp)),
-  SyntheticField.STRING,
-  swap.timestamp
+    f=lambda timestamp: str(datetime.fromtimestamp(timestamp)),
+    type_=SyntheticField.STRING,
+    deps=swap.timestamp,
 )
 
 last_10_swaps = sushiswap.Query.swaps(
-  orderBy=swap.timestamp,
-  orderDirection='desc',
-  first=10,
+    orderBy=swap.timestamp,
+    orderDirection='desc',
+    first=10,
 )
 
 sg.query_df([
-  last_10_swaps.datetime,
-  last_10_swaps.pair.token0.symbol,
-  last_10_swaps.pair.token1.symbol
+    last_10_swaps.datetime,
+    last_10_swaps.pair.token0.symbol,
+    last_10_swaps.pair.token1.symbol,
 ])
 ```
