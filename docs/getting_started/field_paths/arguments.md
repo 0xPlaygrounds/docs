@@ -66,14 +66,14 @@ query {
 ```{note}
 Notice that the values for the `orderBy` and `where` arguments are {class}`~subgrounds.FieldPath` themselves. This allows users to construct complex queries in pure Python by using the {class}`~subgrounds.Subgraph` object returned when loading an API.
 
-The {class}`~subgrounds.FieldPath`s *here* are used as in their relative form, i.e.: they do not start from the root {class}`~subgrounds.subgrounds.query.Query` entity, but rather start from a user defined entity type (in this case the `Pool` entity). 
+The {class}`FieldPaths <subgrounds.FieldPath>` *here* are used as in their relative form, i.e.: they do not start from the root {class}`~subgrounds.subgrounds.query.Query` entity, but rather start from an entity type (in this case the `Pool` entity). 
 ```
 
 ```{warning}
 It is important to make sure that the relative {class}`~subgrounds.FieldPath` used as values for the `orderBy` and `where` arguments match the entity type of the field on which the arguments are applied (in our example, the `pools` field is of type `Pool`). If this is not respected, a type error exception will be thrown. 
 ```
 
-Argument values can *also* be supplied in their "raw" form, without the use of relative {class}`~subgrounds.FieldPath`s:
+Argument values can *also* be supplied in their "raw" form, without the use of relative {class}`FieldPaths <subgrounds.FieldPath>`:
 
 :::::{tab-set}
 
