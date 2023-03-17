@@ -4,7 +4,7 @@ Explore subgrounds through projects created by our community!
 
 ---
 
-::::{grid} 1 2 2 2
+::::{grid} 1  2 2 2
 :gutter: 4
 
 ```{grid-item-card}
@@ -16,7 +16,7 @@ RocketPool x Lido Cross Analysis
 
 Cross examination of RocketPool and Lido pool utilization and financials.
 
-Highlight: `Intermediate` `SyntheticFields` `Combined FieldPaths`
+Highlight: `Intermediate` `SyntheticFields`
 
 <i>By: Tachi</i>
 ```

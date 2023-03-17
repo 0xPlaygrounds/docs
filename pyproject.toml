@@ -14,10 +14,13 @@ sphinx-thebe = "^0.2.1"
 sphinxext-opengraph = "^0.8.1"
 sphinx-copybutton = "^0.5.1"
 sphinxcontrib-repl = "^0.4.1"
-subgrounds = {extras = ["dash"], version = "^1.0.3"}
+subgrounds = {extras = ["dash"], version = "^1.1.1"}
 sphinxcontrib-sass = "^0.3.4"
+sphinx_tippy = "^0.4.1"
+sphinx-jinja = "^2.0.2"
 
 [tool.poe.tasks]
+format = { shell = "blacken-docs --all-files" }
 develop = { shell = "mudkip develop" }
 clean = { shell = "mudkip clean" }
 generate-api-docs = { shell = "sphinx-apidoc --output docs/api subgrounds --separate --force" }
@@ -42,18 +45,26 @@ html_show_sphinx = false
 
 templates_path = ["_templates"]
 
-pygments_style = "tango"
+pygments_style = "native"
 pygments_dark_style = "material"
 
 extensions = [
-    "sphinxcontrib.sass",   # enables `.sass`/`.scss` support for CSS
-    "sphinx_design",        # enables fancy design, like cards, etc
-    "sphinxext.opengraph",  # provides social media cards + ranking info
-    "sphinx_copybutton",    # adds copy buttons to raw code blocks
-    # "sphinx_thebe",       # transforms code cells into executable notebook cells
-    "sphinxcontrib.repl",   # auto evaluates code-blocks w/ `repl`
-]
+    "sphinxcontrib.sass",       # enables `.sass`/`.scss` support for CSS
+    "sphinx_design",            # enables fancy design, like cards, etc
+    "sphinxext.opengraph",      # provides social media cards + ranking info
+    "sphinx_copybutton",        # adds copy buttons to raw code blocks
+    "sphinx_thebe",             # transforms code cells into executable notebook cells
+    "sphinxcontrib.repl",       # auto evaluates code-blocks w/ `repl`
+    "sphinx.ext.intersphinx",   # link across external docs 🔥
+    "sphinx_tippy",             # enables smart tooltips on items
+    "sphinx_jinja",
+] 
+# myst_fence_as_directive = ["python", "mermaid"]
+
 myst_enable_extensions = ["substitution", "colon_fence"]
+myst_heading_anchors = 2
+
+autosectionlabel_prefix_document = true
 suppress_warnings = ["myst.header"]
 
 nitpicky = false
@@ -68,6 +79,11 @@ ogp_enable_meta_description = true
 sass_src_dir = "_styles"
 sass_out_dir = "_build/dist/_static/css"
 
+[tool.mudkip.override.intersphinx_mapping]
+python = ["https://docs.python.org/3", ""]
+pandas = ["http://pandas.pydata.org/pandas-docs/dev", ""]
+
+
 [tool.mudkip.override.sass_targets]
 "theming.scss" = "theming.css"
 
@@ -76,13 +92,13 @@ enable = true
 image = "_static/assets/pg-brandmark.png"
 line_color = "#040019"
 
-# [tool.mudkip.override.thebe_config]
-# repository_url = "https://github.com/0xPlaygrounds/jupyter-stacks-subgrounds"
-# repository_branch = "master"  # TODO -> main
+[tool.mudkip.override.thebe_config]
+repository_url = "https://github.com/0xPlaygrounds/jupyter-stacks-subgrounds"
+repository_branch = "main"
 # codemirror-theme = "ayu-mirage"
 
 [tool.mudkip.override.html_theme_options]
-announcement = "✨ Checkout our brand new <a href='https://playgrounds.network/blog/subgrounds'>blog</a> ✨"
+announcement = "Checkout our upgraded <a href='/getting_started'>Getting Started</a> tutorial!"
 
 sidebar_hide_name = true
 light_logo = "assets/pg-logotype-dark.svg"
@@ -90,23 +106,15 @@ dark_logo = "assets/pg-logotype-primary.svg"
 
 [tool.mudkip.override.html_theme_options.light_css_variables]
 color-foreground-primary = "#040019"
-color-foreground-secondary = "black"
+color-foreground-secondary = "#191F2E"
 
-color-background-primary = "#CFF5FC"
-color-background-secondary = "#B4DCE4"
+color-background-primary = "#F4F4F4"
+color-brand-primary = "var(--color-foreground-secondary)"
 
-color-background-border = "#B5DCE4"
+color-admonition-background = "var(--color-foreground-secondary)"
+color-announcement-background = "var(--color-foreground-secondary)"
 
-color-header-text = "#191F2E"
-
-color-sidebar-caption-text = "#0083CF"
-color-sidebar-background = "#B4DCE4"
-color-sidebar-search-background--focus = "var(--color-sidebar-item-background--hover)"
-
-# sd-color-shadow = "#040019"
-
-color-brand-primary = "#191F2E"
-color-brand-content = "#040019"
+color-link = "#0083CF"
 
 font-stack = "sofia-pro, sans-serif"
 font-stack--monospace = "carbona-variable, monospace"
@@ -132,8 +140,10 @@ color-brand-primary = "#54DDF8"
 color-brand-content = "#0083CF"
 
 sd-color-card-background = "#191F2E"
-sd-color-card-border-hover = "#54DDF8"
-# sd-color-shadow = "#54DDF8"
+sd-color-card-border-hover = "var(--color-brand-primary)"
+
+color-admonition-background = "var(--sd-color-card-background)"
+color-announcement-background = "var(--sd-color-card-background)"
 
 font-stack = "sofia-pro, sans-serif"
 font-stack--monospace = "carbona-variable, monospace"

@@ -1623,6 +1623,19 @@ theme_rtd = ["sphinx-rtd-theme (>=1.0,<2.0)"]
 theme_sbt = ["sphinx-book-theme (>=0.3.0,<0.4.0)"]
 
 [[package]]
+name = "sphinx-jinja"
+version = "2.0.2"
+description = "includes jinja templates in a documentation"
+category = "main"
+optional = false
+python-versions = ">=3.6,<4"
+
+[package.dependencies]
+docutils = ">=0.16"
+Jinja2 = ">=2.11"
+sphinx = ">4.2.0"
+
+[[package]]
 name = "sphinx-rtd-theme"
 version = "1.2.0"
 description = "Read the Docs theme for Sphinx"
@@ -1652,6 +1665,24 @@ sphinx = ">=4,<7"
 [package.extras]
 sphinx = ["matplotlib", "myst-nb", "sphinx-book-theme (>=0.4.0rc1)", "sphinx-copybutton", "sphinx-design"]
 testing = ["beautifulsoup4", "matplotlib", "pytest", "pytest-regressions"]
+
+[[package]]
+name = "sphinx_tippy"
+version = "0.4.1"
+description = "Get rich tool tips in your sphinx documentation!"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+beautifulsoup4 = "*"
+jinja2 = "*"
+requests = "*"
+sphinx = ">4"
+
+[package.extras]
+docs = ["furo", "myst-parser"]
+testing = ["pytest", "pytest-regressions", "sphinx-pytest"]
 
 [[package]]
 name = "sphinx-togglebutton"
@@ -1851,7 +1882,7 @@ tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
 name = "subgrounds"
-version = "1.0.3"
+version = "1.1.1"
 description = "A Pythonic data access layer for applications querying data from The Graph Network."
 category = "main"
 optional = false
@@ -2078,7 +2109,7 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "3f1b26fe21ecc03a67238b234c6afaff75b950c90051f9a0eedc574743bdc5eb"
+content-hash = "4cd0521e02443383f3e560b7df556f9586e2be1bcd319f056a7a8cf65c0f53cb"
 
 [metadata.files]
 alabaster = [
@@ -3328,6 +3359,10 @@ sphinx_design = [
     {file = "sphinx_design-0.3.0-py3-none-any.whl", hash = "sha256:823c1dd74f31efb3285ec2f1254caefed29d762a40cd676f58413a1e4ed5cc96"},
     {file = "sphinx_design-0.3.0.tar.gz", hash = "sha256:7183fa1fae55b37ef01bda5125a21ee841f5bbcbf59a35382be598180c4cefba"},
 ]
+sphinx-jinja = [
+    {file = "sphinx-jinja-2.0.2.tar.gz", hash = "sha256:c6232b59a894139770be1dc6d0b00a379e4288ce78157904e1f8473dea3e0718"},
+    {file = "sphinx_jinja-2.0.2-py3-none-any.whl", hash = "sha256:705ebeb9b7a6018ca3f93724315a7c1effa6ba3db44d630e7eaaa15e4ac081a8"},
+]
 sphinx-rtd-theme = [
     {file = "sphinx_rtd_theme-1.2.0-py2.py3-none-any.whl", hash = "sha256:f823f7e71890abe0ac6aaa6013361ea2696fc8d3e1fa798f463e82bdb77eeff2"},
     {file = "sphinx_rtd_theme-1.2.0.tar.gz", hash = "sha256:a0d8bd1a2ed52e0b338cbe19c4b2eef3c5e7a048769753dac6a9f059c7b641b8"},
@@ -3335,6 +3370,10 @@ sphinx-rtd-theme = [
 sphinx-thebe = [
     {file = "sphinx-thebe-0.2.1.tar.gz", hash = "sha256:f4c8c1542054f991b73fcb28c4cf21697e42aba2f83f22348c1c851b82766583"},
     {file = "sphinx_thebe-0.2.1-py3-none-any.whl", hash = "sha256:e8af555c90acba3541fa7108ea5981ae9c4bd406b54d9a242ab054d326ab7441"},
+]
+sphinx_tippy = [
+    {file = "sphinx_tippy-0.4.1-py3-none-any.whl", hash = "sha256:e1004bc0bf0463274c603065ea961f88b14cd2616a1438264f1fedfc280db1aa"},
+    {file = "sphinx_tippy-0.4.1.tar.gz", hash = "sha256:bc5a012dd13d079d2049727617b4c52f7fb9779510f1784571bab1550c73e621"},
 ]
 sphinx-togglebutton = [
     {file = "sphinx-togglebutton-0.3.2.tar.gz", hash = "sha256:ab0c8b366427b01e4c89802d5d078472c427fa6e9d12d521c34fa0442559dc7a"},
@@ -3432,8 +3471,8 @@ stack-data = [
     {file = "stack_data-0.6.2.tar.gz", hash = "sha256:32d2dd0376772d01b6cb9fc996f3c8b57a357089dec328ed4b6553d037eaf815"},
 ]
 subgrounds = [
-    {file = "subgrounds-1.0.3-py3-none-any.whl", hash = "sha256:ffaeced20826e58b9b67d799cf3a9f91387dcbb66b61c5d28c8f5aa645cc56ab"},
-    {file = "subgrounds-1.0.3.tar.gz", hash = "sha256:60a32d9d819173f349f2ada673bc79b6170cfd22272a2c201f9cd56bff8a6baf"},
+    {file = "subgrounds-1.1.1-py3-none-any.whl", hash = "sha256:66e14d4ea6c52c32958cca711b1d357bdfd0c695297bb65aa638d5d054beab41"},
+    {file = "subgrounds-1.1.1.tar.gz", hash = "sha256:129fcc01c106d3467787e74f83ec6eca2ea9dc7569fb158496bc7bcdbf0d7965"},
 ]
 tabulate = [
     {file = "tabulate-0.9.0-py3-none-any.whl", hash = "sha256:024ca478df22e9340661486f85298cff5f6dcdba14f3813e8830015b9ed1948f"},

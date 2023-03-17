@@ -1,3 +1,82 @@
+.highlight {
+  background: #191F2E !important;
+  box-shadow: inset 0px -3px 5px -3px rgba(0, 0, 0, 0.15);
+  border-radius: 0px;
+}
+
+.literal-block.wrapper {
+  border-radius: 8px;
+}
+
+.thebe-launch-button>.loading-text>.status {
+  color: #5CC653 !important
+}
+
+.CodeMirror-code {
+  // background: #E6E0D1 !important;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+.CodeMirror-cursor {
+  border-left: 1px solid #F4F4F4 !important;
+  background: #F4F4F4 !important;
+}
+
+.CodeMirror-selected {
+  opacity: 0.35;
+}
+
+.thebelab-cell {
+  border: none;
+}
+
+.thebelab-button {
+  font-family: "sofia-pro", sans-serif;
+  background: #040019;
+  color: #F4F4F4;
+  margin-right: 0.5em;
+  padding-bottom: 0.5em;
+  border-width: 1px;
+  border-color: #54DDF8 !important;
+  cursor: pointer;
+
+  &:hover {
+    background: #54DDF8;
+    color: #040019;
+    border-width: 1px;
+    border-color: #54DDF8 !important;
+
+    &>.loading-text>.status {
+      color: #040019 !important
+    }
+  }
+
+  &:active {
+    background: #54DDF8;
+    color: #040019;
+    border-width: 1px;
+    border-color: #54DDF8 !important;
+    opacity: 0.8;
+
+    &>.loading-text>.status {
+      color: #040019 !important
+    }
+  }
+}
+
+.admonition {
+  border-radius: 8px;
+}
+
+.jp-RenderedText,
+.jp-RenderedJavaScript,
+.jp-RenderedHTMLCommon {
+  // color: #F4F4F4 !important;
+  filter: invert(100%);
+  padding-bottom: 0.5em !important;
+}
+
 @mixin colors-dark-override {
 
   .sidebar-drawer {
@@ -22,11 +101,6 @@
     }
   }
 
-  .highlight {
-    background: #191F2E;
-    box-shadow: inset 0px -3px 5px -3px rgba(0, 0, 0, 0.15);
-  }
-
   .page-info {
     &>.context {
       color: var(--color-foreground-muted)
@@ -47,13 +121,22 @@
     }
   }
 
-  .highlight {
-    background: #B7F0FB;
-    box-shadow: inset 0px -3px 5px -3px rgba(0, 0, 0, 0.15);
+  .admonition,
+  .main .caption-text {
+    color: #F4F4F4;
 
-    // specific pygment color override
-    .s1 {
-      color: #0A40BD
+    & a {
+      color: #0083cf;
+      text-decoration-color: #303335;
+
+      &:hover {
+        text-decoration-color: #666666
+      }
+    }
+
+    & .literal {
+      background: transparent;
+      border-color: transparent;
     }
   }
 }
