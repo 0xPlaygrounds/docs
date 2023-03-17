@@ -1,9 +1,9 @@
 # Merging
 
-When passing a list of {class}`~subgrounds.FieldPath`s to any {func}`~subgrounds.Subgrounds.query` function, subgrounds will merge them into a single query.
+When passing a list of {class}`FieldPaths <subgrounds.FieldPath>` to any {func}`~subgrounds.Subgrounds.query` function, subgrounds will merge them into a single query.
 
 ```{warning}
-This is **only** true if the {class}`~subgrounds.FieldPath`s originate from the **same subgraph**.
+This is **only** true if the {class}`FieldPaths <subgrounds.FieldPath>` originate from the **same subgraph**.
 ```
 
 ```{thebe-button}
@@ -66,5 +66,5 @@ query {
 :::::
 
 ```{note}
-This becomes very helpful when chaining partial {class}`~subgrounds.FieldPath`s together since you can leverage normal python constructs to help organize the data as you want to access and {func}`~subgrounds.Subgrounds.query` will handle the rest!
+This becomes very helpful when chaining partial {class}`FieldPaths <subgrounds.FieldPath>` together since you can leverage normal python constructs to help organize the data as you want to access and {func}`~subgrounds.Subgrounds.query` will handle the rest!
 ```

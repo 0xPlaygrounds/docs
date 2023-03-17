@@ -4,6 +4,7 @@ Subgrounds provides 3 main ways to query data, which provide different data stru
 
 * {func}`~subgrounds.subgrounds.Subgrounds.query`
   * Results in raw data types such as a number, a string, etc.
+  * *Note*: It is important to consider the shape of the queried data (e.g.: single entities, list of entities...) as the shape of the returned data will depend on it.
 
 * {func}`~subgrounds.subgrounds.Subgrounds.query_json`
   * Results in a raw JSON object ({py:class}`dict`) containing the unprocessed response from the api.
@@ -12,7 +13,7 @@ Subgrounds provides 3 main ways to query data, which provide different data stru
 * {func}`~subgrounds.subgrounds.Subgrounds.query_df`
   * Results in a {class}`~pandas.DataFrame` or {class}`list`\[{class}`pandas.DataFrame`\].
   * This data is flattened based on the schema of the API from the above JSON data, mimicking the SQL `JOIN` operation
-  * If flattening isn't possible, multiple {class}`~pandas.DataFrame`s will be returned.
+  * If flattening isn't possible, multiple {class}`Dataframes <pandas.DataFrame>` will be returned.
 
 ```{thebe-button}
 ```

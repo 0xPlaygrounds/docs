@@ -19,12 +19,12 @@ You can check your version of python via: `python --version`
 ```{note}
 We recommend creating python environments to help manage your packages. These help in ensuring your projects have the correct versions for the packages you care about.
 
-If you run into problems during installation, see {ref}`faq/environments`.
+If you run into problems during installation, see [Environment Setup](/faq/environments.md).
 ```
 
 ## Simple example
 
-The following example grabs a aave-v2 subgraph and queries market name and their total value locked (in USD) from the the top-level markets entity into a pandas {external:class}`~pandas.DataFrame`.
+The following example grabs a subgraph for the Aave v2 protocol and queries the top 5 markets ordered by TVL (total value locked), selects their name and their TVL (in USD) and returns the data as a pandas {class}`~pandas.DataFrame`.
 
 ```{repl}
 from subgrounds import Subgrounds

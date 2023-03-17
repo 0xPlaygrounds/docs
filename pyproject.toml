@@ -60,7 +60,10 @@ extensions = [
     "sphinx_jinja",
 ] 
 # myst_fence_as_directive = ["python", "mermaid"]
+
 myst_enable_extensions = ["substitution", "colon_fence"]
+myst_heading_anchors = 2
+
 autosectionlabel_prefix_document = true
 suppress_warnings = ["myst.header"]
 

@@ -1,6 +1,6 @@
 # Field Paths
 
-{class}`~subgrounds.FieldPath`s are the main building blocks used to construct Subgrounds queries. A {class}`~subgrounds.FieldPath` represents a selection path through a GraphQL schema starting from the root {class}`~subgrounds.subgrounds.query.Query` entity (see [The Query and Mutation types](https://graphql.org/learn/schema/#the-query-and-mutation-types)) all the way down to a scalar leaf.
+{class}`FieldPaths <subgrounds.FieldPath>` are the main building blocks used to construct Subgrounds queries. A {class}`~subgrounds.FieldPath` represents a selection path through a GraphQL schema starting from the root {class}`~subgrounds.subgrounds.query.Query` entity (see [The Query and Mutation types](https://graphql.org/learn/schema/#the-query-and-mutation-types)) all the way down to a scalar leaf.
 
 {class}`~subgrounds.FieldPath` are created by simply selecting attributes starting from the subgraph object returned by the {class}`~subgrounds.Subgrounds.load_subgraph` or {class}`~subgrounds.Subgrounds.load_api` methods:
 

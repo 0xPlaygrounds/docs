@@ -4,7 +4,7 @@ Explore subgrounds through projects created by our community!
 
 ---
 
-::::{grid} 1 2 2 2
+::::{grid} 1  2 2 2
 :gutter: 4
 
 ```{grid-item-card}
