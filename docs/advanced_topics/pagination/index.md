@@ -39,12 +39,12 @@ from subgrounds import Subgrounds
 from subgrounds.pagination import ShallowStrategy
 
 sg = Subgrounds()
-subgraph = sg.load_subgraph("https://api.thegraph.com/subgraphs/name/messari/compound-ethereum")
+subgraph = sg.load_subgraph("https://api.thegraph.com/subgraphs/name/messari/compound-v2-ethereum")
 
 mkt_daily_snapshots = subgraph.Query.marketDailySnapshots(
     orderBy='timestamp',
     orderDirection='desc',
-    first=1000
+    first=50,
 )
 
 field_paths = [
@@ -54,13 +54,13 @@ field_paths = [
     mkt_daily_snapshots.rates.side,
 ]
 
-df = sg.query_df(field_paths, pagination_strategy=ShallowStrategy) 
+sg.query_df(field_paths, pagination_strategy=ShallowStrategy) 
 ```
 
 Note that pagination can be explicitely disabled by setting {class}`~subgrounds.pagination.LegacyStrategy` to `None`, in which case the query will be executed as-is:
 ```{code-block} python
 :class: thebe
-df = sg.query_df(field_paths, pagination_strategy=None) 
+sg.query_df(field_paths, pagination_strategy=None) 
 ```
 
 ```{toctree}
