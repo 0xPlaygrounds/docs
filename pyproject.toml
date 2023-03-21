@@ -18,6 +18,7 @@ subgrounds = {extras = ["dash"], version = "^1.1.1"}
 sphinxcontrib-sass = "^0.3.4"
 sphinx_tippy = "^0.4.1"
 sphinx-jinja = "^2.0.2"
+sphinxcontrib-youtube = "^1.2.0"
 
 [tool.poe.tasks]
 format = { shell = "blacken-docs --all-files" }
@@ -57,7 +58,7 @@ extensions = [
     "sphinxcontrib.repl",       # auto evaluates code-blocks w/ `repl`
     "sphinx.ext.intersphinx",   # link across external docs 🔥
     "sphinx_tippy",             # enables smart tooltips on items
-    "sphinx_jinja",
+    "sphinxcontrib.youtube",    # enables easy youtube support
 ] 
 # myst_fence_as_directive = ["python", "mermaid"]
 

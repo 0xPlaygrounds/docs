@@ -1821,6 +1821,21 @@ lint = ["docutils-stubs", "flake8", "mypy"]
 test = ["pytest"]
 
 [[package]]
+name = "sphinxcontrib-youtube"
+version = "1.2.0"
+description = "Sphinx \"youtube\" extension"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+requests = "*"
+Sphinx = ">=0.6"
+
+[package.extras]
+doc = ["furo", "sphinx-copybutton"]
+
+[[package]]
 name = "sphinxext-opengraph"
 version = "0.8.1"
 description = "Sphinx Extension to enable OGP support"
@@ -2109,7 +2124,7 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "4cd0521e02443383f3e560b7df556f9586e2be1bcd319f056a7a8cf65c0f53cb"
+content-hash = "7253182850e5fb5892897107e912b009baf31273cf1a42cdaf08f48b9bcab682"
 
 [metadata.files]
 alabaster = [
@@ -3418,6 +3433,10 @@ sphinxcontrib-sass = [
 sphinxcontrib-serializinghtml = [
     {file = "sphinxcontrib-serializinghtml-1.1.5.tar.gz", hash = "sha256:aa5f6de5dfdf809ef505c4895e51ef5c9eac17d0f287933eb49ec495280b6952"},
     {file = "sphinxcontrib_serializinghtml-1.1.5-py2.py3-none-any.whl", hash = "sha256:352a9a00ae864471d3a7ead8d7d79f5fc0b57e8b3f95e9867eb9eb28999b92fd"},
+]
+sphinxcontrib-youtube = [
+    {file = "sphinxcontrib-youtube-1.2.0.tar.gz", hash = "sha256:f468b76550e926c6d918c97b921d6ccc8ec6bc13004746dea309788ea9268991"},
+    {file = "sphinxcontrib_youtube-1.2.0-py3-none-any.whl", hash = "sha256:fcc9301b5df3269597310c1ab41806b25fb7bfe41b0344aa8871dbd820d08ca4"},
 ]
 sphinxext-opengraph = [
     {file = "sphinxext-opengraph-0.8.1.tar.gz", hash = "sha256:4e698b907ef9582cd0106bd50807106677fdab4dc5c31040be17c9afb6e17880"},

@@ -60,6 +60,28 @@ FAQ
 
 Quick answers to your most burning questions
 ```
+
+```{grid-item-card}
+:link: tutorials
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+Tutorials
+</h3>
+
+Links to our recorded video tutorials
+```
+
+```{grid-item-card}
+:link: api/subgrounds
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+API Reference
+</h3>
+
+Auto-generated docs from our codebase
+```
 ::::
 
 ---
@@ -73,6 +95,7 @@ getting_started/index
 advanced_topics/index
 faq/index
 examples
+tutorials
 API Reference <modules>
 ```
 
