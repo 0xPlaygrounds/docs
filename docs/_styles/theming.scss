@@ -114,10 +114,10 @@
 
 @mixin colors-light-override {
   .sd-card {
-    box-shadow: -4px -4px 18px -2px #E2FDF1, 4px 5px 15px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: -4px -4px 18px -2px #E9E9DE, 4px 5px 15px rgba(0, 0, 0, 0.15) !important;
 
     &:hover {
-      background: #E7FAFE !important
+      background: #e6e6e6 !important
     }
   }
 
