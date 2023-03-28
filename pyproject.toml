@@ -14,7 +14,7 @@ sphinx-thebe = "^0.2.1"
 sphinxext-opengraph = "^0.8.1"
 sphinx-copybutton = "^0.5.1"
 sphinxcontrib-repl = "^0.4.1"
-subgrounds = {extras = ["dash"], version = "^1.1.1"}
+subgrounds = { extras = ["dash"], version = "^1.1.1" }
 sphinxcontrib-sass = "^0.3.4"
 sphinx_tippy = "^0.4.1"
 sphinx-jinja = "^2.0.2"
@@ -50,16 +50,16 @@ pygments_style = "native"
 pygments_dark_style = "material"
 
 extensions = [
-    "sphinxcontrib.sass",       # enables `.sass`/`.scss` support for CSS
-    "sphinx_design",            # enables fancy design, like cards, etc
-    "sphinxext.opengraph",      # provides social media cards + ranking info
-    "sphinx_copybutton",        # adds copy buttons to raw code blocks
-    "sphinx_thebe",             # transforms code cells into executable notebook cells
-    "sphinxcontrib.repl",       # auto evaluates code-blocks w/ `repl`
-    "sphinx.ext.intersphinx",   # link across external docs 🔥
-    "sphinx_tippy",             # enables smart tooltips on items
-    "sphinxcontrib.youtube",    # enables easy youtube support
-] 
+    "sphinxcontrib.sass",     # enables `.sass`/`.scss` support for CSS
+    "sphinx_design",          # enables fancy design, like cards, etc
+    "sphinxext.opengraph",    # provides social media cards + ranking info
+    "sphinx_copybutton",      # adds copy buttons to raw code blocks
+    "sphinx_thebe",           # transforms code cells into executable notebook cells
+    "sphinxcontrib.repl",     # auto evaluates code-blocks w/ `repl`
+    "sphinx.ext.intersphinx", # link across external docs 🔥
+    "sphinx_tippy",           # enables smart tooltips on items
+    "sphinxcontrib.youtube",  # enables easy youtube support
+]
 # myst_fence_as_directive = ["python", "mermaid"]
 
 myst_enable_extensions = ["substitution", "colon_fence"]
@@ -99,7 +99,7 @@ repository_branch = "main"
 # codemirror-theme = "ayu-mirage"
 
 [tool.mudkip.override.html_theme_options]
-announcement = "Checkout our upgraded <a href='/getting_started'>Getting Started</a> tutorial!"
+announcement = "Checkout our upgraded <a href='/getting_started'>Getting Started</a>!"
 
 sidebar_hide_name = true
 light_logo = "assets/pg-logotype-dark.svg"

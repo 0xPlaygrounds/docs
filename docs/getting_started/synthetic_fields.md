@@ -67,3 +67,33 @@ sg.query_df([
     last_10_swaps.pair.token1.symbol,
 ])
 ```
+
+## Helpers
+
+Since there are several common instances {class}`SyntheticFields <subgrounds.SyntheticField>` we see in the wild, we've added some helper constructors for ease of use.
+
+### `SyntheticField.datetime_of_timestamp`
+
+This helper constructor makes it easy to convert `timestamps` into {class}`~datetime.datetime` objects.
+
+:::::{tab-set}
+
+::::{tab-item} Helper Method
+```{code-block} python
+
+swap.datetime = SyntheticField.datetime_of_timestamp(swap.timestamp)
+```
+::::
+
+::::{tab-item} Translation
+```{code-block} python
+
+swap.datetime = SyntheticField(
+    f=lambda timestamp: str(datetime.fromtimestamp(timestamp)),
+    type_=SyntheticField.STRING,
+    deps=swap.timestamp,
+)
+```
+::::
+
+:::::
