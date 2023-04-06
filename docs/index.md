@@ -10,7 +10,7 @@ An intuitive python library for interfacing with Subgraphs.
 ## Features
 - **Simple**: Leverage a Pythonic API to easily build queries and transformations without the need for raw GraphQL manipulation.
 - **Automated**: Automatically handle pagination and schema introspection for effortless data retrieval.
-- **Powerful**: Create sophisticated queries using the `SyntheticFields` transformation system.
+- **Powerful**: Create sophisticated queries using the {class}`SyntheticFields <subgrounds.SyntheticField>` transformation system.
 
 ---
 
@@ -91,6 +91,7 @@ Auto-generated docs from our codebase
 :caption: Subgrounds
 :hidden:
 
+Overview <self>
 getting_started/index
 advanced_topics/index
 faq/index

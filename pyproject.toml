@@ -80,10 +80,19 @@ ogp_enable_meta_description = true
 sass_src_dir = "_styles"
 sass_out_dir = "_build/dist/_static/css"
 
+[tool.mudkip.override.html_sidebars]
+"**" = [
+    "sidebar/brand.html",
+    "sidebar/search.html",
+    "sidebar/scroll-start.html",
+    "sidebar/navigation.html",
+    "sidebar/scroll-end.html",
+    "sidebar/variant-selector.html",
+]
+
 [tool.mudkip.override.intersphinx_mapping]
 python = ["https://docs.python.org/3", ""]
 pandas = ["http://pandas.pydata.org/pandas-docs/dev", ""]
-
 
 [tool.mudkip.override.sass_targets]
 "theming.scss" = "theming.css"
@@ -153,19 +162,19 @@ font-stack--monospace = "carbona-variable, monospace"
 name = "GitHub"
 url = "https://github.com/0xPlaygrounds/subgrounds"
 html = ""
-class = "fa-brands fa-github fa-xl"
+class = "fa-brands fa-github fa-l"
 
 [[tool.mudkip.override.html_theme_options.footer_icons]]
 name = "Discord"
 url = "https://discord.gg/v4r4zhBAh2"
 html = ""
-class = "fa-brands fa-discord fa-xl"
+class = "fa-brands fa-discord fa-l"
 
 [[tool.mudkip.override.html_theme_options.footer_icons]]
 name = "Twitter"
 url = "https://twitter.com/Playgrounds0x"
 html = ""
-class = "fa-brands fa-twitter fa-xl"
+class = "fa-brands fa-twitter fa-l"
 
 [build-system]
 requires = ["poetry-core"]
