@@ -11,7 +11,7 @@
 :class: thebe
 :caption: Loading a curve subgraph
 
-from subgrounds.subgrounds import Subgrounds
+from subgrounds import Subgrounds
 sg = Subgrounds()
 
 curve = sg.load_subgraph('https://api.thegraph.com/subgraphs/name/messari/curve-finance-ethereum')
