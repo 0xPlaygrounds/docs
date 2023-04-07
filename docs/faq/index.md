@@ -1,6 +1,6 @@
 # FAQ
 
-::::{grid} 1  2 2 2
+::::{grid} 1 2 2 2
 :gutter: 4
 
 ```{grid-item-card}
