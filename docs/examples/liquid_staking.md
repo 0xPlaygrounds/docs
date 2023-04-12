@@ -4,6 +4,48 @@
 :gutter: 4
 
 ```{grid-item-card}
+:link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/liquid_staking/Lido_Snapshot.ipynb
+
+<h3 class='gradient-text card-heading'>
+Lido Protocol Snapshot_Simple
+</h3>
+
+Exploring Lido financial data for the past 30 days.
+
+Highlight: `Beginner` `SyntheticFields`
+
+<i>By: Tachi</i>
+```
+
+```{grid-item-card}
+:link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/liquid_staking/Lido_Snapshot_2.ipynb
+
+<h3 class='gradient-text card-heading'>
+Lido Protocol Usage Metrics
+</h3>
+
+Exploring top level usage metrics for the past 30 days.
+
+Highlight: `Beginner` `SyntheticFields`
+
+<i>By: Tachi</i>
+```
+
+```{grid-item-card}
+:link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/liquid_staking/Lido_Snapshot_Advanced_1.ipynb
+
+<h3 class='gradient-text card-heading'>
+Lido Protocol Further Explorations
+</h3>
+
+Further explorations of Lido Pools
+
+Highlight: `Beginner` `SyntheticFields`
+
+<i>By: Tachi</i>
+```
+
+```{grid-item-card}
 :link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/RocketPool_x_LidoFi_Advanced.ipynb
 
 <h3 class='gradient-text card-heading'>
@@ -18,17 +60,17 @@ Highlight: `Intermediate` `SyntheticFields`
 ```
 
 ```{grid-item-card}
-:link: https://github.com/RplusT/on-chain/blob/main/Votium%20Bribes%20Analysis.ipynb
+:link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/liquid_staking/RocketPool_Snapshot.ipynb
 
 <h3 class='gradient-text card-heading'>
-Votium Bribes Analysis
+RocketPool Snapshot
 </h3>
 
-Exploring Voting Incentives on Votium Protocol for vlCVX Token Holders
+Exploration of RocketPool Finanacial daily snapshots.
 
-Highlight: `Intermediate`
+Highlight: `Intermediate` `SyntheticFields`
 
-<i>By: RplusT</i>
+<i>By: Tachi</i>
 ```
 
 ```{grid-item-card}
@@ -46,17 +88,17 @@ Highlight: `Intermediate`
 ```
 
 ```{grid-item-card}
-:link: https://github.com/EdgeCaser/Snapshotsurfer/blob/master/Snapshotsurfer.ipynb
+:link: https://github.com/RplusT/on-chain/blob/main/Votium%20Bribes%20Analysis.ipynb
 
 <h3 class='gradient-text card-heading'>
-Snapshot Surfer
+Votium Bribes Analysis
 </h3>
 
-Understanding OlympusDAO proposals and community voting on snapshot
+Exploring Voting Incentives on Votium Protocol for vlCVX Token Holders
 
 Highlight: `Intermediate`
 
-<i>By: EdgeCaser</i>
+<i>By: RplusT</i>
 ```
 
 ::::
