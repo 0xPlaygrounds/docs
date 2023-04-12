@@ -40,7 +40,7 @@ Learn how to conjure more complex queries
 ```
 
 ```{grid-item-card}
-:link: examples
+:link: examples/index
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
@@ -95,7 +95,7 @@ Overview <self>
 getting_started/index
 advanced_topics/index
 faq/index
-examples
+examples/index
 tutorials
 API Reference <modules>
 ```
