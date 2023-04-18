@@ -7,11 +7,13 @@ The first step in acquiring a Playgrounds API key is to create a Playgrounds acc
 
 ### 2. Create your Playgrounds API key
 Once you have created your Playgrounds account and are logged into the Playgrounds app, create a new API key by clicking the "Generate API key" button.
-![](docs/_static/assets/pg-app-create-api-key.png)
+
+![](_static/assets/pg-app-create-api-key.png)
 
 ### 3. Copy your Playgrounds API key
 Congradulations, you now have a Playgrounds API key that you can use to query decentralized network subgraphs through our proxy API! To copy the actual key itself, you can click on the "..." expander and select the "Copy API Token" option, which will copy the key value to the clipboard.
-![](docs/_static/assets/pg-app-copy-api-key.png) 
+
+![](_static/assets/pg-app-copy-api-key.png) 
 
 ## Querying the decentralized network
 Once you have your API key, you can use our proxy API endpoint to query the Graph's decentralized network.
@@ -37,7 +39,7 @@ https://gateway.thegraph.com/api/[api-key]/subgraphs/id/[subgraph-id]
 ### Finding a decentralized subgraph ID
 A decentralized network subgraph's can easily be obtained from The Graph's decentralized network [explorer](https://thegraph.com/explorer).
 
-![](docs/_static/assets/graph-explorer-id.png)
+![](_static/assets/graph-explorer-id.png)
 
 ## Using Subgrounds with the Playgrounds Gateway
 Altough it is entirely possible to use the Playgrounds Gateway by directly sending requests with a valid Playgrounds API key, the Gateway is most useful when used with Subgrounds. This allows you to leverage Subgrounds and its features to query the Graph's decentralized network with ease. Below is an example of how to use Subgrounds with the decentralized network.
