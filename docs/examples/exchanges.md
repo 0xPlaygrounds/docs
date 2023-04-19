@@ -17,4 +17,18 @@ Highlight: `Intermediate` `SyntheticFields`
 <i>By: Tachi</i>
 ```
 
+```{grid-item-card}
+:link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/exchanges/uniswap_v3.ipynb
+
+<h3 class='gradient-text card-heading'>
+Balancer
+</h3>
+
+Uniswap V3 Analysis.
+
+Highlight: `Intermediate` `SyntheticFields`
+
+<i>By: Tachi</i>
+```
+
 ::::
