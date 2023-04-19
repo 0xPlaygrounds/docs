@@ -17,4 +17,18 @@ Highlight: `Intermediate` `SyntheticFields`
 <i>By: Tachi</i>
 ```
 
+```{grid-item-card}
+:link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/exchanges/balancer.ipynb
+
+<h3 class='gradient-text card-heading'>
+Balancer
+</h3>
+
+Balancer Pools Analysis.
+
+Highlight: `Intermediate` `SyntheticFields`
+
+<i>By: Tachi</i>
+```
+
 ::::
