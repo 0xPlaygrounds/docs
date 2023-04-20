@@ -13,6 +13,30 @@ Pagination
 
 Learn how Subgrounds automates your queries!
 ```
+
+```{grid-item-card}
+:link: plotly
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+Contrib - Plotly
+</h3>
+
+The easiest path from `FieldPath` to visualization
+```
+
+<!--```{grid-item-card}
+:link: dash
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+Contrib - Dash
+</h3>
+
+Create live dashboards w/ Subgrounds
+```
+-->
+
 ::::
 
 ---
@@ -23,4 +47,5 @@ Learn how Subgrounds automates your queries!
 :hidden:
 
 pagination/index
+plotly
 ```

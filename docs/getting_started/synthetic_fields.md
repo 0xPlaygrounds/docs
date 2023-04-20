@@ -97,3 +97,29 @@ swap.datetime = SyntheticField(
 ::::
 
 :::::
+
+### `SyntheticField.map`
+
+This helper constructor makes it easy to convert `timestamps` into {class}`~datetime.datetime` objects.
+
+:::::{tab-set}
+
+::::{tab-item} Helper Method
+```{code-block} python
+
+swap.datetime = SyntheticField.datetime_of_timestamp(swap.timestamp)
+```
+::::
+
+::::{tab-item} Translation
+```{code-block} python
+
+swap.datetime = SyntheticField(
+    f=lambda timestamp: str(datetime.fromtimestamp(timestamp)),
+    type_=SyntheticField.STRING,
+    deps=swap.timestamp,
+)
+```
+::::
+
+:::::

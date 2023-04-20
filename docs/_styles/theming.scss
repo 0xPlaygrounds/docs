@@ -33,7 +33,7 @@
 
 .thebelab-button {
   font-family: "sofia-pro", sans-serif;
-  background: #040019;
+  background: transparent;
   color: #F4F4F4;
   margin-right: 0.5em;
   padding-bottom: 0.5em;
@@ -137,6 +137,18 @@
     & .literal {
       background: transparent;
       border-color: transparent;
+    }
+
+    & th.head {
+      background: #131720;
+    }
+
+    & table.docutils {
+
+      & th,
+      & td {
+        border-color: #303335;
+      }
     }
   }
 }

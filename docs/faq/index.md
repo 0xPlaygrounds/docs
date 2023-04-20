@@ -1,6 +1,6 @@
 # FAQ
 
-::::{grid} 1  2 2 2
+::::{grid} 1 2 2 2
 :gutter: 4
 
 ```{grid-item-card}
@@ -14,6 +14,17 @@ Python Environments
 How to leverage environments to organize your project dependencies.
 ```
 
+```{grid-item-card}
+:link: contrib
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+Contrib
+</h3>
+
+How to leverage environments to organize your project dependencies.
+```
+
 ::::
 
 ```{toctree}
@@ -21,5 +32,6 @@ How to leverage environments to organize your project dependencies.
 :hidden:
 
 environments
+contrib
 
 ```
