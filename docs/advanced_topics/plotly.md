@@ -1,5 +1,6 @@
 # Contrib - Plotly
-> The Subgrounds Plotly Wrapper is an extension of the Plotly components to understand and work seamlessly with the Subgrounds library. It provides a convenient way to visualize data fetched from subgraphs using Plotly, by wrapping Plotly's trace components with additional functionality.
+
+The Subgrounds Plotly Wrapper is an extension of the Plotly components to understand and work seamlessly with the Subgrounds library. It provides a convenient way to visualize data fetched from subgraphs using Plotly, by wrapping Plotly's trace components with additional functionality.
 
 **Resources**
 - [Plotly Docs](https://plotly.com/python/)
