@@ -25,7 +25,7 @@ Contrib - Plotly
 The easiest path from `FieldPath` to visualization
 ```
 
-```{grid-item-card}
+<!--```{grid-item-card}
 :link: dash
 :link-type: doc
 
@@ -35,6 +35,7 @@ Contrib - Dash
 
 Create live dashboards w/ Subgrounds
 ```
+-->
 
 ::::
 
@@ -47,5 +48,4 @@ Create live dashboards w/ Subgrounds
 
 pagination/index
 plotly
-dash
 ```
