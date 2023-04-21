@@ -1,6 +1,8 @@
 # The Playgrounds Docs
 
-We our Playgrounds, a data solutions company providing easy and reliable tools for blockchain data analytics using Subgraphs.  Our goal simple - provide the **easiest** way to do data analytics with Subgraphs
+We are Playgrounds, a data solutions company providing easy and reliable tools for blockchain data analytics using Subgraphs.
+
+Our goal simple - provide the **easiest** way to do data analytics with Subgraphs
 
 Dive into our extensive documentation and get started with our innovative products.
 
@@ -28,14 +30,14 @@ Our intuitive and powerful Python library for seamless Subgraph integration
 Playgrounds Gateway
 </h3>
 
-A hassle-free solution for querying decentralized data, without needing a wallet or any GRT
+A hassle-free solution for querying decentralized subgraphs, without needing a wallet or any GRT
 ```
 
 ::::
 
 ----
 
-For any questions or assistance, please visit our [discord](https://discord.gg/gMSSh5bjvk) or reach out to us at out [website](https://playgrounds.network/). Stay updated with the latest news and developments by following our [blog](https://playgrounds.network/blog) and subscribing to our [twitter](https://twitter.com/Playgrounds0x).
+For any questions or assistance, please visit our [discord](https://discord.gg/gMSSh5bjvk) or reach out to us at out [website](https://playgrounds.network/). Stay updated with the latest news and developments by following our [blog](https://playgrounds.network/blog) and following our [twitter](https://twitter.com/Playgrounds0x).
 
 
 ```{toctree}
