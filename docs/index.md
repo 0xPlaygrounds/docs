@@ -1,6 +1,7 @@
-# Playgrounds Docs
+# {octicon}`home` Home
 
 Stub
+
 
 ```{toctree}
 :caption: Gateway
@@ -20,7 +21,7 @@ Overview <subgrounds/index>
 subgrounds/getting_started/index
 subgrounds/advanced_topics/index
 subgrounds/faq/index
-subgrounds/examples
+subgrounds/examples/index
 subgrounds/tutorials
 API Reference <subgrounds/modules>
 ```

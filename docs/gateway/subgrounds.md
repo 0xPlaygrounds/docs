@@ -5,7 +5,11 @@ Although it is entirely possible to use the Playgrounds Gateway by directly send
 ```
 
 ## 1. Initialize {class}`~subgrounds.Subgrounds` object
-The first step is to initialize the {class}`~subgrounds.Subgrounds` object with a custom header value containing you Playgrounds API key. 
+The first step is to initialize the {class}`~subgrounds.Subgrounds` object with a custom header value containing you Playgrounds API key.
+
+```{note}
+Replace `"PG_API_KEY"` with API key gathered from [earlier](/docs/gateway/key)!
+```
 
 ```{code-block} python
 :class: thebe

@@ -11,6 +11,6 @@ Once you have created your Playgrounds account and are logged into the Playgroun
 ![](/_static/assets/pg-app-create-api-key.png)
 
 ## 3. Copy your Playgrounds API key
-Congradulations, you now have a Playgrounds API key that you can use to query decentralized network subgraphs through our proxy API! To copy the actual key itself, you can click on the "..." expander and select the "Copy API Token" option, which will copy the key value to the clipboard.
+Congratulations, you now have a Playgrounds API key that you can use to query decentralized network subgraphs through our proxy API! To copy the actual key itself, you can click on the "..." expander and select the "Copy API Token" option, which will copy the key value to the clipboard.
 
 ![](/_static/assets/pg-app-copy-api-key.png) 
