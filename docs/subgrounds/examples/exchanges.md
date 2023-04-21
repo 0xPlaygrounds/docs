@@ -21,7 +21,7 @@ Highlight: `Intermediate` `SyntheticFields`
 :link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/exchanges/uniswap_v3.ipynb
 
 <h3 class='gradient-text card-heading'>
-Balancer
+Uniswap v3
 </h3>
 
 Uniswap V3 Analysis.
