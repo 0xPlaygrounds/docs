@@ -6,7 +6,7 @@ The Playgrounds Gateway is a premier product aimed at streamlining the user expe
 ## Advantages
 
 - SaaS-like experience for decentralized subgraphs
-- Fully Integrated with [Subgrounds](/docs/gateway/subgrounds.md)
+- Fully Integrated with {doc}`Subgrounds <subgrounds>`
 - Monitor your API key usage
 
 
