@@ -1,103 +1,64 @@
----
-hide-toc: true
-og-description: "An intuitive python library for interfacing with Subgraphs"
----
+# The Playgrounds Docs
 
-# Subgrounds
+We our Playgrounds, a data solutions company providing easy and reliable tools for blockchain data analytics using Subgraphs.  Our goal simple - provide the **easiest** way to do data analytics with Subgraphs
 
-An intuitive python library for interfacing with Subgraphs.
+Dive into our extensive documentation and get started with our innovative products.
 
-## Features
-- **Simple**: Leverage a Pythonic API to easily build queries and transformations without the need for raw GraphQL manipulation.
-- **Automated**: Automatically handle pagination and schema introspection for effortless data retrieval.
-- **Powerful**: Create sophisticated queries using the {class}`SyntheticFields <subgrounds.SyntheticField>` transformation system.
-
----
+----
 
 ::::{grid} 1 2 2 2
 :gutter: 3
 
 ```{grid-item-card}
-:link: getting_started/index
+:link: subgrounds/index
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
-Getting Started
+Subgrounds
 </h3>
 
-Start using Subgrounds in 5 minutes!
+Our intuitive and powerful Python library for seamless Subgraph integration
 ```
 
 ```{grid-item-card}
-:link: advanced_topics/index
+:link: gateway/index
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
-Advanced Topics
+Playgrounds Gateway
 </h3>
 
-Learn how to conjure more complex queries
+A hassle-free solution for querying decentralized data, without needing a wallet or any GRT
 ```
 
-```{grid-item-card}
-:link: examples/index
-:link-type: doc
-
-<h3 class='gradient-text card-heading'>
-Examples
-</h3>
-
-Checkout our curated list of community examples
-```
-
-```{grid-item-card}
-:link: faq/index
-:link-type: doc
-
-<h3 class='gradient-text card-heading'>
-FAQ
-</h3>
-
-Quick answers to your most burning questions
-```
-
-```{grid-item-card}
-:link: tutorials
-:link-type: doc
-
-<h3 class='gradient-text card-heading'>
-Tutorials
-</h3>
-
-Links to our recorded video tutorials
-```
-
-```{grid-item-card}
-:link: api/subgrounds
-:link-type: doc
-
-<h3 class='gradient-text card-heading'>
-API Reference
-</h3>
-
-Auto-generated docs from our codebase
-```
 ::::
 
----
+----
 
+For any questions or assistance, please visit our [discord](https://discord.gg/gMSSh5bjvk) or reach out to us at out [website](https://playgrounds.network/). Stay updated with the latest news and developments by following our [blog](https://playgrounds.network/blog) and subscribing to our [twitter](https://twitter.com/Playgrounds0x).
+
+
+```{toctree}
+:caption: Gateway
+:hidden:
+
+Overview <gateway/index>
+Getting a Key <gateway/key>
+Querying <gateway/querying>
+Using Subgrounds <gateway/subgrounds>
+```
 
 ```{toctree}
 :caption: Subgrounds
 :hidden:
 
-Overview <self>
-getting_started/index
-advanced_topics/index
-faq/index
-examples/index
-tutorials
-API Reference <modules>
+Overview <subgrounds/index>
+subgrounds/getting_started/index
+subgrounds/advanced_topics/index
+subgrounds/faq/index
+subgrounds/examples/index
+subgrounds/tutorials
+API Reference <subgrounds/modules>
 ```
 
 <!-- ```{toctree}

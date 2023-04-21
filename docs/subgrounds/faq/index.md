@@ -4,14 +4,14 @@
 :gutter: 4
 
 ```{grid-item-card}
-:link: environments
+:link: setup/index
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
-Python Environments
+Setup
 </h3>
 
-How to leverage environments to organize your project dependencies.
+Leveraging environments, third party tooling, and more to make project management seemless
 ```
 
 ```{grid-item-card}
@@ -22,7 +22,7 @@ How to leverage environments to organize your project dependencies.
 Contrib
 </h3>
 
-How to leverage environments to organize your project dependencies.
+Extra features in the `subgrounds.contrib` sub-module
 ```
 
 ::::
@@ -31,7 +31,7 @@ How to leverage environments to organize your project dependencies.
 :caption: FAQ
 :hidden:
 
-environments
+setup/index
 contrib
 
 ```

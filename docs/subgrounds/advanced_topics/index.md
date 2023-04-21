@@ -36,7 +36,6 @@ Contrib - Dash
 Create live dashboards w/ Subgrounds
 ```
 -->
-
 ::::
 
 ---
@@ -47,5 +46,4 @@ Create live dashboards w/ Subgrounds
 :hidden:
 
 pagination/index
-plotly
 ```
