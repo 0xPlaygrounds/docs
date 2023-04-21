@@ -3,12 +3,11 @@ Simplify your subgraph queries to the The Graph's decentralized network!
 
 The Playgrounds Gateway is a premier product aimed at streamlining the user experience with The Graph's decentralized network. It eliminates the need for traditional wallet and GRT management by providing a convenient and straightforward API key and URL. Users can effortlessly harness the full potential of the decentralized ecosystem.
 
-## Features
+## Advantages
 
-- No need to manage a wallet or buying GRT to access **high-quality** data
-- Works with existing GraphQL technologies
-- Seemlessly integrates with [Subgrounds](/docs/gateway/subgrounds.md), our open-source querying library
-- Start accessing data for **free**!
+- SaaS-like experience for decentralized subgraphs
+- Fully Integrated with [Subgrounds](/docs/gateway/subgrounds.md)
+- Monitor your API key usage
 
 
 ----
