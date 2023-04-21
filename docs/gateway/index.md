@@ -11,7 +11,7 @@ Simplify your subgraph queries to the The Graph's decentralized network!
 - Start accessing data for **free**!
 
 
----
+----
 
 ::::{grid} 1 2 2 2
 :gutter: 3
@@ -20,10 +20,10 @@ Simplify your subgraph queries to the The Graph's decentralized network!
 :link: https://app.playgrounds.network
 
 <h3 class='gradient-text card-heading'>
-Playgrounds Gateway
+Launch Playgrounds
 </h3>
 
-Access our portal to create API keys
+Access our app to create API keys
 ```
 
 ```{grid-item-card}
@@ -38,4 +38,4 @@ Get started in less than **five minutes**
 ```
 
 ::::
----
+----

@@ -12,7 +12,7 @@ An intuitive python library for interfacing with Subgraphs.
 - **Automated**: Automatically handle pagination and schema introspection for effortless data retrieval.
 - **Powerful**: Create sophisticated queries using the `SyntheticFields` transformation system.
 
----
+----
 
 ::::{grid} 1 2 2 2
 :gutter: 3
@@ -84,4 +84,4 @@ Auto-generated docs from our codebase
 ```
 ::::
 
----
+----
