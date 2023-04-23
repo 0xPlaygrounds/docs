@@ -18,8 +18,9 @@ Pyenv is a tool used to manage different versions of Python on a single operatin
 
 Once pyenv is installed, navigate to your project's directory and run the following commands:
 
-```bash
+```{code-block} bash
 :caption: Install then set the local python
+
 pyenv install 3.11.3
 pyenv local 3.11.3
 ```
@@ -28,13 +29,13 @@ The first command downloads Python version `3.11.3` on your operating system. Th
 
 To test that the correct Python version has been selected, you can run the following command:
 
-```bash
+```{code-block} bash
 pyenv version
 ```
 
 Which should output something like:
 
-```bash
+```
 3.11.3 (set by /my/project/path/.python-version)
 ```
 
@@ -56,7 +57,7 @@ This is some bleeding edge tech, hot off the press! The maintainers haven't used
 
 Follow the instructions in the repo to get started.
 
-```bash
+```{code-block} bash
 :caption: Example of installing `black` as an app
 
 pipx install black
