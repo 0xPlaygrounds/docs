@@ -111,7 +111,7 @@ repository_branch = "main"
 # codemirror-theme = "ayu-mirage"
 
 [tool.mudkip.override.html_theme_options]
-announcement = "The <a href='/gateway/index'>Playgrounds Gateway</a> has appeared!"
+announcement = "A wild <a href='/gateway/index'>Playgrounds Gateway</a> has appeared!"
 
 sidebar_hide_name = true
 light_logo = "assets/pg-logotype-dark.svg"
