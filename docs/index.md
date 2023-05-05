@@ -60,6 +60,7 @@ subgrounds/advanced_topics/index
 subgrounds/faq/index
 subgrounds/examples/index
 subgrounds/tutorials
+subgrounds/changelog
 API Reference <subgrounds/modules>
 ```
 
