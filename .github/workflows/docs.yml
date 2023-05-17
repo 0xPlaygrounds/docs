@@ -1,6 +1,8 @@
 name: Docs
 
 on:
+  repository_dispatch:
+    types: [ trigger-rebuild ]
   workflow_dispatch:
   push:
     branches: [ main ]
