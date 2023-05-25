@@ -19,7 +19,7 @@ You can check your version of python via: `python --version`
 ```{note}
 We recommend creating python environments to help manage your packages. These help in ensuring your projects have the correct versions for the packages you care about.
 
-If you run into problems during installation, see [Environment Setup](/faq/environments.md).
+If you run into problems during installation, see [Environment Setup](/faq/setup/index.md).ß
 ```
 
 ## Simple example
