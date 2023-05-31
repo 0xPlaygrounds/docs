@@ -14,7 +14,7 @@ sphinx-thebe = "^0.2.1"
 sphinxext-opengraph = "^0.8.1"
 sphinx-copybutton = "^0.5.1"
 sphinxcontrib-repl = "^0.4.1"
-subgrounds = {extras = ["all"], version = "^1.6.0"}
+subgrounds = { extras = ["all"], version = "^1.6.0" }
 sphinxcontrib-sass = "^0.3.4"
 sphinx_tippy = "^0.4.1"
 sphinx-jinja = "^2.0.2"
@@ -111,7 +111,7 @@ repository_branch = "main"
 # codemirror-theme = "ayu-mirage"
 
 [tool.mudkip.override.html_theme_options]
-announcement = "A wild <a href='/gateway/index'>Playgrounds Gateway</a> has appeared!"
+announcement = "Give us a ⭐️ on <a href='https://github.com/0xPlaygrounds/subgrounds'>Github</a>!"
 
 sidebar_hide_name = true
 light_logo = "assets/pg-logotype-dark.svg"
