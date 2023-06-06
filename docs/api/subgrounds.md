@@ -1,5 +1,5 @@
-# Querying using Subgrounds
-Although it is entirely possible to use the Playgrounds Gateway by directly sending requests with a valid Playgrounds API key, the Gateway is most useful when used with Subgrounds. This allows you to leverage Subgrounds and its features to query the Graph's decentralized network with ease. Below is an example of how to use Subgrounds with the decentralized network.
+# Subgrounds Integration with the Subgraph Proxy
+Although it is entirely possible to use the Playgrounds proxy by directly sending requests with a valid Playgrounds API key, the Playgrounds proxy is most useful when used with Subgrounds. This allows you to leverage Subgrounds and its features to query the Graph's decentralized network with ease. Below is an example of how to use Subgrounds with the decentralized network.
 
 ```{thebe-button}
 ```

@@ -1,6 +1,6 @@
-# Getting a Playgrounds Key
+# Getting a Playgrounds API Key
 
-To start using the Playgrounds Gateway, you'll first need to aquire a key from our platform.
+To start using the Playgrounds API, you'll first need to aquire an API key from our platform.
 
 ## 1. Creating your Playgrounds account
 The first step in acquiring a Playgrounds API key is to create a Playgrounds account via our signup [page](https://app.playgrounds.network/signup).
