@@ -44,18 +44,18 @@ If you want to query a subgraph hosted on the Arbitrum decentralized service, us
 <div style="width:100%">
 
 **Path parameters**<br>
-|Name|Type|Description|
-|---|---|---|
+| Name            | Type   | Description                       |
+| --------------- | ------ | --------------------------------- |
 | **subgraph_id** | String | Decentralized network subgraph ID |
 </div>
 
 <div style="width:100%">
 
 **Request body (JSON)**<br>
-|Name|Type|Description|
-|---|---|---|
-| **query** | String | GraphQL query |
-| **variables** | optional Dictionary | Values for the variables used in the GraphQL query (if any) |
+| Name          | Type    | Description                                                 |
+| ------------- | ------- | ----------------------------------------------------------- |
+| **query**     | `str`   | GraphQL query                                               |
+| **variables** | `dict?` | Values for the variables used in the GraphQL query (if any) |
 </div>
 
 **Example**<br>
