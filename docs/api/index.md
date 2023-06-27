@@ -1,7 +1,9 @@
-# Playgrounds Gateway
+# Playgrounds API
 Simplify your subgraph queries to the The Graph's decentralized network!
 
-The Playgrounds Gateway is a premier product aimed at streamlining the user experience with The Graph's decentralized network. It eliminates the need for traditional wallet and GRT management by providing a convenient and straightforward API key and URL. Users can effortlessly harness the full potential of the decentralized ecosystem.
+The Playgrounds API is a solution aimed at streamlining the user experience with The Graph's decentralized network. It eliminates the need for traditional wallet and GRT management by providing a convenient and straightforward API key and URL. Users can effortlessly harness the full potential of the decentralized ecosystem.
+
+The Playgrounds API also allows users to download datasets from The Graph's decentralized service via a REST API.
 
 ## Advantages
 

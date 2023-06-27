@@ -23,11 +23,11 @@ Our intuitive and powerful Python library for seamless Subgraph integration
 ```
 
 ```{grid-item-card}
-:link: gateway/index
+:link: api/index
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
-Playgrounds Gateway
+Playgrounds API
 </h3>
 
 A hassle-free solution for querying decentralized subgraphs, without needing a wallet or any GRT
@@ -41,14 +41,16 @@ For any questions or assistance, please visit our [discord](https://discord.gg/g
 
 
 ```{toctree}
-:caption: Gateway
+:caption: Playgrounds API
 :hidden:
 
-Overview <gateway/index>
-Getting a Key <gateway/key>
-Querying <gateway/querying>
-Using Subgrounds <gateway/subgrounds>
+Overview <api/index>
+Getting an API Key <api/key>
+Subgraph Proxy <api/subgraph-proxy>
+Subgrounds Integration <api/subgrounds>
+API Reference <api/api-reference>
 ```
+<!-- REST Adapter <api/rest-adapter> -->
 
 ```{toctree}
 :caption: Subgrounds
