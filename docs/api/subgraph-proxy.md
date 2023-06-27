@@ -4,6 +4,11 @@ After obtaining your API key, use our proxy API endpoint to query decentralized 
 1. Via the subgraph id *(compatible with Ethereum only)*
 2. Via the subgraph deployment id
 
+## Finding a subgraph's ID
+You can quickly find the IDs of decentralized subgraphs via [The Graph Explorer](https://thegraph.com/explorer).
+
+![](/_static/assets/graph-explorer-id.png)
+
 ## Query by Subgraph id
 
 To query a subgraph by its id, send a POST request to the Playgrounds proxy endpoint:
@@ -92,31 +97,31 @@ Unlike The Graph's endpoint where the Graph API key is inserted in the URL, Play
 ```
 
 ```{note}
-This endpoint mirrors the Graph's decentralized network gateway endpoint (see below) with one key difference: the API key is not part of the URL.
+This endpoint mirrors the Graph's decentralized network gateway endpoint (see below) with one key difference: the API key is **NOT** part of the URL.
 
 https://gateway.thegraph.com/api/[api-key]/subgraphs/id/[subgraph-id]
 ```
 
-### Finding a subgraph's ID
-A decentralized network subgraph's ID can easily be obtained from The Graph's decentralized network [explorer](https://thegraph.com/explorer).
+## Finding a subgraph's deployment ID
+A decentralized subgraph's deployment ID can easily be obtained from [The Graph Explorer](https://thegraph.com/explorer).
 
-![](/_static/assets/graph-explorer-id.png)
+![](/_static/assets/graph-explorer-deployment-id.png)
 
-## Query a decentralized network subgraph by deployment id
+## Querying by deployment id
 
-To query a decentralized network subgraph by its deployment ID, you can make a POST request to the following Playgrounds proxy endpoint:
+To request data from a subgraph via its deployment ID, make a POST request to this Playgrounds proxy endpoint:
 ```
 https://api.playgrounds.network/v1/proxy/deployments/id/[deployment-id]
 ```
 
-For example, to query the latest Uniswap V3 subgraph on the decentralized network by its deployment id, use the following URL:
+For instance, to request the latest Uniswap V3 subgraph data using its deployment id, use:
 ```
 https://api.playgrounds.network/v1/proxy/deployments/id/QmcPHxcC2ZN7m79XfYZ77YmF4t9UCErv87a9NFKrSLWKtJ
 ```
 
-Apart from the exact path, both endpoints work essentially the same way. Just like when querying a subgraph by its deployment ID, you will have to set the `Playgrounds-Api-Token` header's value to your API key and you will have to make a POST request containing your GraphQL query.
+Both methods function similarly, differing only in the URL. As with the subgraph ID method, set your API key as the     Playgrounds-Api-Token    header value, and make a POST request that includes your GraphQL query.
 
-Here is an example querying the latest Uniswap V3 subgraph (deployment ID `QmcPHxcC2ZN7m79XfYZ77YmF4t9UCErv87a9NFKrSLWKtJ`) on The Graph's decentralized network:
+Here's an example request for the latest Uniswap V3 subgraph (deployment ID `QmcPHxcC2ZN7m79XfYZ77YmF4t9UCErv87a9NFKrSLWKtJ`) on Decentralized Subgraphs:
 
 :::::{tab-set}
 
@@ -179,8 +184,3 @@ query {
 ::::
 
 :::::
-
-### Finding a subgraph's deployment ID
-A decentralized network subgraph's deployment ID can easily be obtained from The Graph's decentralized network [explorer](https://thegraph.com/explorer).
-
-![](/_static/assets/graph-explorer-deployment-id.png)
