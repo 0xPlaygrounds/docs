@@ -1,10 +1,10 @@
 # Subgrounds Integration
-While you can certainly use the Playgrounds proxy alone by submitting requests with a valid Playgrounds API key, pairing it with Subgrounds simplifies and streamlines the querying and data analysis from decentralized subgraphs. Here's an example demonstrating the integration:
+While you can certainly use the Playgrounds proxy alone by submitting requests with a valid Playgrounds API key, pairing it with Subgrounds simplifies and streamlines the querying and data analysis from decentralized subgraphs.
 
 ```{thebe-button}
 ```
 
-## 1. Add your Playgrounds API Key to your Subgrounds project
+## 1. Using your Playgrounds API Key in Subgrounds
 
 There are two main ways to validate your API key with subgrounds.
 
@@ -58,7 +58,7 @@ sg = Subgrounds(headers={"Playgrounds-Api-Key": "PG_API_KEY"})
 
 :::::
 
-## 2. Query a decentralized network subgraph
+## 2. Query a decentralized subgraph
 Once the {class}`~subgrounds.Subgrounds` object has been initialized with the custom header containing your API key, you can query a decentralized network subgraph through our proxy endpoint just like you would query any other subgraph. 
 
 ```{code-block} python
