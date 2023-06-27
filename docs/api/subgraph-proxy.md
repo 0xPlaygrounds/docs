@@ -1,26 +1,26 @@
 # Playgrounds Subgraph Proxy
-Once you have your API key, you can use our proxy API endpoint to query the Graph's decentralized network. There are two ways to query a subgraph hosted on The Graph's decentralized network with our proxy endpoints:
-1. Using the subgraph id *(only works for the Ethereum decentralized network)*
-2. Using the subgraph deployment id
+After obtaining your API key, use our proxy API endpoint to query Decentralized Subgraphs. You can do this in two ways:
+1. Via the subgraph id *(compatible with Ethereum only)*
+2. Via the subgraph deployment id
 
-## Query a decentralized network subgraph by id
+## Query by Subgraph id
 
-To query a decentralized network subgraph by its id, you can make a POST request to the following Playgrounds proxy endpoint:
+To query a subgraph by its id, send a POST request to the Playgrounds proxy endpoint:
 ```
 https://api.playgrounds.network/v1/proxy/subgraphs/id/[subgraph-id]
 ```
-For example, to query the latest Uniswap V3 subgraph on the decentralized network by its deployment id, use the following URL:
+For example, to access the latest Uniswap V3 subgraph data using its deployment id, use:
 ```
 https://api.playgrounds.network/v1/proxy/deployments/id/ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7
 ```
 
 ```{important}
-This will only work for subgraphs deployed to the Ethereum decentralized network. If you want to use our proxy to query a subgraph hosted on the Arbitrum decentralized network, see [below](#query-a-decentralized-network-subgraph-by-deployment-id).
+This approach is for Ethereum-based subgraphs only. To query a subgraph hosted on Arbitrum, refer to the 'Query by Deployment ID' section [below](#query-a-decentralized-network-subgraph-by-deployment-id).
 ```
 
-The POST request itself will have to contain the Playgrounds API key you generated earlier as the value of the `Playgrounds-Api-Token` header. The rest of the request will be the same as the request you would usually make to the Graph's decentralized network.<br> 
+Your POST request must include your Playgrounds API key, used as the Playgrounds-Api-Token header value. The remainder of the request mirrors what you'd typically send to The Graph's decentralized network.<br> 
 
-Here is an example querying the Uniswap V3 subgraph (subgraph ID `ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7`) on The Graph's decentralized network:
+Here's an example request for the Uniswap V3 subgraph (ID ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7) on The Graph's decentralized network:
 
 :::::{tab-set}
 
