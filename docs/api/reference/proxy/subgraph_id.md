@@ -1,5 +1,9 @@
 # Subgraph ID
-## {bdg-dark}`POST` `subgraphs/id/:subgraph_id/`
+{bdg-info-line}`/v1/proxy/`
+
+## `subgraphs/id/:subgraph_id`
+
+### {bdg-dark}`POST` 
 Make a graphql request to the subgraph identified by the id `subgraph_id`.
 
 ```{important}
@@ -8,24 +12,30 @@ This endpoint only works with subgraphs deployed on The Graph's Ethereum decentr
 If you want to query a subgraph hosted on the Arbitrum decentralized service, use the [proxy by deployment id](deployment_id.md) endpoint.
 ```
 
-<div style="width:100%">
+<br>
 
-**Path parameters**<br>
-| Name            | Type   | Description                       |
-| --------------- | ------ | --------------------------------- |
-| **subgraph_id** | String | Decentralized network subgraph ID |
-</div>
+#### URL Parameters
+<div class='sd-bg-secondary' style='width: 95%; height: 1px; margin: 0em 0em 0.1em 0em'></div>
 
-<div style="width:100%">
+{bdg-primary-line}`subgraph_id` <code class="sd-text-secondary">string</code>
+The decentralized network subgraph ID you are querying
 
-**Request body (JSON)**<br>
-| Name          | Type    | Description                                                 |
-| ------------- | ------- | ----------------------------------------------------------- |
-| **query**     | `str`   | GraphQL query                                               |
-| **variables** | `dict?` | Values for the variables used in the GraphQL query (if any) |
-</div>
+<br>
 
-**Example**<br>
+#### Request Body (JSON)
+<div class='sd-bg-secondary' style='width: 95%; height: 1px; margin: 0em 0em 0.1em 0em'></div>
+
+{bdg-primary-line}`query` <code class="sd-text-secondary">string</code>
+The GraphQL query itself
+
+{bdg-primary-line}`variables` <code class="sd-text-secondary">dict?</code>
+Values for the variables used within the GraphQL query *(if any)*
+
+<br>
+
+#### Example
+<div class='sd-bg-secondary' style='width: 95%; height: 1px; margin: 0em 0em 0.1em 0em'></div>
+
 ```bash
 curl https://api.playgrounds.network/v1/proxy/subgraphs/id/ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7 \
     -H 'Content-Type: application/json' \
@@ -36,8 +46,8 @@ curl https://api.playgrounds.network/v1/proxy/subgraphs/id/ELUcwgpm14LKPLrBRuVvP
 Response:
 ```json
 {
-    "data":{
-        "protocols":[
+    "data": {
+        "protocols": [
             {
                 "name": "Uniswap V3",
                 "totalPoolCount": 13767
@@ -47,4 +57,27 @@ Response:
 }
 ```
 
-## {bdg-dark}`GET` `/v1/proxy/subgraphs/id/:subgraph_id/:toplevel_field`
+## `subgraphs/id/:subgraph_id/:toplevel_field`
+
+### {bdg-dark}`GET` 
+
+<br>
+
+#### URL Parameters
+
+
+<br>
+
+#### Request Body (JSON)
+
+<br>
+
+#### Example
+```bash
+
+```
+
+Response:
+```json
+{}
+```

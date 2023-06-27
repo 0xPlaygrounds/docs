@@ -1,5 +1,5 @@
 # Subgraph Proxy
-{bdg-info-line}`/v1/proxy`
+{bdg-info-line}`/v1/proxy/`
 
 ---
 
@@ -26,6 +26,34 @@ Unlike The Graph's endpoint where the Graph API key is inserted in the URL, Play
 ```
 
 ---
+
+::::{grid} 1 2 2 2
+:gutter: 3
+
+```{grid-item-card}
+:link: proxy/subgraph_id
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+    Subgraph ID
+</h3>
+
+{bdg-info-line}`/v1/proxy/subgraphs/id`
+```
+
+```{grid-item-card}
+:link: proxy/deployment_id
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+    Deployment ID
+</h3>
+
+{bdg-info-line}`/v1/proxy/deployments/id`
+```
+
+::::
+
 
 ```{toctree}
 :caption: API Reference
