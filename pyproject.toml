@@ -129,6 +129,11 @@ color-announcement-background = "var(--color-foreground-secondary)"
 
 color-link = "#0083CF"
 
+sd-color-success = "#5CC653"
+sd-color-warning = "#F1C21B"
+sd-color-info = "#54DDF8"
+sd-color-danger = "#D54A44"
+
 font-stack = "sofia-pro, sans-serif"
 font-stack--monospace = "carbona-variable, monospace"
 
@@ -154,6 +159,11 @@ color-brand-content = "#0083CF"
 
 sd-color-card-background = "#191F2E"
 sd-color-card-border-hover = "var(--color-brand-primary)"
+
+sd-color-success = "#5CC653"
+sd-color-warning = "#F1C21B"
+sd-color-info = "#54DDF8"
+sd-color-danger = "#D54A44"
 
 color-admonition-background = "var(--sd-color-card-background)"
 color-announcement-background = "var(--sd-color-card-background)"

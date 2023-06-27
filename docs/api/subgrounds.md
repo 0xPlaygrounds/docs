@@ -14,7 +14,7 @@ Replace `"PG_API_KEY"` with API key gathered from [earlier](/docs/gateway/key)!
 
 :::::{tab-set}
 
-::::{tab-item} Alternative Constructor
+::::{tab-item} Constructor
 ```{code-block} python
 :class: thebe
 :caption: Initialize {class}`~subgrounds.Subgrounds` object with a playgrounds api key

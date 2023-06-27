@@ -47,10 +47,10 @@ For any questions or assistance, please visit our [discord](https://discord.gg/g
 Overview <api/index>
 Getting an API Key <api/key>
 Subgraph Proxy <api/subgraph-proxy>
-REST Adapter <api/rest-adapter>
 Subgrounds Integration <api/subgrounds>
 API Reference <api/api-reference>
 ```
+<!-- REST Adapter <api/rest-adapter> -->
 
 ```{toctree}
 :caption: Subgrounds

@@ -1,5 +1,6 @@
 # Playgrounds Subgraph Proxy
-After obtaining your API key, use our proxy API endpoint to query Decentralized Subgraphs. You can do this in two ways:
+After obtaining your API key, use our proxy API endpoint to query decentralized subgraphs. You can do this in two ways:
+
 1. Via the subgraph id *(compatible with Ethereum only)*
 2. Via the subgraph deployment id
 
@@ -20,7 +21,7 @@ This approach is for Ethereum-based subgraphs only. To query a subgraph hosted o
 
 Your POST request must include your Playgrounds API key, used as the Playgrounds-Api-Token header value. The remainder of the request mirrors what you'd typically send to The Graph's decentralized network.<br> 
 
-Here's an example request for the Uniswap V3 subgraph (ID ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7) on The Graph's decentralized network:
+Here's an example request for the Uniswap V3 subgraph id (`ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7`) on The Graph's decentralized network:
 
 :::::{tab-set}
 
@@ -32,8 +33,9 @@ Here's an example request for the Uniswap V3 subgraph (ID ELUcwgpm14LKPLrBRuVvPv
 curl https://api.playgrounds.network/v1/proxy/subgraphs/id/ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7 \
     -H 'Content-Type: application/json' \
     -H 'Playgrounds-Api-Key: PG_API_KEY' \
-    -d '{"query":"{protocols {id}}"}'
+    -d '{"query":"{protocols {name totalPoolCount}}"}'
 ```
+
 ::::
 
 ::::{tab-item} Python
@@ -46,7 +48,7 @@ resp = requests.post(
         "Playgrounds-Api-Key": "PG_API_KEY"
     },
     json={
-        "query": "{protocols {id}}"
+        "query": "{protocols {name totalPoolCount}}"
     }
 )
 
@@ -59,7 +61,8 @@ resp.json()
 :caption: This is the GraphQL query being sent to the subgraph
 query {
     protocols {
-        id
+        name
+        totalPoolCount
     }
 }
 ```
@@ -71,7 +74,10 @@ query {
 {
     "data": {
         "protocols": [
-            {"id": "0x1f98431c8ad98523631ae4a59f267346ea31f984"}
+            {
+                "name": "Uniswap V3",
+                "totalPoolCount": 13767
+            }
         ]
     }
 }
@@ -122,7 +128,7 @@ Here is an example querying the latest Uniswap V3 subgraph (deployment ID `QmcPH
 curl https://api.playgrounds.network/v1/proxy/deployments/id/QmcPHxcC2ZN7m79XfYZ77YmF4t9UCErv87a9NFKrSLWKtJ \
     -H 'Content-Type: application/json' \
     -H 'Playgrounds-Api-Key: PG_API_KEY' \
-    -d '{"query":"{protocols {id}}"}'
+    -d '{"query":"{protocols {name totalPoolCount}}"}'
 ```
 ::::
 
@@ -136,7 +142,7 @@ resp = requests.post(
         "Playgrounds-Api-Key": "PG_API_KEY"
     },
     json={
-        "query": "{protocols {id}}"
+        "query": "{protocols {name totalPoolCount}}"
     }
 )
 
@@ -149,7 +155,8 @@ resp.json()
 :caption: This is the GraphQL query being sent to the subgraph
 query {
     protocols {
-        id
+        name
+        totalPoolCount
     }
 }
 ```
@@ -161,7 +168,10 @@ query {
 {
     "data": {
         "protocols": [
-            {"id": "0x1f98431c8ad98523631ae4a59f267346ea31f984"}
+            {
+                "name": "Uniswap V3",
+                "totalPoolCount": 13767
+            }
         ]
     }
 }
