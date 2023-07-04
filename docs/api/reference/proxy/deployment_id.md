@@ -1,7 +1,7 @@
 # Deployment ID
 {bdg-info-line}`/v1/proxy/`
 
-## `deployments/id/:deployment_id/`
+## `deployments/id/:deployment_id`
 
 ### {bdg-dark}`POST` 
 Make a graphql request to the subgraph identified by the id `deployment_id`.
@@ -31,7 +31,7 @@ Values for the variables used within the GraphQL query *(if any)*
 <div class='sd-bg-secondary' style='width: 95%; height: 1px; margin: 0em 0em 0.1em 0em'></div>
 
 ```bash
-curl https://api.playgrounds.network/v1/proxy/subgraphs/id/ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7 \
+curl https://api.playgrounds.network/v1/proxy/deployments/id/QmcPHxcC2ZN7m79XfYZ77YmF4t9UCErv87a9NFKrSLWKtJ \
     -H 'Content-Type: application/json' \
     -H 'Playgrounds-Api-Key: PG_API_KEY' \
     -d '{"query":"{protocols {name totalPoolCount}}"}'
