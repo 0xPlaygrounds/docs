@@ -15,7 +15,20 @@ Learn how Subgrounds automates your queries!
 ```
 
 ```{grid-item-card}
-:link: plotly
+:link: async/index
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+
+{bdg-success-line}`NEW` Async & Sans-IO 
+
+</h3>
+
+Learn how Subgrounds automates your queries!
+```
+
+```{grid-item-card}
+:link: contrib/plotly
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
@@ -23,6 +36,17 @@ Contrib - Plotly
 </h3>
 
 The easiest path from `FieldPath` to visualization
+```
+
+```{grid-item-card}
+:link: contrib/pyodide
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+Contrib - Pyodide
+</h3>
+
+Executing `Subgrounds` purely in the web
 ```
 
 <!--```{grid-item-card}
@@ -45,5 +69,7 @@ Create live dashboards w/ Subgrounds
 :caption: Advanced Topics
 :hidden:
 
+contrib/index
 pagination/index
+sans-io/index
 ```

@@ -85,3 +85,32 @@ Auto-generated docs from our codebase
 ::::
 
 ----
+
+::::{grid} 1 2 2 2
+:gutter: 3
+
+```{grid-item-card}
+:link: changelog
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+Changelog
+</h3>
+
+Keep up with Subgrounds and the latest changes
+```
+
+```{grid-item-card}
+:link: contributing
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+Contributing
+</h3>
+
+Learn how you can help improve Subgrounds!
+```
+
+::::
+
+----

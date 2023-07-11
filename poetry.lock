@@ -2333,18 +2333,22 @@ test = ["pydata-sphinx-theme[doc]", "pytest"]
 
 [[package]]
 name = "Pygments"
-version = "2.14.0"
+version = "2.15.1"
 description = "Pygments is a syntax highlighting package written in Python."
 category = "main"
 optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "Pygments-2.14.0-py3-none-any.whl", hash = "sha256:fa7bd7bd2771287c0de303af8bfdfc731f51bd2c6a47ab69d117138893b82717"},
-    {file = "Pygments-2.14.0.tar.gz", hash = "sha256:b3ed06a9e8ac9a9aae5a6f5dbe78a8a58655d17b43b93c078f094ddc476ae297"},
-]
+python-versions = ">=3.7"
+files = []
+develop = false
 
 [package.extras]
 plugins = ["importlib-metadata"]
+
+[package.source]
+type = "git"
+url = "https://github.com/pygments/pygments"
+reference = "HEAD"
+resolved_reference = "3c7fbf86da160430d61f8799bb8950bfc825fc90"
 
 [[package]]
 name = "pyodide-http"
@@ -2812,6 +2816,23 @@ sphinx = ">=4.0"
 
 [package.extras]
 docs = ["furo", "ipython", "myst-parser", "sphinx-copybutton", "sphinx-inline-tabs"]
+
+[[package]]
+name = "sphinx-code-include"
+version = "1.1.1"
+description = "Include source code from any Sphinx project using only its import path"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+files = [
+    {file = "sphinx-code-include-1.1.1.tar.gz", hash = "sha256:1bd022a18571fe9245ad342a1bd83ebf69ed0aeca3508abc7498f8f4701952a3"},
+    {file = "sphinx_code_include-1.1.1-py2.py3-none-any.whl", hash = "sha256:8c7d680fabb9fe45a74d036c967a61ef574fe1bd49d1539a74f52b9abbe50207"},
+]
+
+[package.dependencies]
+beautifulsoup4 = ">=4.8"
+six = ">=1.12"
+sphinx = ">=1.3"
 
 [[package]]
 name = "sphinx-copybutton"
@@ -3580,4 +3601,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "4d3c5f2956c9e6f082f0d473db4aa1c3056174c382aa4a80d8d218253bd16eb3"
+content-hash = "0bd5ec1b9b94a51967209ff6c24fb91c84fe42b36bdaf8a5b1b55e87db4d07a1"

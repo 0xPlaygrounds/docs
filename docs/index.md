@@ -63,12 +63,13 @@ subgrounds/faq/index
 subgrounds/examples/index
 subgrounds/tutorials
 subgrounds/changelog
+subgrounds/contributing
 API Reference <subgrounds/modules>
 ```
 
-<!-- ```{toctree}
-:caption: Development
+```{toctree}
+:caption: Meta
 :hidden:
 
-contributing
-``` -->
+Improving the Docs <meta/contributing>
+```

@@ -19,12 +19,14 @@ sphinxcontrib-sass = "^0.3.4"
 sphinx_tippy = "^0.4.1"
 sphinx-jinja = "^2.0.2"
 sphinxcontrib-youtube = "^1.2.0"
+sphinx-code-include = "^1.1.1"
+pygments = { git = "https://github.com/pygments/pygments" }
 
 [tool.poe.tasks]
 format = { shell = "blacken-docs --all-files" }
 develop = { shell = "mudkip develop" }
 clean = { shell = "mudkip clean" }
-generate-api-docs = { shell = "sphinx-apidoc --output docs/api subgrounds --separate --force" }
+generate-api-docs = { shell = "sphinx-apidoc --output docs/subgrounds/api subgrounds --separate --force" }
 
 [tool.mudkip]
 base_url = "https://docs.playgrounds.network"
@@ -57,11 +59,12 @@ extensions = [
     "sphinx_design",          # enables fancy design, like cards, etc
     "sphinxext.opengraph",    # provides social media cards + ranking info
     "sphinx_copybutton",      # adds copy buttons to raw code blocks
-    "sphinx_thebe",           # transforms code cells into executable notebook cells
+    "sphinx_thebe",           # transforms code cells into executable cells
     "sphinxcontrib.repl",     # auto evaluates code-blocks w/ `repl`
     "sphinx.ext.intersphinx", # link across external docs 🔥
     "sphinx_tippy",           # enables smart tooltips on items
     "sphinxcontrib.youtube",  # enables easy youtube support
+    "code_include.extension", # enables us to include code from source
 ]
 # myst_fence_as_directive = ["python", "mermaid"]
 
@@ -111,7 +114,7 @@ repository_branch = "main"
 # codemirror-theme = "ayu-mirage"
 
 [tool.mudkip.override.html_theme_options]
-announcement = "Give us a ⭐️ on <a href='https://github.com/0xPlaygrounds/subgrounds'>Github</a>!"
+announcement = "<a href='/subgrounds/getting_started/async'>Async Subgrounds has arrived 🎉 </a>"
 
 sidebar_hide_name = true
 light_logo = "assets/pg-logotype-dark.svg"
@@ -150,7 +153,7 @@ color-header-text = "#54DDF8"
 color-sidebar-link-text--top-level = "var(--color-foreground-muted)"
 color-sidebar-caption-text = "var(--color-foreground-primary)"
 
-color-sidebar-background = "linear-gradient(180deg, #131720 36.39%, #1A263D 100%)"
+color-sidebar-background = "linear-gradient(180deg, #000E19 36.39%, #0C263B 100%)"
 color-sidebar-item-background--current = "transparent"
 color-sidebar-search-background--focus = "var(--color-sidebar-item-background--hover)"
 

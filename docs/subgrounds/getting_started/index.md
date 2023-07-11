@@ -19,7 +19,7 @@ You can check your version of python via: `python --version`
 ```{note}
 We recommend creating python environments to help manage your packages. These help in ensuring your projects have the correct versions for the packages you care about.
 
-If you run into problems during installation, see [Environment Setup](/faq/setup/index.md).ß
+If you run into problems during installation, see [Environment Setup](/faq/setup/index.md).
 ```
 
 ## Simple example
@@ -32,7 +32,8 @@ from subgrounds import Subgrounds
 sg = Subgrounds()
 
 # Load
-aave_v2 = sg.load_subgraph('https://api.thegraph.com/subgraphs/name/messari/aave-v2-ethereum')
+aave_v2 = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/aave-v2-ethereum")
 
 # Construct the query
 latest = aave_v2.Query.markets(
@@ -54,6 +55,7 @@ sg.query_df([
 
 basics
 field_paths/index
-querying
+querying/index
 synthetic_fields
+async
 ```

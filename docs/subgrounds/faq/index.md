@@ -15,7 +15,7 @@ Leveraging environments, third party tooling, and more to make project managemen
 ```
 
 ```{grid-item-card}
-:link: contrib
+:link: ../advanced_topics/contrib/index
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>

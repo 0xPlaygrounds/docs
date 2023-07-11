@@ -46,10 +46,11 @@ from subgrounds import Subgrounds
 sg = Subgrounds()
 
 # Load a subgraph using its API URL
-aave_v2 = sg.load_subgraph('https://api.thegraph.com/subgraphs/name/messari/aave-v2-ethereum')
+aave_v2 = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/aave-v2-ethereum")
 
 # Load a vanilla GraphQL API using its API URL
-snapshot = sg.load_api('https://hub.snapshot.org/graphql')
+snapshot = sg.load_api("https://hub.snapshot.org/graphql")
 ```
 
 ## Getting the Data

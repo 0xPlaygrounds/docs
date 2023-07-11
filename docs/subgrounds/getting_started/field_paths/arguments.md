@@ -12,7 +12,8 @@ Some {class}`FieldPaths <subgrounds.FieldPath>` can be parameterized with certai
 from subgrounds.subgrounds import Subgrounds
 sg = Subgrounds()
 
-curve = sg.load_subgraph('https://api.thegraph.com/subgraphs/name/messari/curve-finance-ethereum')
+curve = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/curve-finance-ethereum")
 ```
 
 :::::{tab-set}

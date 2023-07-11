@@ -14,7 +14,8 @@
 from subgrounds.subgrounds import Subgrounds
 sg = Subgrounds()
 
-curve = sg.load_subgraph('https://api.thegraph.com/subgraphs/name/messari/curve-finance-ethereum')
+curve = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/curve-finance-ethereum")
 ```
 
 :::::{tab-set}

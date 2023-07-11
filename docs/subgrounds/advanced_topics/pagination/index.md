@@ -1,4 +1,11 @@
 # Pagination
+
+```{article-info}
+:avatar-outline: muted
+:author: "*New in version `1.0.0`*"
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1 sd-text-muted
+```
+
 By default, Subgrounds handles GraphQL query pagination automatically. That is, if a query selects more than 1000 entities using the `first` argument (1000 being The Graph's limit to the `first` argument), then Subgrounds will automatically split the query into multiple queries that each query at most 1000 entities.
 
 Pagination is performed by Subgrounds with the use of a pagination strategy: a class that implements the {class}`~subgrounds.pagination.PaginationStrategy` protocol. Subgrounds provides two pagination strategies out of the box, however, users wishing to implement their own strategy should create a class that implements the aforementioned protocol (see below).
@@ -39,11 +46,12 @@ from subgrounds import Subgrounds
 from subgrounds.pagination import ShallowStrategy
 
 sg = Subgrounds()
-subgraph = sg.load_subgraph("https://api.thegraph.com/subgraphs/name/messari/compound-v2-ethereum")
+subgraph = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/compound-v2-ethereum")
 
 mkt_daily_snapshots = subgraph.Query.marketDailySnapshots(
-    orderBy='timestamp',
-    orderDirection='desc',
+    orderBy="timestamp",
+    orderDirection="desc",
     first=50,
 )
 

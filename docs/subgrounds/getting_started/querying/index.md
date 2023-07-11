@@ -24,7 +24,8 @@ Subgrounds provides 3 main ways to query data, which provide different data stru
 from subgrounds import Subgrounds
 
 sg = Subgrounds()
-aave_v2 = sg.load_subgraph("https://api.thegraph.com/subgraphs/name/messari/aave-v2-ethereum")
+aave_v2 = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/aave-v2-ethereum")
 
 aave_markets = aave_v2.Query.markets(
     first=3,
@@ -75,3 +76,10 @@ sg.query_df([
 ::::
 
 :::::
+
+```{toctree}
+:caption: Field Paths
+:hidden:
+
+grouping
+```

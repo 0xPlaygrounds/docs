@@ -14,7 +14,8 @@ The example below demonstrates how to create a simple {class}`~subgrounds.Synthe
 from subgrounds import Subgrounds
 sg = Subgrounds()
 
-sushiswap = sg.load_subgraph('https://api.thegraph.com/subgraphs/name/sushiswap/exchange')
+sushiswap = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/sushiswap/exchange")
 swap = sushiswap.Swap  # short hand for ease-of-use
 
 # Define a synthetic field named price1 (the swap price of token1,
@@ -25,11 +26,11 @@ swap.price1 = (
 )
 
 # Build query to get the last 10 swaps of the WETH-USDC pair on Sushiswap 
-weth_usdc = sushiswap.Query.pair(id='0x397ff1542f962076d0bfe58ea045ffa2d347aca0')
+weth_usdc = sushiswap.Query.pair(id="0x397ff1542f962076d0bfe58ea045ffa2d347aca0")
 
 last_10_swaps = weth_usdc.swaps(
     orderBy=swap.timestamp,
-    orderDirection='desc',
+    orderDirection="desc",
     first=10
 )
 
@@ -57,7 +58,7 @@ swap.datetime = SyntheticField(
 
 last_10_swaps = sushiswap.Query.swaps(
     orderBy=swap.timestamp,
-    orderDirection='desc',
+    orderDirection="desc",
     first=10,
 )
 

@@ -80,13 +80,20 @@
 @mixin colors-dark-override {
 
   .sidebar-drawer {
-    background: linear-gradient(180deg, hsl(222, 25%, 10%) 36.39%, #1A263D 100%) fixed !important;
+    background: linear-gradient(180deg, #000E19 36.39%, #0C263B 100%);
     will-change: transform; // this is hell
   }
 
   h1,
   .gradient-text,
   .sidebar-brand-text {
+    & span.sd-text-success {
+      background: unset;
+      background-clip: unset;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: var(--sd-color-success);
+    }
+
     background: linear-gradient(90deg, #54DDF8 0%, #0083CF 100%);
     background-clip: text;
     -webkit-background-clip: text;

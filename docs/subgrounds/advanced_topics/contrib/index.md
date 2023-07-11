@@ -9,14 +9,25 @@ For us, `subgrounds.contrib` represents extra features and ideas with `subground
 
 ## What's currently here?
 
-### Plotly
+### [Plotly](plotly)
 Originally located in `plotly_wrappers`, `subgrounds.contrib.plotly` contains helpful wrappers on `plotly` objects that allow you to use {class}`FieldPaths <subgrounds.FieldPath>` directly without creating a {class}`~pandas.DataFrame`.
 
 ### Dash
 Originally located in `subgrounds.dash_wrappers`, `subgrounds.contrib.dash` contains helpful wrappers on `dash` objects that allow you to use other wrapped visualization objects (currently `subgrounds.contrib.plotly`) in `dash` apps without creating {class}`DataFrames <pandas.DataFrame>`.
 
+### [Pyodide](pyodide)
+This module only is activated in a WASM / pyodide environment.
+
 ```{warning}
 The `contrib` subpackage of `subgrounds` does **not** follow the same semver patterns that `subgrounds` does. This means, there **can** be breaking changes between **minor** versions of the package. In the future, we *may* consider a stabilization route for `contrib`.
 
 This is purely a place for us to experiment with new ideas, including enriching popular libraries with `subgrounds`.
+```
+
+```{toctree}
+:caption: Advanced Topics
+:hidden:
+
+plotly
+pyodide
 ```

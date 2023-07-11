@@ -1,4 +1,10 @@
-# Contrib - Plotly
+# Plotly
+
+```{article-info}
+:avatar-outline: muted
+:author: "*New in version `1.4.0`*"
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1 sd-text-muted
+```
 
 The Subgrounds Plotly Wrapper is an extension of the Plotly components to understand and work seamlessly with the Subgrounds library. It provides a convenient way to visualize data fetched from subgraphs using Plotly, by wrapping Plotly's trace components with additional functionality.
 
@@ -36,9 +42,9 @@ Figure(
 
 Here are some code examples demonstrating how to use the Subgrounds Plotly Wrapper:
 
-Example 1: Creating a simple Indicator
-
+### Simple Indcator
 ```{code-block} python
+:caption: An indicator for the price of a token
 :class: thebe
 
 from subgrounds import Subgrounds
@@ -54,9 +60,10 @@ Figure(
     ],
 )
 ```
-Example 2: Creating Scatter and Bar plots using Subgrounds and Plotly Wrapper
 
+### Scatter and Bar Plots
 ```{code-block} python
+:caption: Scatter and bar plots across a months worth of data
 :class: thebe
 
 from datetime import datetime
@@ -121,14 +128,14 @@ fig2 = Figure(
 
 ```{code-block} python
 :class: thebe
-# Show the figure:
+:caption: Show figure 1
 
 fig.figure.show()
 ```
 
 ```{code-block} python
 :class: thebe
-# Show the second figure:
+:caption: Show figure 2
 
 fig2.figure.show()
 ```

@@ -19,12 +19,13 @@ This is **only** true if the {class}`FieldPaths <subgrounds.FieldPath>` originat
 from subgrounds import Subgrounds
 sg = Subgrounds()
 
-curve = sg.load_subgraph('https://api.thegraph.com/subgraphs/name/messari/curve-finance-ethereum')
+curve = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/curve-finance-ethereum")
 
 # Partial FieldPath selecting the top 4 most traded pools on Curve
 most_traded_pools = curve.Query.liquidityPools(
     orderBy=curve.LiquidityPool.cumulativeVolumeUSD,
-    orderDirection='desc',
+    orderDirection="desc",
     first=4,
 )
 
@@ -33,7 +34,7 @@ most_traded_pools = curve.Query.liquidityPools(
 # Mote that reuse of `most_traded_pools` in the partial FieldPath
 most_traded_snapshots = most_traded_pools.dailySnapshots(
     orderBy=curve.LiquidityPoolDailySnapshot.dailyTotalRevenue,
-    orderDirection='desc',
+    orderDirection="desc",
     first=3,
 ) 
 
