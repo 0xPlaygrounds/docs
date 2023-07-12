@@ -81,6 +81,7 @@ suppress_warnings = ["myst.header", "refdoc"]
 nitpicky = false
 
 # Open Graph Metadata (https://ogp.me/)
+ogp_image = "https://raw.githubusercontent.com/0xPlaygrounds/docs/main/docs/_static/assets/pg-logotype-primary.svg"
 ogp_site_url = "https://docs.playgrounds.network/"
 ogp_site_name = "Playgrounds Documentation"
 
