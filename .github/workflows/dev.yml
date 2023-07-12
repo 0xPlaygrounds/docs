@@ -71,15 +71,22 @@ jobs:
         set -e
         git config --global user.name "github-actions"
         git config --global user.email "action@github.com"
-        git worktree add --detach dev-build
         poetry run mudkip build
+        git worktree add --detach dev-build
         cd dev-build
         git fetch
         git checkout dev-build
         rm -rf *
         mv -v ../docs/_build/dist/* .
+        echo "https://pga-docs-dev.surge.sh" > CNAME
         git add .
         git commit -m 'Update Dev Docs'
         git push -f
-        cd ..
-        git worktree remove dev-build
+
+    - name: Deploy to surge.sh
+      uses: dswistowski/surge-sh-action@v1
+      with:
+        domain: 'https://pga-docs-dev.surge.sh'
+        project: '.'
+        login: ${{ secrets.surge_login }}
+        token: ${{ secrets.surge_token }}
