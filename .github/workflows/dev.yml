@@ -1,4 +1,4 @@
-name: Bleeding Edge Docs
+name: Dev Docs
 
 on:
   workflow_dispatch:
@@ -75,5 +75,4 @@ jobs:
         poetry run mudkip build
         mv -v docs/_build/dist/* dev-build/
         cd dev-build
-        git switch --orphan dev-build
         git push -u origin dev-build
