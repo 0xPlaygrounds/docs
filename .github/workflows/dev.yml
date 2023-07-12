@@ -75,4 +75,6 @@ jobs:
         poetry run mudkip build
         mv -v docs/_build/dist/* dev-build/
         cd dev-build
+        git add .
+        git commit -m 'Update Dev Docs'
         git push -u origin dev-build
