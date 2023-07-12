@@ -71,12 +71,14 @@ jobs:
         set -e
         git config --global user.name "github-actions"
         git config --global user.email "action@github.com"
-        git worktree add dev-build
+        git worktree add --detach dev-build
         poetry run mudkip build
-        mv -v docs/_build/dist/* dev-build/
         cd dev-build
+        git fetch
+        git checkout dev-build
+        mv -v ../docs/_build/dist/* .
         git add .
         git commit -m 'Update Dev Docs'
-        git push -fu origin dev-build
+        git push -f
         cd ..
         git worktree remove dev-build
