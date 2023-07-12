@@ -121,7 +121,6 @@ line_color = "#040019"
 [tool.mudkip.override.thebe_config]
 repository_url = "https://github.com/0xPlaygrounds/jupyter-stacks-subgrounds"
 repository_branch = "main"
-# codemirror-theme = "ayu-mirage"
 
 [tool.mudkip.override.html_theme_options]
 announcement = "<a href='/subgrounds/getting_started/async'> Async Subgrounds has arrived 🎉 </a>"
