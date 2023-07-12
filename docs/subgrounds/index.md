@@ -73,7 +73,7 @@ Links to our recorded video tutorials
 ```
 
 ```{grid-item-card}
-:link: api/subgrounds
+:link: api_reference/subgrounds
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>

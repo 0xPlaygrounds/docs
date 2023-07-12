@@ -6,4 +6,5 @@ These docs are directly generated from our source code docstrings.
 :maxdepth: 4
 
 api/subgrounds
+api_reference/index
 ```

@@ -14,19 +14,22 @@ sphinx-thebe = "^0.2.1"
 sphinxext-opengraph = "^0.8.1"
 sphinx-copybutton = "^0.5.1"
 sphinxcontrib-repl = "^0.4.1"
-subgrounds = { extras = ["all"], version = "^1.6.0" }
+subgrounds = { git = "https://github.com/0xPlaygrounds/subgrounds.git", rev = "feat/async", extras = [
+    "all",
+] }
 sphinxcontrib-sass = "^0.3.4"
 sphinx_tippy = "^0.4.1"
 sphinx-jinja = "^2.0.2"
 sphinxcontrib-youtube = "^1.2.0"
 sphinx-code-include = "^1.1.1"
 pygments = { git = "https://github.com/pygments/pygments" }
+blacken-docs = "^1.15.0"
 
 [tool.poe.tasks]
-format = { shell = "blacken-docs --all-files" }
-develop = { shell = "mudkip develop" }
-clean = { shell = "mudkip clean" }
-generate-api-docs = { shell = "sphinx-apidoc --output docs/subgrounds/api subgrounds --separate --force" }
+format = "blacken-docs --all-files"
+develop = "mudkip develop"
+clean = "mudkip clean"
+generate-api-docs = "sphinx-apidoc --output docs/subgrounds/api subgrounds --separate --force"
 
 [tool.mudkip]
 base_url = "https://docs.playgrounds.network"
@@ -68,11 +71,12 @@ extensions = [
 ]
 # myst_fence_as_directive = ["python", "mermaid"]
 
-myst_enable_extensions = ["substitution", "colon_fence"]
+myst_enable_extensions = ["substitution", "colon_fence", "deflist"]
 myst_heading_anchors = 2
 
 autosectionlabel_prefix_document = true
-suppress_warnings = ["myst.header"]
+
+suppress_warnings = ["myst.header", "refdoc"]
 
 nitpicky = false
 
@@ -85,6 +89,11 @@ ogp_enable_meta_description = true
 # sass config
 sass_src_dir = "_styles"
 sass_out_dir = "_build/dist/_static/css"
+
+[tool.mudkip.override.autodoc_default_options]
+members = true
+undoc-member = true
+show-inheritance = true
 
 [tool.mudkip.override.html_sidebars]
 "**" = [
@@ -114,7 +123,7 @@ repository_branch = "main"
 # codemirror-theme = "ayu-mirage"
 
 [tool.mudkip.override.html_theme_options]
-announcement = "<a href='/subgrounds/getting_started/async'>Async Subgrounds has arrived 🎉 </a>"
+announcement = "<a href='/subgrounds/getting_started/async'> Async Subgrounds has arrived 🎉 </a>"
 
 sidebar_hide_name = true
 light_logo = "assets/pg-logotype-dark.svg"

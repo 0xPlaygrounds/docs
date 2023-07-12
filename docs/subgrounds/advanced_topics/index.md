@@ -15,12 +15,12 @@ Learn how Subgrounds automates your queries!
 ```
 
 ```{grid-item-card}
-:link: async/index
+:link: sans-io/index
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
 
-{bdg-success-line}`NEW` Async & Sans-IO 
+{bdg-success-line}`NEW` Sans-IO 
 
 </h3>
 

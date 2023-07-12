@@ -30,7 +30,8 @@ Bridges
 Analyze bridge subgraphs like hop, stargate etc...
 ```
 
-<!-- ```{grid-item-card}
+<!-- 
+``{grid-item-card}
 :link: derivatives_options
 :link-type: doc
 
@@ -42,7 +43,8 @@ Analyze derivativesoptions like opyn
 ``` -->
 
 
-<!-- ```{grid-item-card}
+<!--
+``{grid-item-card}
 :link: derivatives_perps
 :link-type: doc
 
@@ -75,7 +77,8 @@ Governance
 Analyze Governance like aave, ampleforth, compound etc...
 ```
 
-<!-- ```{grid-item-card}
+<!-- 
+``{grid-item-card}
 :link: lending
 :link-type: doc
 
@@ -84,7 +87,8 @@ Lending
 </h3>
 
 Analyze Governance like aave, ampleforth, compound etc...
-``` -->
+```
+-->
 
 ```{grid-item-card}
 :link: advanced_research
@@ -97,7 +101,8 @@ Advanced Research
 MEVs, Complex On-chain behaviors and much more
 ```
 
-<!-- ```{grid-item-card}
+<!--
+``{grid-item-card}
 :link: nft_markets
 :link-type: doc
 
@@ -127,13 +132,13 @@ Analyze Vaults like Convex, StakeDAO, Yearn etc...
 
 exchanges
 bridges
-<!-- derivatives_options -->
-<!-- derivatives_perps -->
 liquid_staking
 governance
-<!-- lending -->
 advanced_research
-<!-- nft_markets -->
 vaults
 
 ```
+<!-- derivatives_options -->
+<!-- derivatives_perps -->
+<!-- lending -->
+<!-- nft_markets -->

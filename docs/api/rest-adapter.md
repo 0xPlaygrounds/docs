@@ -8,7 +8,7 @@ GET /v1/proxy/subgraphs/id/:subgraph_id/:toplevel_field?arg1=value1&arg2=value2&
 Where `subgraph_id` is the ID of the decentralized network subgraph, `toplevel_field` is the toplevel field being queried and `arg1`, `arg2`, `value1` and `value2` are the arguments and their values to use while querying the toplevel field.
 
 Under the hood, the Playgrounds REST Adapter will make the following GraphQL request to the decentralized network subgraph with ID `subgraph_id`:
-```{code-block} graphql
+```graphql
 query {
     toplevel_field(
         arg1=value1,
