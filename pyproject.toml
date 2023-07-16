@@ -9,7 +9,7 @@ readme = "README.md"
 python = "^3.10"
 mudkip = "^0.8.0"
 furo = "2022.12.7"
-sphinx_design = "^0.4.1"
+sphinx_design = "^0.3.0"
 sphinx-thebe = "^0.2.1"
 sphinxext-opengraph = "^0.8.1"
 sphinx-copybutton = "^0.5.1"
@@ -65,11 +65,12 @@ extensions = [
     "sphinx_thebe",           # transforms code cells into executable cells
     "sphinxcontrib.repl",     # auto evaluates code-blocks w/ `repl`
     "sphinx.ext.intersphinx", # link across external docs 🔥
-    "sphinx_tippy",           # enables smart tooltips on items
+    # "sphinx_tippy",           # enables smart tooltips on items
     "sphinxcontrib.youtube",  # enables easy youtube support
     "code_include.extension", # enables us to include code from source
 ]
-# myst_fence_as_directive = ["python", "mermaid"]
+
+tippy_anchor_parent_selector = "div.content"
 
 myst_enable_extensions = ["substitution", "colon_fence", "deflist"]
 myst_heading_anchors = 2

@@ -15,16 +15,16 @@ Learn how Subgrounds automates your queries!
 ```
 
 ```{grid-item-card}
-:link: sans-io/index
+:link: custom_clients/index
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
 
-{bdg-success-line}`NEW` Sans-IO 
+{bdg-success-line}`NEW` Custom Clients
 
 </h3>
 
-Learn how Subgrounds automates your queries!
+Learn how to create your own `Subgrounds` client!
 ```
 
 ```{grid-item-card}
@@ -71,5 +71,5 @@ Create live dashboards w/ Subgrounds
 
 contrib/index
 pagination/index
-sans-io/index
+custom_clients/index
 ```

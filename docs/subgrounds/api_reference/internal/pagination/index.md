@@ -1,15 +1,12 @@
-# pagination
-
-```{eval-rst}
-.. automodule:: subgrounds.pagination
-```
+# Pagination
 
 ```{toctree}
-:caption: pagination
-:hidden:
-
 strategies
 preprocess
 pagination
 utils
+```
+
+```{eval-rst}
+.. automodule:: subgrounds.pagination
 ```

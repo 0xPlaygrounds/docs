@@ -1,3 +1,14 @@
+.dropdown-body-text {
+  line-height: 1.5em;
+
+  em {
+    background: linear-gradient(90deg, #54DDF8 0%, #0083CF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 .tippy-box {
   background-color: var(--sd-color-card-background);
   color: var(--sd-color-card-text);
@@ -100,11 +111,18 @@
   h1,
   .gradient-text,
   .sidebar-brand-text {
-    & span.sd-text-success {
+    & span.sd-badge {
       background: unset;
       background-clip: unset;
       -webkit-background-clip: unset;
-      -webkit-text-fill-color: var(--sd-color-success);
+
+      &.sd-text-success {
+        -webkit-text-fill-color: var(--sd-color-success)
+      }
+
+      &.sd-text-warning {
+        -webkit-text-fill-color: var(--sd-color-warning)
+      }
     }
 
     background: linear-gradient(90deg, #54DDF8 0%, #0083CF 100%);

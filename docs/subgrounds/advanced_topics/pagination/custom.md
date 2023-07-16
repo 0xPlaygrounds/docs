@@ -1,4 +1,11 @@
 # Custom Strategies
+
+```{article-info}
+:avatar-outline: muted
+:author: "*New in version `1.0.0`*"
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1 sd-text-muted
+```
+
 Subgrounds allows developers to create their own pagination strategy by creating a class that implements the {class}`~subgrounds.pagination.PaginationStrategy` protocol:
 
 ```{code-include}

@@ -1,5 +1,11 @@
 # Contrib
 
+```{article-info}
+:avatar-outline: muted
+:author: "*New in version `1.0.0`*"
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1 sd-text-muted
+```
+
 ## What is this?
 Contrib is a niche concept in some libraries that represent extra / contributed content to a library that may not fit in the main package. This might be due to the maintainer not willing to maintain said content, the content being deemed too experimental, or perhaps it's unknown whether it's a "good idea" or not.
 
@@ -29,5 +35,4 @@ This is purely a place for us to experiment with new ideas, including enriching 
 :hidden:
 
 plotly
-pyodide
 ```
