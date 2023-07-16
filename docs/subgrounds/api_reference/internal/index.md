@@ -1,4 +1,4 @@
-# Low-Level
+# Internal
 
 ```{toctree}
 :maxdepth: 4

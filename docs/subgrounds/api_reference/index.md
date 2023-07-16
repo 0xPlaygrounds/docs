@@ -1,6 +1,6 @@
 ```{toctree}
-:maxdepth: 4
+:maxdepth: 2
 
 high_level/index
-low_level/index
+internal/index
 ```

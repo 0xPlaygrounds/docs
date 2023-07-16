@@ -85,9 +85,16 @@
 
 @mixin colors-dark-override {
 
-  .sidebar-drawer {
-    background: linear-gradient(180deg, #000E19 36.39%, #0C263B 100%);
-    will-change: transform; // this is hell
+  @media (min-width: 67.1em) {
+    .sidebar-drawer {
+      background: linear-gradient(180deg, #000E19 36.39%, #0C263B 100%);
+      height: min-content;
+      will-change: transform; // this is hell
+      position: sticky;
+      top: 0;
+      left: 0;
+
+    }
   }
 
   h1,
