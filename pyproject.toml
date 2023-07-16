@@ -9,7 +9,7 @@ readme = "README.md"
 python = "^3.10"
 mudkip = "^0.8.0"
 furo = "2022.12.7"
-sphinx_design = "^0.3.0"
+sphinx_design = "^0.4.1"
 sphinx-thebe = "^0.2.1"
 sphinxext-opengraph = "^0.8.1"
 sphinx-copybutton = "^0.5.1"
@@ -74,8 +74,6 @@ extensions = [
 myst_enable_extensions = ["substitution", "colon_fence", "deflist"]
 myst_heading_anchors = 2
 
-autosectionlabel_prefix_document = true
-
 suppress_warnings = ["myst.header", "refdoc"]
 
 nitpicky = false
@@ -91,10 +89,13 @@ ogp_enable_meta_description = true
 sass_src_dir = "_styles"
 sass_out_dir = "_build/dist/_static/css"
 
+# autodoc
+autodoc_typehints_format = "short"
+autoclass_content = "both"
+
 [tool.mudkip.override.autodoc_default_options]
 members = true
 undoc-member = true
-show-inheritance = true
 
 [tool.mudkip.override.html_sidebars]
 "**" = [
