@@ -160,7 +160,8 @@
 .tk-carbona-variable,
 .highlight,
 .CodeMirror,
-code.literal {
+code.literal,
+table {
     font-family: "carbona-variable", sans-serif !important;
     letter-spacing: 0.04em;
     line-height: 150%;

@@ -48,6 +48,7 @@ html_css_files = [
 ]
 html_js_files = [
     "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js",
+    "scripts/theme.js",
 ]
 html_show_copyright = false
 html_show_sphinx = false
@@ -113,6 +114,7 @@ python = ["https://docs.python.org/3", ""]
 pandas = ["http://pandas.pydata.org/pandas-docs/dev", ""]
 
 [tool.mudkip.override.sass_targets]
+"colors.scss" = "colors.css"
 "theming.scss" = "theming.css"
 
 [tool.mudkip.override.ogp_social_cards]
@@ -133,13 +135,13 @@ dark_logo = "assets/pg-logotype-primary.svg"
 
 [tool.mudkip.override.html_theme_options.light_css_variables]
 color-foreground-primary = "#040019"
-color-foreground-secondary = "#191F2E"
+# color-foreground-secondary = "#191F2E"
 
 color-background-primary = "#F4F4F4"
 color-brand-primary = "var(--color-foreground-secondary)"
 
-color-admonition-background = "var(--color-foreground-secondary)"
-color-announcement-background = "var(--color-foreground-secondary)"
+# color-admonition-background = "var(--color-foreground-secondary)"
+# color-announcement-background = "var(--color-foreground-secondary)"
 
 color-link = "#0083CF"
 
@@ -170,6 +172,9 @@ color-sidebar-search-background--focus = "var(--color-sidebar-item-background--h
 
 color-brand-primary = "#54DDF8"
 color-brand-content = "#0083CF"
+
+color-table-header-background = "#191F2E"
+color-table-border = "#525252"
 
 sd-color-card-background = "#191F2E"
 sd-color-card-border-hover = "var(--color-brand-primary)"

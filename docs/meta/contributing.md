@@ -1,3 +1,3 @@
-# Contributing
+# Contributing: Docs
 
 <!-- THIS FILE IS AUTOMATICALLY REPLACED ON THE BUILT DOCS -->

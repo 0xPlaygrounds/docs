@@ -5,7 +5,7 @@ After obtaining your API key, use our proxy API endpoint to query decentralized 
 2. Via the subgraph deployment id
 
 ### Finding a subgraph's ID
-You can quickly find the IDs of decentralized subgraphs via [The Graph Explorer](https://thegraph.com/explorer).
+You can quickly find the IDs of decentralized subgraphs via [The Graph Explorer](https://thegraph.com/explorer) (via {guilabel}`SUBGRAPH-ID`).
 
 ![](/_static/assets/graph-explorer-id.png)
 
@@ -103,7 +103,7 @@ https://gateway.thegraph.com/api/[api-key]/subgraphs/id/[subgraph-id]
 ```
 
 ### Finding a subgraph's deployment ID
-A decentralized subgraph's deployment ID can easily be obtained from [The Graph Explorer](https://thegraph.com/explorer).
+A decentralized subgraph's deployment ID can easily be obtained from [The Graph Explorer](https://thegraph.com/explorer) (via {guilabel}`DEPLOYMENT-ID`).
 
 ![](/_static/assets/graph-explorer-deployment-id.png)
 

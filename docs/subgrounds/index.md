@@ -62,7 +62,7 @@ Quick answers to your most burning questions
 ```
 
 ```{grid-item-card}
-:link: tutorials
+:link: videos
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
@@ -73,7 +73,7 @@ Links to our recorded video tutorials
 ```
 
 ```{grid-item-card}
-:link: api_reference/subgrounds
+:link: api_reference/index
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>

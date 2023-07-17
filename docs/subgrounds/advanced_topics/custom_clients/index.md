@@ -35,19 +35,19 @@ Both of these methods are implemented as [**generators**](https://docs.python.or
 ```{dropdown} More on Generators
 :class-body: dropdown-body-text
 
-# *Wait, it's all generators?*
+*Wait, it's all generators?*
 
 Yes! Generators in Python are quite fancy. While they are generally seen as an easier way to create iterators, they also have the ability to consume values. Generators are the backbone for {mod}`asyncio` in Python as the keywords `async` and `await` are merely syntatical sugar for various forms of `yield` statements.
 
-# *How are you using it?*
+*How are you using it?*
 
 We use generators via manually running `next()` and `.send()` functions to resume the generator state. Essentially, the buisness logic needs to step out and receive and send information to IO to compute. `yield` statements essentially allow us to "pause" the internal context while a different function implemented by a {class}`~subgrounds.client.SubgroundsBase` subclass to actually compute.
 
-# *But why?*
+*But why?*
 
 The approach, known as [sans-io](https://sans-io.readthedocs.io/), we've chosen here has allowed us to reduce a large amount of code duplication when producing an `async` version of our API. It also disentangles the IO aspect of the library with the buisness logic allowing anyone to write in their own IO with very little work.
 
-# *Where can I learn more?*
+*Where can I learn more?*
 
 - [Basics on Sans-IO](https://sans-io.readthedocs.io/)
 - [Generators as Pipelines](http://www.dabeaz.com/generators/)
@@ -74,12 +74,12 @@ except StopIteration as e:
     return e.value
 ```
 
-| Step   | Description                                                         |
-| ------ | ------------------------------------------------------------------- |
-| [#2]   | We instantiate our generator object                                 |
-| [#3-5] | We produce a value, transform it, and send it back to the generator |
-| [#1-8] | Every thing is wrapped in a `try-except` to catch `StopIteration`   |
-| [#9]   | `StopIteration.value` is our actual return value!                   |
+| Step | Description                                                         |
+| ---- | ------------------------------------------------------------------- |
+| 2    | We instantiate our generator object                                 |
+| 3-5  | We produce a value, transform it, and send it back to the generator |
+| 1-8  | Every thing is wrapped in a `try-except` to catch `StopIteration`   |
+| 9    | `StopIteration.value` is our *actual* return value!                 |
 
 Alternatively, you can host a `while` loop if you have an unknown number of producing and consuming to do:
 

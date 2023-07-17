@@ -30,7 +30,7 @@ Once activated, `pip` install all of your favorite packages
 ```{code-block} bash
 :caption: Installing `subgrounds`, the best package!
 
-pip install -U "subgrounds[dash]"
+pip install -U "subgrounds[all]"
 ```
 
 Now that you have your packages, you can "freeze" them into a file. This essentially captures every version of the dependency (and their dependencies, etc) into a file. 

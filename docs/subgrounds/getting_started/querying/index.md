@@ -2,18 +2,33 @@
 
 Subgrounds provides 3 main ways to query data, which provide different data structures and typing:
 
-* {func}`~subgrounds.subgrounds.Subgrounds.query`
-  * Results in raw data types such as a number, a string, etc.
-  * *Note*: It is important to consider the shape of the queried data (e.g.: single entities, list of entities...) as the shape of the returned data will depend on it.
+:::{list-table}
+:header-rows: 1
 
-* {func}`~subgrounds.subgrounds.Subgrounds.query_json`
-  * Results in a raw JSON object ({py:class}`dict`) containing the unprocessed response from the api.
-  * For subgraphs, this *can* include generated id keys for each generated sub-query.
+* - Function
+  - Return Type
+  - Description
 
-* {func}`~subgrounds.subgrounds.Subgrounds.query_df`
-  * Results in a {class}`~pandas.DataFrame` or {class}`list`\[{class}`pandas.DataFrame`\].
-  * This data is flattened based on the schema of the API from the above JSON data, mimicking the SQL `JOIN` operation
-  * If flattening isn't possible, multiple {class}`Dataframes <pandas.DataFrame>` will be returned.
+* - {func}`~subgrounds.Subgrounds.query`
+  - {py:class}`str` | {py:class}`int` | {py:class}`float` | {py:class}`bool` | {py:class}`list` | {py:class}`tuple` | {py:class}`None`
+  - The shape of the queried data will determine the shape of the returned data (e.g. whether you query a single entity, list of entities)
+
+* - {func}`~subgrounds.Subgrounds.query_json`
+  - {py:class}`dict`
+  - For subgraphs, this *can* include generated id keys for each generated sub-query.
+
+* - {func}`~subgrounds.Subgrounds.query_df`
+  - {class}`~pandas.DataFrame` or {class}`list`\[{class}`pandas.DataFrame`\]
+  - Flattened based on the schema of the API from {func}`~subgrounds.Subgrounds.query_json`, mimicking an SQL `JOIN` operation. If flattening isn't possible, multiple {class}`Dataframes <pandas.DataFrame>` will be returned (like when querying a nested list).
+:::
+
+```{tip}
+{func}`~subgrounds.Subgrounds.query_df` will likely be the best choice for most folks!
+```
+
+## Quick Example
+
+The following code blocks present a comparison between all methods using the `aave-v2` market data:
 
 ```{thebe-button}
 ```

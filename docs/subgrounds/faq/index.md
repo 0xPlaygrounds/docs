@@ -32,6 +32,6 @@ Extra features in the `subgrounds.contrib` sub-module
 :hidden:
 
 setup/index
-contrib
+../advanced_topics/contrib/index
 
 ```

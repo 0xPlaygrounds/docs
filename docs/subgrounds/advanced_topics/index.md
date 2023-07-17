@@ -20,7 +20,7 @@ Learn how Subgrounds automates your queries!
 
 <h3 class='gradient-text card-heading'>
 
-{bdg-success-line}`NEW` Custom Clients
+{bdg-warning-line}`LAB` Custom Clients
 
 </h3>
 
@@ -36,17 +36,6 @@ Contrib - Plotly
 </h3>
 
 The easiest path from `FieldPath` to visualization
-```
-
-```{grid-item-card}
-:link: contrib/pyodide
-:link-type: doc
-
-<h3 class='gradient-text card-heading'>
-Contrib - Pyodide
-</h3>
-
-Executing `Subgrounds` purely in the web
 ```
 
 <!--```{grid-item-card}

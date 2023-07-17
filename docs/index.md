@@ -61,7 +61,7 @@ subgrounds/getting_started/index
 subgrounds/advanced_topics/index
 subgrounds/faq/index
 subgrounds/examples/index
-subgrounds/tutorials
+subgrounds/videos
 subgrounds/changelog
 subgrounds/contributing
 API Reference <subgrounds/modules>
