@@ -1,4 +1,4 @@
-# {bdg-success-line}`NEW` Async
+# {{ new_bdg }} Async
 
 ```{article-info}
 :avatar-outline: muted

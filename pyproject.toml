@@ -66,7 +66,7 @@ extensions = [
     "sphinx_thebe",           # transforms code cells into executable cells
     "sphinxcontrib.repl",     # auto evaluates code-blocks w/ `repl`
     "sphinx.ext.intersphinx", # link across external docs 🔥
-    # "sphinx_tippy",           # enables smart tooltips on items
+    # "sphinx_tippy",         # enables smart tooltips on items
     "sphinxcontrib.youtube",  # enables easy youtube support
     "code_include.extension", # enables us to include code from source
 ]
@@ -102,6 +102,10 @@ autoclass_content = "both"
 [tool.mudkip.override.autodoc_default_options]
 members = true
 undoc-member = true
+
+[tool.mudkip.override.myst_substitutions]
+new_bdg = '<span class="light-only">{bdg-success}`NEW`</span><span class="dark-only">{bdg-success-line}`NEW`</span>'
+lab_bdg = '<span class="light-only">{bdg-warning}`LAB`</span><span class="dark-only">{bdg-warning-line}`LAB`</span>'
 
 [tool.mudkip.override.html_sidebars]
 "**" = [
@@ -143,11 +147,11 @@ dark_logo = "assets/pg-logotype-primary.svg"
 color-foreground-primary = "#040019"
 color-foreground-secondary = "#191F2E"
 
-color-background-primary = "#F4F4F4"
-color-background-secondary = "#E4EBFE50"
+color-background-primary = "#EFF6FF"
+color-background-secondary = "#E4EBFE"
 color-brand-primary = "var(--color-foreground-secondary)"
 
-color-sidebar-background = "#54DDF8"
+color-sidebar-background = "#54E1F8"
 color-sidebar-search-background = "transparent"
 color-sidebar-caption-text = "#304881"
 
@@ -160,15 +164,16 @@ color-sidebar-search-background--focus = "var(--color-sidebar-item-background--h
 sd-color-card-background = "var(--color-background-secondary)"
 sd-color-card-border-hover = "var(--color-brand-primary)"
 
-color-admonition-background = "var(--color-background-secondary)"
+color-admonition-background = "white"
 # color-announcement-background = "var(--color-background-secondary)"
 
 color-link = "#0083CF"
 
-# sd-color-success = "#5CC653"
-# sd-color-warning = "#F1C21B"
-# sd-color-info = "#54DDF8"
-# sd-color-danger = "#D54A44"
+sd-color-success = "#5CC653"
+sd-color-warning = "#F1C21B"
+sd-color-info = "#54DDF8"
+sd-color-danger = "#D54A44"
+sd-color-secondary = "#548BF8"
 
 font-stack = "sofia-pro, sans-serif"
 font-stack--monospace = "carbona-variable, monospace"
@@ -180,6 +185,7 @@ color-foreground-muted = "#A9ACAC"
 
 color-background-primary = "#040019"
 color-background-secondary = "#191F2EAA"
+color-background-hover = "#304881"
 
 color-header-text = "#54DDF8"
 
@@ -203,6 +209,7 @@ sd-color-success = "#5CC653"
 sd-color-warning = "#F1C21B"
 sd-color-info = "#54DDF8"
 sd-color-danger = "#D54A44"
+sd-color-secondary = "var(--color-brand-primary)"
 
 color-admonition-background = "var(--sd-color-card-background)"
 color-announcement-background = "var(--sd-color-card-background)"

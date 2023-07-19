@@ -19,6 +19,7 @@ The `subgrounds` leverages an internal transformation pipeline that allows us to
 
 ```{toctree}
 :caption: Transforms
+:hidden:
 
 layers
 ```

@@ -1,4 +1,4 @@
-# {bdg-warning-line}`LAB` Custom Clients
+# {{ lab_bdg }} Custom Clients
 
 ```{article-info}
 :avatar-outline: muted

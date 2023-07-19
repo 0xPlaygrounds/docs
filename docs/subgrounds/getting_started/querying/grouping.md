@@ -1,4 +1,4 @@
-# {bdg-success-line}`NEW` Grouping
+# {{ new_bdg }} Grouping
 
 ```{article-info}
 :avatar-outline: muted
@@ -12,7 +12,9 @@ This feature is easily usable via context managers and the `with` statement:
 
 ```{thebe-button}
 ```
+
 ```{code-block} python
+:class: thebe
 :caption: Gathering data from aave maarkets
 
 from subgrounds import Subgrounds

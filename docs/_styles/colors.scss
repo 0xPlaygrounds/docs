@@ -1,3 +1,23 @@
+// .dropdown-body-text {
+//     em {
+//         background: var(--color-sidebar-background);
+//         background-clip: text;
+//         -webkit-background-clip: text;
+//         -webkit-text-fill-color: transparent;
+//     }
+// }
+
+@media (min-width: 67.1em) {
+    .sidebar-drawer {
+        background: var(--color-sidebar-background);
+        height: min-content;
+        will-change: transform; // this is hell
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+}
+
 @mixin colors-dark-override {
     .admonition-title {
         color: #A9B4D0
@@ -14,27 +34,6 @@
         background: #F4F4F4 !important;
     }
 
-    .dropdown-body-text {
-        em {
-            background: linear-gradient(90deg, #54DDF8 0%, #0083CF 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    }
-
-    @media (min-width: 67.1em) {
-        .sidebar-drawer {
-            background: linear-gradient(180deg, #000E19 36.39%, #0C263B 100%);
-            height: min-content;
-            will-change: transform; // this is hell
-            position: sticky;
-            top: 0;
-            left: 0;
-
-        }
-    }
-
     h1,
     .gradient-text,
     .sidebar-brand-text {
@@ -42,14 +41,6 @@
             background: unset;
             background-clip: unset;
             -webkit-background-clip: unset;
-
-            &.sd-text-success {
-                -webkit-text-fill-color: var(--sd-color-success)
-            }
-
-            &.sd-text-warning {
-                -webkit-text-fill-color: var(--sd-color-warning)
-            }
         }
 
         background: linear-gradient(90deg, #54DDF8 0%, #0083CF 100%);
@@ -120,21 +111,53 @@
 
 // Enable dark-mode-overrides, if requested.
 [data-theme="dark"] {
-    @include colors-dark-override
+    @include colors-dark-override;
+
+    .dark-only {
+        display: inline-block !important
+    }
+
+    .light-only {
+        display: none !important
+    }
 }
 
 // Enable light-mode-overrides, if requested.
 [data-theme="light"] {
-    @include colors-light-override
+    @include colors-light-override;
+
+    .light-only {
+        display: inline-block !important
+    }
+
+    .dark-only {
+        display: none !important
+    }
 }
 
 // If "auto", uses media preference
 [data-theme="auto"] {
     @media (prefers-color-scheme: dark) {
-        @include colors-dark-override
+        @include colors-dark-override;
+
+        .dark-only {
+            display: inline-block !important
+        }
+
+        .light-only {
+            display: none !important
+        }
     }
 
     @media (prefers-color-scheme: light) {
-        @include colors-light-override
+        @include colors-light-override;
+
+        .light-only {
+            display: inline-block !important
+        }
+
+        .dark-only {
+            display: none !important
+        }
     }
 }

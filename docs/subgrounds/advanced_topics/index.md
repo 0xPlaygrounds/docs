@@ -22,7 +22,7 @@ Learn how Subgrounds automates your queries!
 
 <h3 class='gradient-text card-heading'>
 
-{bdg-warning-line}`LAB` Custom Clients
+{{ lab_bdg }} Custom Clients
 
 </h3>
 
