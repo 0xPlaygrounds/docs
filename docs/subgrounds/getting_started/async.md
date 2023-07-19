@@ -11,6 +11,7 @@
 Asynchronous programming in python allows us to **concurrently** perform operations. In the context of `Subgrounds`, it allows us to perform multiple queries at the same time -- we won't need to wait for 1 query to finish before producing another one.
 
 ```{code-block} python
+:class: thebe
 :caption: An example of an async function which waits for 5 seconds.
 
 import asyncio
@@ -44,63 +45,39 @@ To leverage `async` within subgrounds, we will need to use an alternative client
 ```
 
 ```{code-block} python
+:class: thebe
 :caption: Making queries with async
 
 from subgrounds import AsyncSubgrounds
+import time
 
 sg = AsyncSubgrounds()
 
 curve = await sg.load_subgraph(
     "https://api.thegraph.com/subgraphs/name/convex-community/volume-mainnet")
 
-await sg.query_df(curve.Query.pools)
-await sg.query_df(curve.Query.candles)
+t0 = time.perf_counter()
+pools = await sg.query_df(curve.Query.pools)
+candles = await sg.query_df(curve.Query.candles)
+t1 = time.perf_counter()
+
+print(f"{t1-t0:0.2f}s elapsed")
 ```
 
-Unfortuntely, making a secondary query here would *not* automatically parallelize the queries — we need to use [`tasks`](https://docs.python.org/3.11/library/asyncio-task.html).
+Unfortuntely, making a secondary query here would *not* automatically parallelize the queries — we can use {py:func}`asyncio.gather` for this!
 
 ```{code-block} python
+:class: thebe
 :caption: An example of making two queries **concurrently** (and timing them)
 
 import asyncio
-import time
 
-task1 = asyncio.create_task(
-    sg.query_df(curve.Query.pools)
+t0 = time.perf_counter()
+pools, candles = await asyncio.gather(
+    sg.query_df(curve.Query.pools), 
+    sg.query_df(curve.Query.candles),
 )
+t1 = time.perf_counter()
 
-task2 = asyncio.create_task(
-    sg.query_df(curve.Query.candles)
-)
-
-print(f"started at {time.strftime('%X')}")
-
-asyncio.gather([task1, task2])
-
-print(f"finished at {time.strftime('%X')}")
-
-print(task1.result())
-print(task2.result())
+print(f"{t1-t0:0.2f}s elapsed")
 ```
-
-:::{hint}
-If you are using Python 3.11 or higher, you can leverage a newer async api called {class}`TaskGroups <asyncio.TaskGroup>` alongside {doc}`query grouping <querying/grouping>`:
-
-```{code-block} python
-
-from asyncio import TaskGroup
-
-with (sg, TaskGroup() as tg):
-    tasks = [
-        tg.create_task(
-            sg.query_df(curve.Query.pools)
-        ),
-        tg.create_task(
-            sg.query_df(curve.Query.candles)
-        ),
-    ]
-
-for task in tasks:
-    print(task.result())
-```
-:::

@@ -15,6 +15,7 @@ pagination/index
 transform/index
 subgraph/index
 
+errors
 query
 schema
 utils

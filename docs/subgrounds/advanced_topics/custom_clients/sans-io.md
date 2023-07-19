@@ -12,7 +12,7 @@
 This doc is **incomplete**, check back soon!
 ```
 
-In the process of introducing [async](/subgrounds/getting_started/async) querying to `Subgrounds`, a large amount of refactoring was needed to reduce code duplication. We decided to embrace the technique of [sans-io](https://sans-io.readthedocs.io/), a methodology to decouple the libraries' buisness logic from "IO" logic (making and sending requests).
+In the process of introducing [async](/subgrounds/getting_started/async) querying to `Subgrounds`, a large amount of refactoring was needed to reduce code duplication. We decided to embrace the technique of [sans-io](https://sans-io.readthedocs.io/), a methodology to decouple the libraries' business logic from "IO" logic (making and sending requests).
 
 The result of this work has led us to the {mod}`subgrounds.client` subpackage and the {class}`~subgrounds.client.SubgroundsBase` class as an access point to all the logic encapsulated by `subgrounds`. We've implemented two clients as apart of the `subgrounds` package: {class}`~subgrounds.Subgrounds` and {class}`~subgrounds.AsyncSubgrounds` — leveraging [`httpx`](https://www.python-httpx.org/) to actually make requests.
 

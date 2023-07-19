@@ -11,7 +11,7 @@
 Setup
 </h3>
 
-Leveraging environments, third party tooling, and more to make project management seemless
+Environments, third party tooling, and more for easier project management
 ```
 
 ```{grid-item-card}
@@ -22,7 +22,7 @@ Leveraging environments, third party tooling, and more to make project managemen
 Contrib
 </h3>
 
-Extra features in the `subgrounds.contrib` sub-module
+Extra features in the `subgrounds.contrib` subpackage
 ```
 
 ::::
@@ -32,6 +32,5 @@ Extra features in the `subgrounds.contrib` sub-module
 :hidden:
 
 setup/index
-../advanced_topics/contrib/index
 
 ```

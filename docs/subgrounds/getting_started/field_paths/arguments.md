@@ -9,7 +9,7 @@ Some {class}`FieldPaths <subgrounds.FieldPath>` can be parameterized with certai
 :class: thebe
 :caption: Loading a curve subgraph
 
-from subgrounds.subgrounds import Subgrounds
+from subgrounds import Subgrounds
 sg = Subgrounds()
 
 curve = sg.load_subgraph(

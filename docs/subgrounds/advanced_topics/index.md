@@ -8,7 +8,9 @@
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
-Pagination
+
+Pagination {bdg-light}`INVIS`
+
 </h3>
 
 Learn how Subgrounds automates your queries!
@@ -32,10 +34,25 @@ Learn how to create your own `Subgrounds` client!
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
-Contrib - Plotly
+
+Contrib - Plotly {bdg-light}`INVIS`
+
 </h3>
 
 The easiest path from `FieldPath` to visualization
+```
+
+```{grid-item-card}
+:link: transforms/index
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+
+Transforms {bdg-light}`INVIS`
+
+</h3>
+
+A deep-dive into our transformation pipelines
 ```
 
 <!--```{grid-item-card}
@@ -61,4 +78,5 @@ Create live dashboards w/ Subgrounds
 contrib/index
 pagination/index
 custom_clients/index
+transforms/index
 ```

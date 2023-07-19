@@ -98,3 +98,11 @@ sg.query_df([
 
 grouping
 ```
+
+:::{tip}
+The Graph provides a default server timeout of 30s so we've chosen this as our default for subgrounds. However, if you are using a custom or self-hosted indexer, you might want to adjust this timeout value. You can do so via the `timeout` constructor param.
+
+```python
+sg = Subgrounds(timeout=60)
+```
+:::

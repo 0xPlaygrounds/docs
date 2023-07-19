@@ -46,7 +46,7 @@ sg.query_df([
 ```{code-block} python
 :class: thebe
 from datetime import datetime
-from subgrounds.subgraph import SyntheticField
+from subgrounds import SyntheticField
 
 # Create a SyntheticField on the Swap entity called `datetime`, which will format 
 # the timestamp field into something more human readable
@@ -99,16 +99,31 @@ swap.datetime = SyntheticField(
 
 :::::
 
-### `SyntheticField.map`
+<!-- ### `SyntheticField.map`
 
-This helper constructor makes it easy to convert `timestamps` into {class}`~datetime.datetime` objects.
+This constructor allows you to map values from field paths via key-values set in a dict, returning a default if not found
 
 :::::{tab-set}
 
 ::::{tab-item} Helper Method
 ```{code-block} python
 
-swap.datetime = SyntheticField.datetime_of_timestamp(swap.timestamp)
+# Fake mapping of pool addresses to symbol
+pooladdr_symbol_map = {
+    "0x5777d92f208679db4b9778590fa3cab3ac9e2168": "DAI/USDC-001",
+    "0x6c6bc977e13df9b0de53b251522280bb72383700": "DAI/USDC-005",
+    "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8": "USDC/ETH-030",
+    "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640": "USDC/ETH-005",
+}
+
+# Create map SyntheticField using our dictionary with 'UNKNOWN' as the
+# default value
+sushiswap.Pool.symbol = SyntheticField.map(
+    pooladdr_symbol_map,
+    SyntheticField.STRING,
+    sushiswap.Pool.id,
+    "DEFAULT",
+)
 ```
 ::::
 
@@ -123,4 +138,4 @@ swap.datetime = SyntheticField(
 ```
 ::::
 
-:::::
+::::: -->

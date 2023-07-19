@@ -64,7 +64,7 @@ subgrounds/examples/index
 subgrounds/videos
 subgrounds/changelog
 subgrounds/contributing
-API Reference <subgrounds/modules>
+API Reference <subgrounds/api_reference/index>
 ```
 
 ```{toctree}

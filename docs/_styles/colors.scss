@@ -1,42 +1,140 @@
-// @use "https://raw.githubusercontent.com/pradyunsg/furo/main/src/furo/assets/styles/variables/_colors.scss" as furo;
+@mixin colors-dark-override {
+    .admonition-title {
+        color: #A9B4D0
+    }
 
-// @mixin dark {
-//     @include furo.colors;
-//     @include furo.colors-dark;
+    .CodeMirror-code {
+        // background: #E6E0D1 !important;
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+    }
 
-//     --color-foreground-primary: #E6E6E6;
-//     --color-foreground-secondary: #CCCCCC;
-//     --color-foreground-muted: #A9ACAC;
+    .CodeMirror-cursor {
+        border-left: 1px solid #F4F4F4 !important;
+        background: #F4F4F4 !important;
+    }
 
-//     --color-background-primary: #040019;
-//     --color-background-secondary: #131720;
+    .dropdown-body-text {
+        em {
+            background: linear-gradient(90deg, #54DDF8 0%, #0083CF 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
 
-//     --color-header-text: #54DDF8;
+    @media (min-width: 67.1em) {
+        .sidebar-drawer {
+            background: linear-gradient(180deg, #000E19 36.39%, #0C263B 100%);
+            height: min-content;
+            will-change: transform; // this is hell
+            position: sticky;
+            top: 0;
+            left: 0;
 
-//     --color-sidebar-link-text--top-level: var(--color-foreground-muted);
-//     --color-sidebar-caption-text: var(--color-foreground-primary);
+        }
+    }
 
-//     --color-sidebar-background: linear-gradient(180deg, #000E19 36.39%, #0C263B 100%);
-//     --color-sidebar-item-background--current: transparent;
-//     --color-sidebar-search-background--focus: var(--color-sidebar-item-background--hover);
+    h1,
+    .gradient-text,
+    .sidebar-brand-text {
+        & span.sd-badge {
+            background: unset;
+            background-clip: unset;
+            -webkit-background-clip: unset;
 
-//     --color-brand-primary: #54DDF8;
-//     --color-brand-content: #0083CF;
+            &.sd-text-success {
+                -webkit-text-fill-color: var(--sd-color-success)
+            }
 
-//     --color-table-header-background: #191F2E;
-//     --color-table-border: #525252;
+            &.sd-text-warning {
+                -webkit-text-fill-color: var(--sd-color-warning)
+            }
+        }
 
-//     --sd-color-card-background: #191F2E;
-//     --sd-color-card-border-hover: var(--color-brand-primary);
+        background: linear-gradient(90deg, #54DDF8 0%, #0083CF 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-//     --sd-color-success: #5CC653;
-//     --sd-color-warning: #F1C21B;
-//     --sd-color-info: #54DDF8;
-//     --sd-color-danger: #D54A44;
+    .sd-card {
+        box-shadow: 0px 2px 0px #54DDF8 !important;
 
-//     --color-admonition-background: var(--sd-color-card-background);
-//     --color-announcement-background: var(--sd-color-card-background);
+        &:hover {
+            background: #121621 !important
+        }
+    }
 
-//     --font-stack: sofia-pro, sans-serif;
-//     --font-stack--monospace: carbona-variable, monospace;
-// }
+    .page-info {
+        &>.context {
+            color: var(--color-foreground-muted)
+        }
+
+        &>.title {
+            color: var(--color-foreground-primary)
+        }
+    }
+}
+
+@mixin colors-light-override {
+    // .sd-card {
+    //   box-shadow: -4px -4px 18px -2px #E9E9DE, 4px 5px 15px rgba(0, 0, 0, 0.15) !important;
+
+    //   &:hover {
+    //     background: #e6e6e6 !important
+    //   }
+    // }
+
+    // .admonition,
+    // .main .caption-text {
+    //   color: #F4F4F4;
+
+    //   & a {
+    //     color: #0083cf;
+    //     text-decoration-color: #303335;
+
+    //     &:hover {
+    //       text-decoration-color: #666666
+    //     }
+    //   }
+
+    //   & .literal {
+    //     background: transparent;
+    //     border-color: transparent;
+    //   }
+
+    //   & th.head {
+    //     background: #131720;
+    //   }
+
+    //   & table.docutils {
+
+    //     & th,
+    //     & td {
+    //       border-color: #303335;
+    //     }
+    //   }
+    // }
+}
+
+// Enable dark-mode-overrides, if requested.
+[data-theme="dark"] {
+    @include colors-dark-override
+}
+
+// Enable light-mode-overrides, if requested.
+[data-theme="light"] {
+    @include colors-light-override
+}
+
+// If "auto", uses media preference
+[data-theme="auto"] {
+    @media (prefers-color-scheme: dark) {
+        @include colors-dark-override
+    }
+
+    @media (prefers-color-scheme: light) {
+        @include colors-light-override
+    }
+}
