@@ -106,6 +106,18 @@ undoc-member = true
 [tool.mudkip.override.myst_substitutions]
 new_bdg = '<span class="light-only">{bdg-success}`NEW`</span><span class="dark-only">{bdg-success-line}`NEW`</span>'
 lab_bdg = '<span class="light-only">{bdg-warning}`LAB`</span><span class="dark-only">{bdg-warning-line}`LAB`</span>'
+thebe_button = """
+::::{admonition} Click for Interactive Documentation
+:class: dropdown admonition important
+
+Clicking this button will enable editing and execution of the code-blocks on this page. Learn more [here](/subgrounds/getting_started/basics).
+
+```{thebe-button}
+```
+
+::::
+"""
+
 
 [tool.mudkip.override.html_sidebars]
 "**" = [
@@ -151,7 +163,11 @@ color-background-primary = "#EFF6FF"
 color-background-secondary = "#E4EBFE"
 color-brand-primary = "var(--color-foreground-secondary)"
 
-color-sidebar-background = "#54E1F8"
+color-code-background = "#9CCDFF"
+color-inline-code-background = "#E4EBFE25"
+color-code-foreground = "var(--color-foreground-secondary)"
+
+color-sidebar-background = "linear-gradient(115deg, #54E1F8 22.69%, #0083CF 77.94%)"
 color-sidebar-search-background = "transparent"
 color-sidebar-caption-text = "#304881"
 
@@ -165,15 +181,35 @@ sd-color-card-background = "var(--color-background-secondary)"
 sd-color-card-border-hover = "var(--color-brand-primary)"
 
 color-admonition-background = "white"
-# color-announcement-background = "var(--color-background-secondary)"
+color-admonition-title = "var(--color-code-foreground)"
+color-announcement-background = "var(--color-background-secondary)"
+color-announcement-text = "var(--color-foreground-secondary)"
 
-color-link = "#0083CF"
+color-link = "#548BF8"
 
 sd-color-success = "#5CC653"
+sd-color-success-text = "var(--color-foreground-primary)"
+
 sd-color-warning = "#F1C21B"
+sd-color-warning-text = "var(--color-foreground-primary)"
+
 sd-color-info = "#54DDF8"
+sd-color-info-text = "var(--color-foreground-primary)"
+
 sd-color-danger = "#D54A44"
+sd-color-danger-text = "var(--color-foreground-primary)"
+
 sd-color-secondary = "#548BF8"
+sd-color-secondary-text = "var(--color-foreground-primary)"
+
+color-admonition-title--important = "var(--sd-color-success)"
+color-admonition-title--caution = "var(--sd-color-warning)"
+color-admonition-title--warning = "var(--sd-color-warning)"
+color-admonition-title--info = "var(--sd-color-info)"
+color-admonition-title--seealso = "var(--sd-color-info)"
+color-admonition-title--attention = "var(--sd-color-danger)"
+color-admonition-title--danger = "var(--sd-color-danger)"
+color-admonition-title--error = "var(--sd-color-danger)"
 
 font-stack = "sofia-pro, sans-serif"
 font-stack--monospace = "carbona-variable, monospace"
@@ -184,8 +220,12 @@ color-foreground-secondary = "#CCCCCC"
 color-foreground-muted = "#A9ACAC"
 
 color-background-primary = "#040019"
-color-background-secondary = "#191F2EAA"
+color-background-secondary = "#191F2E"
 color-background-hover = "#304881"
+
+color-code-background = "#2A4179"
+color-inline-code-background = "#191F2E25"
+color-code-foreground = "#A9B4D0"
 
 color-header-text = "#54DDF8"
 
@@ -206,13 +246,32 @@ sd-color-card-background = "var(--color-background-secondary)"
 sd-color-card-border-hover = "var(--color-brand-primary)"
 
 sd-color-success = "#5CC653"
+sd-color-success-text = "var(--color-foreground-primary)"
+
 sd-color-warning = "#F1C21B"
+sd-color-warning-text = "var(--color-foreground-primary)"
+
 sd-color-info = "#54DDF8"
+sd-color-info-text = "var(--color-foreground-primary)"
+
 sd-color-danger = "#D54A44"
+sd-color-danger-text = "var(--color-foreground-primary)"
+
 sd-color-secondary = "var(--color-brand-primary)"
+sd-color-secondary-text = "var(--color-foreground-primary)"
 
 color-admonition-background = "var(--sd-color-card-background)"
+color-admonition-title = "var(--color-code-foreground)"
 color-announcement-background = "var(--sd-color-card-background)"
+
+color-admonition-title--important = "var(--sd-color-success)"
+color-admonition-title--caution = "var(--sd-color-warning)"
+color-admonition-title--warning = "var(--sd-color-warning)"
+color-admonition-title--info = "var(--sd-color-info)"
+color-admonition-title--seealso = "var(--sd-color-info)"
+color-admonition-title--attention = "var(--sd-color-danger)"
+color-admonition-title--danger = "var(--sd-color-danger)"
+color-admonition-title--error = "var(--sd-color-danger)"
 
 font-stack = "sofia-pro, sans-serif"
 font-stack--monospace = "carbona-variable, monospace"

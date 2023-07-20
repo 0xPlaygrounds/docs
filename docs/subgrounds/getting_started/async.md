@@ -6,6 +6,8 @@
 :class-container: sd-p-2 sd-outline-muted sd-rounded-1 sd-text-muted
 ```
 
+{{ thebe_button }}
+
 ## The World of Async
 
 Asynchronous programming in python allows us to **concurrently** perform operations. In the context of `Subgrounds`, it allows us to perform multiple queries at the same time -- we won't need to wait for 1 query to finish before producing another one.
@@ -40,9 +42,6 @@ This allows you to use `await` at the top-most level. Otherwise, `await` is only
 ## {class}`~subgrounds.AsyncSubgrounds`
 
 To leverage `async` within subgrounds, we will need to use an alternative client, {class}`~subgrounds.AsyncSubgrounds`.
-
-```{thebe-button}
-```
 
 ```{code-block} python
 :class: thebe

@@ -1,11 +1,16 @@
-// .dropdown-body-text {
-//     em {
-//         background: var(--color-sidebar-background);
-//         background-clip: text;
-//         -webkit-background-clip: text;
-//         -webkit-text-fill-color: transparent;
-//     }
-// }
+::root {
+    --color-admonition-title-background--important: #{'rgba(var(--color-admonition-title--important), 0.2)'} !important;
+    --color-admonition-title-background--caution: #{'rgba(var(--color-admonition-title--caution), 0.2)'} !important;
+    --color-admonition-title-background--warning: #{'rgba(var(--color-admonition-title--warning), 0.2)'} !important;
+    --color-admonition-title-background--info: #{'rgba(var(--color-admonition-title--info), 0.2)'} !important;
+    --color-admonition-title-background--seealso: #{'rgba(var(--color-admonition-title--seealso), 0.2)'} !important;
+    --color-admonition-title-background--attention: #{'rgba(var(--color-admonition-title--attention), 0.2)'} !important;
+    --color-admonition-title-background--danger: #{'rgba(var(--color-admonition-title--danger), 0.2)'} !important;
+    --color-admonition-title-background--error: #{'rgba(var(--color-admonition-title--error), 0.2)'} !important;
+
+    // --color-inline-code-background: #{'rgba(var(--color-background-secondary), 0.25)'} !important;
+}
+
 
 @media (min-width: 67.1em) {
     .sidebar-drawer {
@@ -19,10 +24,6 @@
 }
 
 @mixin colors-dark-override {
-    .admonition-title {
-        color: #A9B4D0
-    }
-
     .CodeMirror-code {
         // background: #E6E0D1 !important;
         -webkit-filter: invert(100%);

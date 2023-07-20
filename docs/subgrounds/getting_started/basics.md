@@ -29,12 +29,13 @@ This feature is best used on the **latest** Chrome-based browsers, feel free to 
 
 ## Subgrounds
 
-
 The {class}`~subgrounds.Subgrounds` class provides the top level API and most users will be using this class exclusively. This class is used to load (i.e.: introspect) GraphQL APIs (subgraph **or** vanilla GraphQL APIs) as well as execute querying operations. Moreover, this class is meant to be used as a singleton, i.e.: initialized once and reused throughout a project.
 
 The code cell below demonstrates how to initialize your {class}`~subgrounds.Subgrounds` object and load a GraphQL API.
 
-> Both {class}`~subgrounds.Subgrounds.load_subgraph` and {class}`~subgrounds.Subgrounds.load_api` result in similar structures except subgraphs provide better optics since there's more schema data to explore.
+```{note}
+Both {class}`~subgrounds.Subgrounds.load_subgraph` and {class}`~subgrounds.Subgrounds.load_api` result in similar structures except subgraphs provide better optics since there's more schema data to explore.
+```
 
 ```{code-block} python
 :class: thebe

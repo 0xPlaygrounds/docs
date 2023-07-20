@@ -6,8 +6,7 @@ One of Subgrounds' unique features is the ability to define schema-based (i.e.: 
 
 The example below demonstrates how to create a simple {class}`~subgrounds.SyntheticField` to calculate the swap price of `Swap` events stored on the Sushiswap subgraph:
 
-```{thebe-button}
-```
+{{ thebe_button }}
 
 ```{code-block} python
 :class: thebe

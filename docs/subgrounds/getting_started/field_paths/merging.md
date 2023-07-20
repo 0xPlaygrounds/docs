@@ -6,8 +6,7 @@ When passing a list of {class}`FieldPaths <subgrounds.FieldPath>` to any {func}`
 This is **only** true if the {class}`FieldPaths <subgrounds.FieldPath>` originate from the **same subgraph**.
 ```
 
-```{thebe-button}
-```
+{{ thebe_button }}
 
 :::::{tab-set}
 

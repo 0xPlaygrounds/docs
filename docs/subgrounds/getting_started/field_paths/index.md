@@ -4,9 +4,8 @@
 
 {class}`~subgrounds.FieldPath` are created by simply selecting attributes starting from the subgraph object returned by the {class}`~subgrounds.Subgrounds.load_subgraph` or {class}`~subgrounds.Subgrounds.load_api` methods:
 
-```{thebe-button}
-```
-
+{{ thebe_button }}
+ 
 ```{code-block} python
 :class: thebe
 :caption: Loading a curve subgraph

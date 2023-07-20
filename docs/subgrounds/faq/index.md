@@ -4,6 +4,17 @@
 :gutter: 4
 
 ```{grid-item-card}
+:link: exporting
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+Exporting
+</h3>
+
+Export your data as CSVs and more!
+```
+
+```{grid-item-card}
 :link: setup/index
 :link-type: doc
 
@@ -32,5 +43,5 @@ Extra features in the `subgrounds.contrib` subpackage
 :hidden:
 
 setup/index
-
+exporting
 ```

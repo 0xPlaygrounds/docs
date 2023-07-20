@@ -2,8 +2,7 @@
 
 Some {class}`FieldPaths <subgrounds.FieldPath>` can be parameterized with certain arguments such as specific token ids, sorting by certain fields, etc. These arguments can be configured by "calling" said function (e.g. `aave_v2.Query.market(first=10)`).
 
-```{thebe-button}
-```
+{{ thebe_button }}
 
 ```{code-block} python
 :class: thebe

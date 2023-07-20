@@ -30,8 +30,7 @@ Subgrounds provides 3 main ways to query data, which provide different data stru
 
 The following code blocks present a comparison between all methods using the `aave-v2` market data:
 
-```{thebe-button}
-```
+{{ thebe_button }}
 
 ```{code-block} python
 :class: thebe

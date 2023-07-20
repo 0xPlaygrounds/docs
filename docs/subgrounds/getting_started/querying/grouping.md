@@ -6,12 +6,11 @@
 :class-container: sd-p-2 sd-outline-muted sd-rounded-1 sd-text-muted
 ```
 
+{{ thebe_button }}
+
 Query grouping allows you to effectively manage multiple queries to communicate more effectively with servers. It uses the idea of sessions and/or clients (in libraries like `httpx` or `requests`) to keep networking connections open which makes multiple or dependent queries more efficient and quicker.
 
 This feature is easily usable via context managers and the `with` statement:
-
-```{thebe-button}
-```
 
 ```{code-block} python
 :class: thebe

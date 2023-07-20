@@ -1,3 +1,32 @@
+.admonition.toggle-hidden .admonition-title~* {
+  display: none !important;
+  // visibility: unset !important;
+}
+
+$colors: "important",
+  "caution",
+  "warning",
+  "info",
+  "seealso",
+  "attention",
+  "danger",
+  "error";
+
+@each $color in $colors {
+  .admonition.#{$color} {
+    .admonition-title {
+      &>.toggle-button {
+        color: var(--color-admonition-title--#{$color});
+        cursor: pointer;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 h1,
 .gradient-text,
 .sidebar-brand-text {
@@ -5,19 +34,19 @@ h1,
     color: transparent;
 
     &.sd-text-success {
-      -webkit-text-fill-color: var(--sd-color-success)
+      -webkit-text-fill-color: var(--sd-color-success);
     }
 
     &.sd-text-warning {
-      -webkit-text-fill-color: var(--sd-color-warning)
+      -webkit-text-fill-color: var(--sd-color-warning);
     }
 
     &.sd-text-danger {
-      -webkit-text-fill-color: var(--sd-color-danger)
+      -webkit-text-fill-color: var(--sd-color-danger);
     }
 
     &.sd-text-info {
-      -webkit-text-fill-color: var(--sd-color-info)
+      -webkit-text-fill-color: var(--sd-color-info);
     }
   }
 }
@@ -34,11 +63,11 @@ h1,
 
   .nodeLabel,
   .edgeLabel {
-    color: var(--color-foreground-secondary) !important
+    color: var(--color-foreground-secondary) !important;
   }
 
   .edgeLabel {
-    background: var(--color-background-primary) !important
+    background: var(--color-background-primary) !important;
   }
 }
 
@@ -53,7 +82,7 @@ h1,
 
 // spacer
 .sd-badge.sd-bg-light {
-  visibility: hidden
+  visibility: hidden;
 }
 
 table.docutils {
@@ -66,7 +95,7 @@ table.docutils {
   }
 
   td {
-    font-size: 14px
+    font-size: 14px;
   }
 
   th,
@@ -87,7 +116,7 @@ table.docutils {
 }
 
 .thebe-launch-button>.loading-text>.status {
-  color: var(--sd-color-success) !important
+  color: var(--sd-color-success) !important;
 }
 
 .CodeMirror-selected {
@@ -118,7 +147,7 @@ table.docutils {
     border-color: var(--sd-color-secondary) !important;
 
     &>.loading-text>.status {
-      color: var(--color-background-primary) !important
+      color: var(--color-background-primary) !important;
     }
   }
 
@@ -128,7 +157,7 @@ table.docutils {
     border-color: var(--sd-color-secondary) !important;
 
     &>.loading-text>.status {
-      color: var(--color-background-primary) !important
+      color: var(--color-background-primary) !important;
     }
 
     border-width: 1.5px;
