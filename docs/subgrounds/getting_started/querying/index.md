@@ -18,7 +18,7 @@ Subgrounds provides 3 main ways to query data, which provide different data stru
   - For subgraphs, this *can* include generated id keys for each generated sub-query.
 
 * - {func}`~subgrounds.Subgrounds.query_df`
-  - {class}`~pandas.DataFrame` or {class}`list`\[{class}`pandas.DataFrame`\]
+  - {class}`~pandas.DataFrame` | {class}`list`\[{class}`~pandas.DataFrame`\]
   - Flattened based on the schema of the API from {func}`~subgrounds.Subgrounds.query_json`, mimicking an SQL `JOIN` operation. If flattening isn't possible, multiple {class}`Dataframes <pandas.DataFrame>` will be returned (like when querying a nested list).
 :::
 
@@ -91,13 +91,6 @@ sg.query_df([
 
 :::::
 
-```{toctree}
-:caption: Field Paths
-:hidden:
-
-grouping
-```
-
 :::{tip}
 The Graph provides a default server timeout of 30s so we've chosen this as our default for subgrounds. However, if you are using a custom or self-hosted indexer, you might want to adjust this timeout value. You can do so via the `timeout` constructor param.
 
@@ -105,3 +98,10 @@ The Graph provides a default server timeout of 30s so we've chosen this as our d
 sg = Subgrounds(timeout=60)
 ```
 :::
+
+```{toctree}
+:caption: Field Paths
+:hidden:
+
+```
+<!-- grouping -->

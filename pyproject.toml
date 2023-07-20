@@ -174,7 +174,7 @@ color-sidebar-caption-text = "#304881"
 color-background-border = "#17BCDB50"
 color-background-hover = "#77e2f8"
 
-color-sidebar-item-background--current = "transparent"
+color-sidebar-item-background--current = "#B6F0FD"
 color-sidebar-search-background--focus = "var(--color-sidebar-item-background--hover)"
 
 sd-color-card-background = "var(--color-background-secondary)"
@@ -233,7 +233,7 @@ color-sidebar-link-text--top-level = "var(--color-foreground-muted)"
 color-sidebar-caption-text = "var(--color-foreground-primary)"
 
 color-sidebar-background = "linear-gradient(180deg, #000E19 36.39%, #0C263B 100%)"
-color-sidebar-item-background--current = "transparent"
+color-sidebar-item-background--current = "#0A1F4F"
 color-sidebar-search-background--focus = "var(--color-sidebar-item-background--hover)"
 
 color-brand-primary = "#54DDF8"

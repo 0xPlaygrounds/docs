@@ -57,5 +57,5 @@ basics
 field_paths/index
 querying/index
 synthetic_fields
-async
 ```
+<!-- async -->

@@ -15,7 +15,7 @@ Pagination {bdg-light}`INVIS`
 
 Learn how Subgrounds automates your queries!
 ```
-
+<!-- 
 ```{grid-item-card}
 :link: custom_clients/index
 :link-type: doc
@@ -28,6 +28,7 @@ Learn how Subgrounds automates your queries!
 
 Learn how to create your own `Subgrounds` client!
 ```
+-->
 
 ```{grid-item-card}
 :link: contrib/plotly
@@ -41,7 +42,7 @@ Contrib - Plotly {bdg-light}`INVIS`
 
 The easiest path from `FieldPath` to visualization
 ```
-
+<!-- 
 ```{grid-item-card}
 :link: transforms/index
 :link-type: doc
@@ -54,6 +55,7 @@ Transforms {bdg-light}`INVIS`
 
 A deep-dive into our transformation pipelines
 ```
+-->
 
 <!--```{grid-item-card}
 :link: dash
@@ -77,6 +79,6 @@ Create live dashboards w/ Subgrounds
 
 contrib/index
 pagination/index
-custom_clients/index
-transforms/index
 ```
+<!-- custom_clients/index
+transforms/index -->

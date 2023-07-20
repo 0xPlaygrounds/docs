@@ -11,6 +11,16 @@
     // --color-inline-code-background: #{'rgba(var(--color-background-secondary), 0.25)'} !important;
 }
 
+.page-info {
+    &>.context {
+        color: var(--color-foreground-muted)
+    }
+
+    &>.title {
+        color: var(--color-foreground-primary)
+    }
+}
+
 
 @media (min-width: 67.1em) {
     .sidebar-drawer {
@@ -57,26 +67,16 @@
             background: #121621 !important
         }
     }
-
-    .page-info {
-        &>.context {
-            color: var(--color-foreground-muted)
-        }
-
-        &>.title {
-            color: var(--color-foreground-primary)
-        }
-    }
 }
 
 @mixin colors-light-override {
-    // .sd-card {
-    //   box-shadow: -4px -4px 18px -2px #E9E9DE, 4px 5px 15px rgba(0, 0, 0, 0.15) !important;
+    .sd-card {
+        box-shadow: -4px -4px 18px -2px #E9E9DE, 4px 5px 15px rgba(0, 0, 0, 0.15) !important;
 
-    //   &:hover {
-    //     background: #e6e6e6 !important
-    //   }
-    // }
+        &:hover {
+            background: var(--color-background-primary) !important
+        }
+    }
 
     // .admonition,
     // .main .caption-text {

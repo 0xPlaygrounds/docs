@@ -11,7 +11,7 @@
 Exporting
 </h3>
 
-Export your data as CSVs and more!
+Export your data as CSVs and more
 ```
 
 ```{grid-item-card}
@@ -22,7 +22,7 @@ Export your data as CSVs and more!
 Setup
 </h3>
 
-Environments, third party tooling, and more for easier project management
+How to manage your python environment
 ```
 
 ```{grid-item-card}
