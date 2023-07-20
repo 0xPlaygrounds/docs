@@ -1,8 +1,7 @@
 # Subgrounds Integration
 While you can certainly use the Playgrounds proxy alone by submitting requests with a valid Playgrounds API key, pairing it with Subgrounds simplifies and streamlines the querying and data analysis from decentralized subgraphs.
 
-```{thebe-button}
-```
+{{ thebe_button }}
 
 ## 1. Using your Playgrounds API Key in Subgrounds
 

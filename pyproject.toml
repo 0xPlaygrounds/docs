@@ -171,7 +171,9 @@ color-sidebar-background = "linear-gradient(115deg, #54E1F8 22.69%, #0083CF 77.9
 color-sidebar-search-background = "transparent"
 color-sidebar-caption-text = "#304881"
 
-color-background-border = "#17BCDB50"
+color-background-border = "#548BF8BB"
+color-guilabel-border = "#548BF8BB"
+color-guilabel-background = "#548BF822"
 color-background-hover = "#77e2f8"
 
 color-sidebar-item-background--current = "#B6F0FD"
