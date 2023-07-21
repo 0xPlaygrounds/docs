@@ -187,7 +187,7 @@ color-admonition-title = "var(--color-code-foreground)"
 color-announcement-background = "var(--color-background-secondary)"
 color-announcement-text = "var(--color-foreground-secondary)"
 
-color-link = "#548BF8"
+color-link = "#004DE5"
 
 sd-color-success = "#5CC653"
 sd-color-success-text = "var(--color-foreground-primary)"
@@ -265,6 +265,8 @@ sd-color-secondary-text = "var(--color-foreground-primary)"
 color-admonition-background = "var(--sd-color-card-background)"
 color-admonition-title = "var(--color-code-foreground)"
 color-announcement-background = "var(--sd-color-card-background)"
+
+color-link = "#62A9FF"
 
 color-admonition-title--important = "var(--sd-color-success)"
 color-admonition-title--caution = "var(--sd-color-warning)"
