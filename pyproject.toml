@@ -158,6 +158,7 @@ dark_logo = "assets/pg-logotype-primary.svg"
 [tool.mudkip.override.html_theme_options.light_css_variables]
 color-foreground-primary = "#040019"
 color-foreground-secondary = "#191F2E"
+color-foreground-muted = "#4F6291"
 
 color-background-primary = "#EFF6FF"
 color-background-secondary = "#E4EBFE"
@@ -212,6 +213,10 @@ color-admonition-title--seealso = "var(--sd-color-info)"
 color-admonition-title--attention = "var(--sd-color-danger)"
 color-admonition-title--danger = "var(--sd-color-danger)"
 color-admonition-title--error = "var(--sd-color-danger)"
+
+sd-color-tabs-underline = "transparent"
+sd-color-tabs-overline = "transparent"
+sd-color-tabs-underline-inactive = "transparent"
 
 font-stack = "sofia-pro, sans-serif"
 font-stack--monospace = "carbona-variable, monospace"
@@ -276,6 +281,10 @@ color-admonition-title--seealso = "var(--sd-color-info)"
 color-admonition-title--attention = "var(--sd-color-danger)"
 color-admonition-title--danger = "var(--sd-color-danger)"
 color-admonition-title--error = "var(--sd-color-danger)"
+
+sd-color-tabs-underline = "transparent"
+sd-color-tabs-overline = "transparent"
+sd-color-tabs-underline-inactive = "transparent"
 
 font-stack = "sofia-pro, sans-serif"
 font-stack--monospace = "carbona-variable, monospace"
