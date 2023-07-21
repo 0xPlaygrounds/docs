@@ -14,9 +14,7 @@ sphinx-thebe = "^0.2.1"
 sphinxext-opengraph = "^0.8.1"
 sphinx-copybutton = "^0.5.1"
 sphinxcontrib-repl = "^0.4.1"
-subgrounds = { git = "https://github.com/0xPlaygrounds/subgrounds.git", rev = "feat/async", extras = [
-    "all",
-] }
+subgrounds = {extras = ["all"], version = "^1.6.0"}
 sphinxcontrib-sass = "^0.3.4"
 sphinx_tippy = "^0.4.1"
 sphinx-jinja = "^2.0.2"
@@ -168,7 +166,7 @@ color-code-background = "#9CCDFF"
 color-inline-code-background = "#E4EBFE25"
 color-code-foreground = "var(--color-foreground-secondary)"
 
-color-sidebar-background = "linear-gradient(115deg, #54E1F8 22.69%, #0083CF 77.94%)"
+color-sidebar-background = "linear-gradient(180deg, #86E7FB 0%, #548BF8 100%)"
 color-sidebar-search-background = "transparent"
 color-sidebar-caption-text = "#304881"
 
@@ -232,7 +230,7 @@ color-background-hover = "#0A1F4F"
 
 color-code-background = "#2A4179"
 color-inline-code-background = "#191F2E25"
-color-code-foreground = "#A9B4D0"
+color-code-foreground = "#C2CBDB"
 
 color-header-text = "#54DDF8"
 

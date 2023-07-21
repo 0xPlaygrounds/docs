@@ -1,3 +1,7 @@
+.announcement {
+  box-shadow: 2px 5px 15px -5px rgba(0, 0, 0, 0.15);
+}
+
 .admonition.toggle-hidden .admonition-title~* {
   display: none !important;
   // visibility: unset !important;
