@@ -67,6 +67,13 @@
             background: #121621 !important
         }
     }
+
+    .jp-RenderedText,
+    .jp-RenderedJavaScript,
+    .jp-RenderedHTMLCommon {
+        // color: #F4F4F4 !important;
+        filter: invert(100%);
+    }
 }
 
 @mixin colors-light-override {

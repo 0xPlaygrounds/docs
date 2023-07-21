@@ -42,6 +42,6 @@ Extra features in the `subgrounds.contrib` subpackage
 :caption: FAQ
 :hidden:
 
-setup/index
 exporting
+setup/index
 ```

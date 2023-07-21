@@ -18,7 +18,7 @@ sg = Subgrounds()
 aave_v2 = sg.load_subgraph(
     "https://api.thegraph.com/subgraphs/name/messari/aave-v2-ethereum")
 
-df = sg.query_df(aave_v2.Query.market_DailySnapshots(first=1000))
+df = sg.query_df(aave_v2.Query.marketDailySnapshots(first=1000))
 df.head()  # show the first 5 rows
 ```
 
@@ -36,9 +36,10 @@ There are several other formats that can be exported, all describes [here](https
 You can also easily load CSV files back into {mod}`pandas`.
 
 ```{code-block} python
+:class: thebe
 
 import pandas as pd
 
-df2 = pd.read_csv("my_data.csv)
+df2 = pd.read_csv("my_data.csv")
 df2.head()
 ```
