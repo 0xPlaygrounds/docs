@@ -147,7 +147,7 @@ repository_url = "https://github.com/0xPlaygrounds/jupyter-stacks-subgrounds"
 repository_branch = "main"
 
 [tool.mudkip.override.html_theme_options]
-announcement = "<a href='/subgrounds/getting_started/async'> Async Subgrounds has arrived 🎉 </a>"
+announcement = "Give us a ⭐️ on <a href='https://github.com/0xPlaygrounds/subgrounds'> Github </a>"
 
 sidebar_hide_name = true
 light_logo = "assets/pg-logotype-dark.svg"
