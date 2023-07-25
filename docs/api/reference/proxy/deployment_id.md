@@ -3,7 +3,7 @@
 
 ## `deployments/id/:deployment_id`
 
-### {bdg-dark}`POST` 
+### {bdg-dark}`POST`
 Make a graphql request to the subgraph identified by the id `deployment_id`.
 
 <br>
@@ -11,7 +11,7 @@ Make a graphql request to the subgraph identified by the id `deployment_id`.
 #### URL Parameters
 <div class='sd-bg-secondary' style='width: 95%; height: 1px; margin: 0em 0em 0.1em 0em'></div>
 
-{bdg-primary-line}`deployment_id` <code class="sd-text-secondary">string</code>
+{bdg-info-line}`deployment_id` <code class="sd-text-secondary">string</code>
 The decentralized network deployment ID you are querying
 
 <br>
@@ -19,10 +19,10 @@ The decentralized network deployment ID you are querying
 #### Request Body (JSON)
 <div class='sd-bg-secondary' style='width: 95%; height: 1px; margin: 0em 0em 0.1em 0em'></div>
 
-{bdg-primary-line}`query` <code class="sd-text-secondary">string</code>
+{bdg-info-line}`query` <code class="sd-text-secondary">string</code>
 The GraphQL query itself
 
-{bdg-primary-line}`variables` <code class="sd-text-secondary">dict?</code>
+{bdg-info-line}`variables` <code class="sd-text-secondary">dict?</code>
 Values for the variables used within the GraphQL query *(if any)*
 
 <br>
@@ -51,28 +51,34 @@ Response:
 }
 ```
 
-
+<!-- 
 ## `deployments/id/:deployment_id/:toplevel_field`
 
-### {bdg-dark}`GET` 
+### {bdg-dark}`GET`
+
+Make a standard request to the subgraph identified by the id `deployment_id`.
 
 <br>
 
 #### URL Parameters
+<div class='sd-bg-secondary' style='width: 95%; height: 1px; margin: 0em 0em 0.1em 0em'></div>
 
+{bdg-info-line}`deployment_id` <code class="sd-text-secondary">string</code>
+The decentralized network deployment ID you are querying
 
-<br>
-
-#### Request Body (JSON)
+{bdg-info-line}`toplevel_field` <code class="sd-text-secondary">string</code>
+The top-level entity you are wishing to query
 
 <br>
 
 #### Example
 ```bash
-
+curl https://api.playgrounds.network/v1/proxy/deployments/id/QmcPHxcC2ZN7m79XfYZ77YmF4t9UCErv87a9NFKrSLWKtJ/protocols \
+    -H 'Content-Type: application/json' \
+    -H 'Playgrounds-Api-Key: PG_API_KEY'
 ```
 
 Response:
 ```json
 {}
-```
+``` -->
