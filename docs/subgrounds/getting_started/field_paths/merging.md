@@ -13,7 +13,7 @@ This is **only** true if the {class}`FieldPaths <subgrounds.FieldPath>` originat
 ::::{tab-item} Python
 ```{code-block} python
 :class: thebe
-:caption: In this query, we are taking the top 4 curve pools by **cumulative volume** and analyzes the top 3 days by **daily total revenue**
+:caption: "In this query, we are taking the **top 4 curve pools** by **cumulative volume** and analyzing the **top 3 days by daily total revenue**"
 
 from subgrounds import Subgrounds
 sg = Subgrounds()
@@ -49,11 +49,12 @@ sg.query_df([
 ::::
 
 ::::{tab-item} GraphQL
-```graphql
+```{code-block} graphql
+:caption: "In this query, we are taking the **top 4 curve pools** by **cumulative volume** and analyzing the **top 3 days by daily total revenue**"
+
 query {
   liquidityPools(first: 4, orderBy: cumulativeVolumeUSD, orderDirection: desc) {
     name
-
     dailySnapshots(first: 3, orderBy: dailyTotalRevenueUSD, orderDirection: desc) {
       dailyVolumeUSD
       dailyTotalRevenueUSD

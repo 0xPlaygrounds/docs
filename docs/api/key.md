@@ -29,3 +29,7 @@ OR
 :::
 
 ![](/_static/assets/pg-app-copy-api-key.png) 
+
+```{seealso}
+All Playgrounds API keys start with the sequence `pg-` to differentiate them from other API keys (such as The Graph's keys).
+```

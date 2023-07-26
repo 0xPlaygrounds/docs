@@ -46,8 +46,9 @@ For any questions or assistance, please visit our [discord](https://discord.gg/g
 
 Overview <api/index>
 Getting an API Key <api/key>
-Subgraph Proxy <api/subgraph-proxy>
-Subgrounds Integration <api/subgrounds>
+api/subgraph-proxy
+api/subgrounds
+api/faq/index
 API Reference <api/api-reference>
 ```
 <!-- REST Adapter <api/rest-adapter> -->

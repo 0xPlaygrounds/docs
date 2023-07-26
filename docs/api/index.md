@@ -38,6 +38,28 @@ Getting Started
 Get started in less than **five minutes**
 ```
 
+```{grid-item-card}
+:link: faq/index
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+FAQ
+</h3>
+
+Common questions about the Playgrounds API
+```
+
+```{grid-item-card}
+:link: api-reference
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+API Reference
+</h3>
+
+Full reference on each endpoint we offer
+```
+
 ::::
 
 ----

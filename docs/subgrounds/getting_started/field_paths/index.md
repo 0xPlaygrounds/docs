@@ -73,5 +73,7 @@ If you're having trouble understanding the naming and pathing of the {class}`~su
 :hidden:
 
 arguments
+filtering
+sorting
 merging
 ```

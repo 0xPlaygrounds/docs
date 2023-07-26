@@ -8,10 +8,10 @@ The Playgrounds API uses API keys to authenticate requests. You can view and man
 
 Your API keys carry many privileges, so be sure to keep them secure! Do not share your secret API keys in publicly accessible areas such as GitHub, client-side code, and so forth.
 
-Authentication to the API is performed via the custom Playgrounds authorization header `Playgrounds-Api-Key`. To authenticate, include the following into the header of your request (replacing `PG_API_KEY` with your own)!
+Authentication to the API is performed via the custom Playgrounds authorization header `Playgrounds-Api-Key`. To authenticate, include the following into the header of your request (replacing `pg-abcdefghijk` with your own)!
 
 ```py
-Playgrounds-Api-Key: PG_API_KEY
+Playgrounds-Api-Key: pg-abcdefghijk
 ```
 
 ```{note}

@@ -225,7 +225,7 @@ color-foreground-secondary = "#CCCCCC"
 color-foreground-muted = "#A9ACAC"
 
 color-background-primary = "#040019"
-color-background-secondary = "#191F2E"
+color-background-secondary = "#191F2ECC"
 color-background-hover = "#0A1F4F"
 
 color-code-background = "#2A4179"

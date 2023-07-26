@@ -1,4 +1,4 @@
-# Playgrounds Subgraph Proxy
+# Subgraph Proxy
 After obtaining your API key, use our proxy API endpoint to query decentralized subgraphs. You can do this in two ways:
 
 1. Via the subgraph id *(compatible with Ethereum only)*
