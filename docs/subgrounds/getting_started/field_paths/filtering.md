@@ -21,12 +21,12 @@ pool = curve.LiquidityPool  # shorthand for examples
 ```
 
 ```{note}
-In some of the following examples, I stack multiple conditions on top of each other. This would not result in any data being returned since the multiple conditions would likely conflict with each other.
+In some of the following examples, multiple conditions are stacked on top of each other. This would **not** result in any data being returned since the multiple conditions would likely conflict with each other.
 ```
 
 ## Matching Values
 
-Matching exact values on field paths. Can also match negated values.
+Using the `==` and `=!` operators in Python, matching exact or negated values on field paths is pretty straight forward:
 
 :::::{tab-set}
 ::::{tab-item} Relative Form
@@ -57,7 +57,7 @@ curve_pools = curve.Query.liquidityPools(
 
 ## Comparisons
 
-You can filter based on your basic filters of greater than, lesser than, etc. on any field path (usually numerical). This is where Subgrounds relative form becomes more obvious than pure GraphQL.
+Filtering can also be based on standard comparison logic on any field path, such as "greater than", "less than", etc — generally more useful for numeric fields.
 
 :::::{tab-set}
 ::::{tab-item} Relative Form
@@ -89,7 +89,8 @@ curve_pools = curve.Query.liquidityPools(
 :::::
 
 ## Nested Filtering
-Since entities are nested with field paths, we can also filter based on nested values.
+
+Entities can have any layer of nestable objects which thereby are **also** filterable in the `where` clause:
 
 :::::{tab-set}
 ::::{tab-item} Relative Form
@@ -105,6 +106,8 @@ curve_pools = curve.Query.liquidityPools(
 ::::{tab-item} Raw Form
 ```{code-block} python
 :class: thebe
+:caption: "The trailing `_` prefix is needed in the GraphQL form since without it, GraphQL assumes you are matching the exact value!"
+
 curve_pools = curve.Query.liquidityPools(
     where={
         "hourlySnapshots_": {"hourlyVolumeUSD_gt": 14720000}

@@ -80,12 +80,12 @@ Nested filtering usually only works at a maxinum depth of **2** and may not work
 
 ```{code-block} python
 :class: thebe
-:caption: "Sorting Liquidity Pools based upon the output token's last traded price."
+:caption: "Sorting liquidity pools based upon the output token's last traded price."
 
 sg.query_df(
     curve.Query.liquidityPool(
         orderBy=pool.outputToken.lastPriceUSD,
-        orderDirection="desc"
+        orderDirection="desc",
     )
 )
 ```
