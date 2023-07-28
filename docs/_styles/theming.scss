@@ -1,3 +1,35 @@
+.toc-drawer {
+  z-index: -50 !important
+}
+
+.sd-card-footer {
+  transition: background 300ms;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: var(--color-admonition-background);
+
+  * {
+    color: var(--color-foreground-secondary);
+    display: block;
+    text-align: right;
+    font-size: 10px;
+    font-style: italic;
+  }
+}
+
+.new-in-version {
+  font-size: 10px;
+  position: absolute;
+  color: var(--color-foreground-secondary);
+  right: 1.5em;
+  bottom: 0.5em;
+}
+
+.back-to-top {
+  background: var(--sd-color-card-background);
+  transition: background-color 300ms;
+}
+
 .announcement {
   box-shadow: 2px 5px 15px -5px rgba(0, 0, 0, 0.15);
 }
@@ -34,6 +66,8 @@ $colors: "important",
 h1,
 .gradient-text,
 .sidebar-brand-text {
+  display: inline-block;
+
   & span.sd-badge {
     color: transparent;
 

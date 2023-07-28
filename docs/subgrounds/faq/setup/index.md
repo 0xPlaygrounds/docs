@@ -2,7 +2,7 @@
 
 Python installations vary across various system architectures, OS's, and guides. Often times, the path of a python install can be quite the confusing journey causing multiple pythons installations to pollute your workspace.
 <figure style="text-align: center;">
-    <img src="/_static/assets/python-env-meme.png" width=50%/>
+    <img src="/_static/assets/python-env-meme.png" width=50% class="dark-mode-image"/>
     <figcaption><i>The pain of managing a python install (<a href=https://xkcd.com/1987>Source</a>)</i></figcaption>
 </figure>
 

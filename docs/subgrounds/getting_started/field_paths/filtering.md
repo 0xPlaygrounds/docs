@@ -1,8 +1,6 @@
 # Filtering
 
-Filtering subgraphs in `subgrounds` is done via the `where` argument in {class}`~subgrounds.FieldPath`. Subgraph's GraphQL provides several options to filter based on nearly any field path.
-
-The following list will contain examples of all of the ways to filter field paths.
+Filtering subgraphs in `subgrounds` is done via the `where` argument in {class}`~subgrounds.FieldPath`. A subgraph's GraphQL provides several options to filter based on nearly any field path.
 
 {{ thebe-button }}
 
@@ -32,24 +30,28 @@ Using the `==` and `=!` operators in Python, matching exact or negated values on
 ::::{tab-item} Relative Form
 ```{code-block} python
 :class: thebe
-curve_pools = curve.Query.liquidityPools(
-    where=[
-        isSingleSided == False,
-        # or
-        isSingleSided != True,
-    ]
+sg.query_df(
+    curve.Query.liquidityPools(
+        where=[
+            isSingleSided == False,
+            # or
+            isSingleSided != True,
+        ]
+    )
 )
 ```
 ::::
 ::::{tab-item} Raw Form
 ```{code-block} python
 :class: thebe
-curve_pools = curve.Query.liquidityPools(
-    where={
-        "isSingleSided": False,
-        # or
-        "isSingleSided_not": False,
-    }
+sg.query_df(
+    curve.Query.liquidityPools(
+        where={
+            "isSingleSided": False,
+            # or
+            "isSingleSided_not": False,
+        }
+    )
 )
 ```
 ::::
@@ -63,26 +65,30 @@ Filtering can also be based on standard comparison logic on any field path, such
 ::::{tab-item} Relative Form
 ```{code-block} python
 :class: thebe
-curve_pools = curve.Query.liquidityPools(
-    where=[
-        pool.cumulativeVolumeUSD > 150000000,
-        pool.cumulativeVolumeUSD >= 150000000,
-        pool.cumulativeVolumeUSD < 150000000,
-        pool.cumulativeVolumeUSD <= 150000000,
-    ]
+sg.query_df(
+    curve.Query.liquidityPools(
+        where=[
+            pool.cumulativeVolumeUSD > 150000000,
+            pool.cumulativeVolumeUSD >= 150000000,
+            pool.cumulativeVolumeUSD < 150000000,
+            pool.cumulativeVolumeUSD <= 150000000,
+        ]
+    )
 )
 ```
 ::::
 ::::{tab-item} Raw Form
 ```{code-block} python
 :class: thebe
-curve_pools = curve.Query.liquidityPools(
-    where={
-        "cumulativeVolumeUSD_gt": 150000000,
-        "cumulativeVolumeUSD_gte": 150000000,
-        "cumulativeVolumeUSD_lt": 150000000,
-        "cumulativeVolumeUSD_lte": 150000000,
-    }
+sg.query_df(
+    curve.Query.liquidityPools(
+        where={
+            "cumulativeVolumeUSD_gt": 150000000,
+            "cumulativeVolumeUSD_gte": 150000000,
+            "cumulativeVolumeUSD_lt": 150000000,
+            "cumulativeVolumeUSD_lte": 150000000,
+        }
+    )
 )
 ```
 ::::
@@ -96,24 +102,31 @@ Entities can have any layer of nestable objects which thereby are **also** filte
 ::::{tab-item} Relative Form
 ```{code-block} python
 :class: thebe
-curve_pools = curve.Query.liquidityPools(
-    where=[
-        pool.hourlySnapshots.hourlyVolumeUSD > 1000
-    ]
+sg.query_df(
+    curve.Query.liquidityPools(
+        where=[
+            pool.hourlySnapshots.hourlyVolumeUSD > 1000
+        ]
+    )
 )
 ```
 ::::
 ::::{tab-item} Raw Form
 ```{code-block} python
 :class: thebe
-:caption: "The trailing `_` prefix is needed in the GraphQL form since without it, GraphQL assumes you are matching the exact value!"
-
-curve_pools = curve.Query.liquidityPools(
-    where={
-        "hourlySnapshots_": {"hourlyVolumeUSD_gt": 14720000}
-    }
+sg.query_df(
+    curve.Query.liquidityPools(
+        where={
+            "hourlySnapshots_": {"hourlyVolumeUSD_gt": 14720000}
+        }
+    )
 )
 ```
+
+```{note}
+The trailing `_` prefix is needed in the GraphQL form since without it, GraphQL assumes you are matching the exact value!
+```
+
 ::::
 :::::
 

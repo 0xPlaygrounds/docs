@@ -1,6 +1,6 @@
 # Exporting Data
 
-Once you've done your work with `subgrounds`, it might be time to export your CSV to another platform. This can be simply handled by {mod}`pandas` via {func}`pandas.DataFrame.to_csv`.
+Once you've done your work with `subgrounds`, it might be time to export your CSV to another platform. This is simply handled by {mod}`pandas` via {meth}`pandas.DataFrame.to_csv`.
 
 {{ thebe_button }}
 
@@ -23,17 +23,17 @@ df.head()  # show the first 5 rows
 ```
 
 ```{code-block} python
-:caption: Save this data into a CSV (won't be available through the docs)
+:caption: "Save this data into a CSV (won't be available through the docs)"
 :class: thebe
 
 df.to_csv("my_data.csv")
 ```
 
 ```{tip}
-There are several other formats that can be exported, all describes [here](https://pandas.pydata.org/docs/user_guide/io.html).
+There are several other formats that can be exported described [here](https://pandas.pydata.org/docs/user_guide/io.html).
 ```
 
-You can also easily load CSV files back into {mod}`pandas`.
+You can also easily load CSV files back into a {class}`pandas.DataFrame`.
 
 ```{code-block} python
 :class: thebe

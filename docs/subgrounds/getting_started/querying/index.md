@@ -23,7 +23,7 @@ Subgrounds provides 3 main ways to query data, which provide different data stru
 :::
 
 ```{tip}
-{func}`~subgrounds.Subgrounds.query_df` will likely be the best choice for most folks!
+{func}`~subgrounds.Subgrounds.query_df` will likely the best choice for you!
 ```
 
 ## Quick Example
@@ -87,16 +87,35 @@ sg.query_df([
     aave_markets.totalValueLockedUSD,
 ])
 ```
+
+:::{admonition} Naming your columns
+:class: important
+
+{meth}`~subgrounds.Subgrounds.query_df` can also take an optional parameter `columns`, which let you name the column for each field path!
+
+```{code-block} python
+:class: thebe
+
+sg.query_df(
+    [aave_markets.name, aave_markets.totalValueLockedUSD],
+    columns=["Name", "TVL (USD)"],
+)
+```
+
+:::
 ::::
 
 :::::
 
-:::{tip}
+:::{admonition} Tip {{ new_in_version.format("1.7.0") }}
+:class: admonition tip
+
 The Graph provides a default server timeout of 30s so we've chosen this as our default for subgrounds. However, if you are using a custom or self-hosted indexer, you might want to adjust this timeout value. You can do so via the `timeout` constructor param.
 
 ```python
 sg = Subgrounds(timeout=60)
 ```
+
 :::
 
 ```{toctree}

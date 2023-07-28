@@ -15,9 +15,9 @@ To query a subgraph by its id, send a POST request to the Playgrounds proxy endp
 ```
 https://api.playgrounds.network/v1/proxy/subgraphs/id/[subgraph-id]
 ```
-For example, to access the latest Uniswap V3 subgraph data using its deployment id, use:
+For example, to access the latest Uniswap V3 subgraph data using its subgraph id, use:
 ```
-https://api.playgrounds.network/v1/proxy/deployments/id/ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7
+https://api.playgrounds.network/v1/proxy/subgraphs/id/ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7
 ```
 
 ```{important}

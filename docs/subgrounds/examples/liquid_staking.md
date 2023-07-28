@@ -7,14 +7,15 @@
 :link: https://github.com/Tachikoma000/Subgrounds-Explorations/blob/main/liquid_staking/Lido_Snapshot.ipynb
 
 <h3 class='gradient-text card-heading'>
-Lido Protocol Snapshot_Simple
+Lido Protocol Snapshot Simple
 </h3>
 
 Exploring Lido financial data for the past 30 days.
 
-Highlight: `Beginner` `SyntheticFields`
+{bdg-primary-line}`Beginner` {bdg-primary-line}`SyntheticFields`
 
-<i>By: Tachi</i>
++++
+Tachi
 ```
 
 ```{grid-item-card}
@@ -26,9 +27,10 @@ Lido Protocol Usage Metrics
 
 Exploring top level usage metrics for the past 30 days.
 
-Highlight: `Beginner` `SyntheticFields`
+{bdg-primary-line}`Beginner` {bdg-primary-line}`SyntheticFields`
 
-<i>By: Tachi</i>
++++
+Tachi
 ```
 
 ```{grid-item-card}
@@ -40,9 +42,10 @@ Lido Protocol Further Explorations
 
 Further explorations of Lido Pools
 
-Highlight: `Beginner` `SyntheticFields`
+{bdg-primary-line}`Beginner` {bdg-primary-line}`SyntheticFields`
 
-<i>By: Tachi</i>
++++
+Tachi
 ```
 
 ```{grid-item-card}
@@ -54,9 +57,10 @@ RocketPool x Lido Cross Analysis
 
 Cross examination of RocketPool and Lido pool utilization and financials.
 
-Highlight: `Intermediate` `SyntheticFields`
+{bdg-primary-line}`Intermediate` {bdg-primary-line}`SyntheticFields`
 
-<i>By: Tachi</i>
++++
+Tachi
 ```
 
 ```{grid-item-card}
@@ -68,9 +72,10 @@ RocketPool Snapshot
 
 Exploration of RocketPool Finanacial daily snapshots.
 
-Highlight: `Intermediate` `SyntheticFields`
+{bdg-primary-line}`Intermediate` {bdg-primary-line}`SyntheticFields`
 
-<i>By: Tachi</i>
++++
+Tachi
 ```
 
 ```{grid-item-card}
@@ -82,9 +87,10 @@ ETH and stETH Analysis
 
 Investigating Latest Deposit Patterns for WETH and stETH on Aave v2
 
-Highlight: `Intermediate`
+{bdg-primary-line}`Intermediate`
 
-<i>By: GivenAppimate</i>
++++
+GivenAppimate
 ```
 
 ```{grid-item-card}
@@ -96,9 +102,9 @@ Votium Bribes Analysis
 
 Exploring Voting Incentives on Votium Protocol for vlCVX Token Holders
 
-Highlight: `Intermediate`
-
-<i>By: RplusT</i>
+{bdg-primary-line}`Intermediate`
++++
+Tachi
 ```
 
 ::::

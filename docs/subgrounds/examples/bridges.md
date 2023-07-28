@@ -12,9 +12,10 @@ Stargate
 
 Exploration of Stargate bridge.
 
-Highlight: `Beginner` `SyntheticFields`
+{bdg-primary-line}`Beginner` {bdg-primary-line}`SyntheticFields`
 
-<i>By: Tachi</i>
++++
+Tachi
 ```
 
 ::::

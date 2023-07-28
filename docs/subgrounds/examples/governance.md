@@ -12,9 +12,9 @@ Snapshot Surfer
 
 Understanding OlympusDAO proposals and community voting on snapshot
 
-Highlight: `Intermediate`
-
-<i>By: EdgeCaser</i>
+{bdg-primary-line}`Intermediate`
++++
+EdgeCaser
 ```
 
 ::::

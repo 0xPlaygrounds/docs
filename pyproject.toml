@@ -115,6 +115,7 @@ Clicking this button will enable editing and execution of the code-blocks on thi
 
 ::::
 """
+new_in_version = '<em class="code-font new-in-version">New in version {}</em>'
 
 
 [tool.mudkip.override.html_sidebars]
@@ -225,7 +226,7 @@ color-foreground-secondary = "#CCCCCC"
 color-foreground-muted = "#A9ACAC"
 
 color-background-primary = "#040019"
-color-background-secondary = "#191F2ECC"
+color-background-secondary = "#191F2E"
 color-background-hover = "#0A1F4F"
 
 color-code-background = "#2A4179"
@@ -265,7 +266,7 @@ sd-color-danger-text = "var(--color-foreground-primary)"
 sd-color-secondary = "var(--color-brand-primary)"
 sd-color-secondary-text = "var(--color-foreground-primary)"
 
-color-admonition-background = "var(--sd-color-card-background)"
+color-admonition-background = "#121526"
 color-admonition-title = "var(--color-code-foreground)"
 color-announcement-background = "var(--sd-color-card-background)"
 

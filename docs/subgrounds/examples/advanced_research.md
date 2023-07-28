@@ -12,9 +12,10 @@ MEV Research
 
 Researching bot activity with Olympus's Protocol Owned liquidity.
 
-Highlight: `Advanced` `Research`
+{bdg-primary-line}`Advanced` {bdg-primary-line}`Research`
 
-<i>By: Evan Kim</i>
++++
+Evan Kim
 ```
 
 ```{grid-item-card}
@@ -26,9 +27,10 @@ Topological Data Analysis
 
 Using Mapper to Analyze Topological Properties of Olympus
 
-Highlight: `Advanced` `Research`
+{bdg-primary-line}`Advanced` {bdg-primary-line}`Research`
 
-<i>By: Evan Kim</i>
++++
+Evan Kim
 ```
 
 ```{grid-item-card}
@@ -40,9 +42,9 @@ Klima Playgrounds
 
 An on-chain data analytics, education, and simulation environment for KlimaDAO
 
-Highlight: `Advanced` `Research`
-
-<i>By: Playgrounds Analytics and KlimaDAO</i>
+{bdg-primary-line}`Advanced` {bdg-primary-line}`Research`
++++
+Playgrounds Analytics & KlimaDAO
 ```
 
 ::::

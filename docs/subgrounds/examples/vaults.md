@@ -12,9 +12,9 @@ Votium Bribes Analysis
 
 Exploring Voting Incentives on Votium Protocol for vlCVX Token Holders
 
-Highlight: `Intermediate`
-
-<i>By: RplusT</i>
+{bdg-primary-line}`Intermediate`
++++
+RplusT
 ```
 
 ```{grid-item-card}
@@ -26,9 +26,9 @@ ETH and stETH Analysis
 
 Investigating Latest Deposit Patterns for WETH and stETH on Aave v2
 
-Highlight: `Intermediate`
-
-<i>By: GivenAppimate</i>
+{bdg-primary-line}`Intermediate`
++++
+GivenAppimate
 ```
 
 ::::

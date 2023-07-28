@@ -12,9 +12,10 @@ Balancer
 
 Balancer Pools Analysis.
 
-Highlight: `Intermediate` `SyntheticFields`
+{bdg-primary-line}`Intermediate` {bdg-primary-line}`SyntheticFields`
 
-<i>By: Tachi</i>
++++
+Tachi
 ```
 
 ```{grid-item-card}
@@ -26,9 +27,10 @@ Uniswap v3
 
 Uniswap V3 Analysis.
 
-Highlight: `Intermediate` `SyntheticFields`
+{bdg-primary-line}`Intermediate` {bdg-primary-line}`SyntheticFields`
 
-<i>By: Tachi</i>
++++
+Tachi
 ```
 
 ::::
