@@ -75,7 +75,7 @@ Adding more complexity to your query will lead to longer query times as the inde
 We aren't just limited by sorting only on the top-level fields — we can sort *by* nested fields. This is different than layering since we are ordering the main list of rows based upon a nested value (usually within an object).
 
 ```{danger}
-Nested filtering usually only works at a maxinum depth of **2** and may not work across older subgraphs.
+Nested filtering usually only works at a maximum depth of **2** and may not work across older subgraphs.
 ```
 
 ```{code-block} python
