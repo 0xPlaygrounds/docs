@@ -6,7 +6,7 @@ In the Playgrounds API, queries are 1:1 to the number of requests made to the un
 
 Generally, whatever is placed in the `first` argument correlates to the number of expected pages.
 
-{{ thebe-button }}
+{{ thebe_button }}
 
 ```{code-block} python
 :class: thebe

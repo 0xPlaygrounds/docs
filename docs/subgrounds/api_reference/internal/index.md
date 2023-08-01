@@ -21,7 +21,7 @@ schema
 utils
 ```
 
-```{eval-est}
+```{eval-rst}
 Module contents
 ---------------
 

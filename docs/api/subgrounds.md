@@ -41,7 +41,7 @@ sg = Subgrounds()
 ```{warning}
 This method will produce a {class}`RuntimeWarning` if `$PLAYGROUNDS_API_KEY` does *not* look like valid.
 
-It will also be overriden if the headers are set manually, or via {method}`Subgrounds.from_pg_key`
+It will also be overriden if the headers are set manually, or via {meth}`Subgrounds.from_pg_key`
 ```
 ::::
 
