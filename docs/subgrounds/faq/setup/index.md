@@ -1,4 +1,4 @@
-# Setup
+# Python Setup
 
 Python installations vary across various system architectures, OS's, and guides. Often times, the path of a python install can be quite the confusing journey causing multiple pythons installations to pollute your workspace.
 <figure style="text-align: center;">

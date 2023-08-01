@@ -10,7 +10,7 @@ The `subgrounds` leverages an internal transformation pipeline that allows us to
 
 ## A Visual Intro
 
-<figcaption style="text-align: center; padding: 0.25em">A simple example of how a <code>subgrounds</code> query gets transformed from a high-level</figcaption>
+<figcaption style="text-align: center; padding: 0.25em">A simple example of how a <code>subgrounds</code> query gets transformed from a high-level point of view. Here, <code class="literal">timestamp</code> gets transformed into a synthetic <code class="literal">datetime</code>. </figcaption>
 
 <img src="https://app.eraser.io/workspace/CtIBJDofsGNpuNWBuMbP/preview?elements=uFEznbs0RcPKxT5mc3Wdyw&type=embed" style="filter: invert(95%)" class="only-dark"/>
 

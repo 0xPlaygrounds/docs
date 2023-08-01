@@ -68,6 +68,7 @@ jobs:
         curl $CHANGELOG_URL > docs/subgrounds/changelog.md
         curl $CONTRIBUTING_URL > docs/subgrounds/contributing.md
         cp CONTRIBUTING.md docs/meta/contributing.md
+        mv docs/_templates/_base.html docs/_templates/base.html
 
 
     - name: Build and deploy documentation

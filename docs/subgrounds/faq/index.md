@@ -1,14 +1,29 @@
 # FAQ
 
+Here's a quick list of common questions surfaced from our users
+
+---
+
 ::::{grid} 1 2 2 2
 :gutter: 4
+
+```{grid-item-card}
+:link: more_data
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+Getting More Data
+</h3>
+
+How to query more than 100 rows of data
+```
 
 ```{grid-item-card}
 :link: exporting
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
-Exporting
+Exporting to Disk
 </h3>
 
 Export your data as CSVs and more
@@ -19,7 +34,7 @@ Export your data as CSVs and more
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
-Setup
+Python Setup
 </h3>
 
 How to manage your python environment
@@ -30,7 +45,7 @@ How to manage your python environment
 :link-type: doc
 
 <h3 class='gradient-text card-heading'>
-Contrib
+Contrib and More
 </h3>
 
 Extra features in the `subgrounds.contrib` subpackage
@@ -43,5 +58,6 @@ Extra features in the `subgrounds.contrib` subpackage
 :hidden:
 
 exporting
+more_data
 setup/index
 ```
