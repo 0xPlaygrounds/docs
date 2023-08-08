@@ -2,7 +2,7 @@
 
 Data can also be queried based on specific sort of a field path. This can be helpful if you want get data such as the top performing pools based on revenue, etc.
 
-{{ thebe-button }}
+{{ thebe_button }}
 
 ```{code-block} python
 :class: thebe

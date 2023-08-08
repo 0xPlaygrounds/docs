@@ -2,7 +2,7 @@
 
 Filtering subgraphs in `subgrounds` is done via the `where` argument in {class}`~subgrounds.FieldPath`. A subgraph's GraphQL provides several options to filter based on nearly any field path.
 
-{{ thebe-button }}
+{{ thebe_button }}
 
 ```{code-block} python
 :class: thebe
@@ -28,6 +28,8 @@ Using the `==` and `=!` operators in Python, matching exact or negated values on
 
 :::::{tab-set}
 ::::{tab-item} Relative Form
+:sync: relative
+
 ```{code-block} python
 :class: thebe
 sg.query_df(
@@ -42,6 +44,8 @@ sg.query_df(
 ```
 ::::
 ::::{tab-item} Raw Form
+:sync: raw
+
 ```{code-block} python
 :class: thebe
 sg.query_df(
@@ -63,6 +67,8 @@ Filtering can also be based on standard comparison logic on any field path, such
 
 :::::{tab-set}
 ::::{tab-item} Relative Form
+:sync: relative
+
 ```{code-block} python
 :class: thebe
 sg.query_df(
@@ -78,6 +84,8 @@ sg.query_df(
 ```
 ::::
 ::::{tab-item} Raw Form
+:sync: raw
+
 ```{code-block} python
 :class: thebe
 sg.query_df(
@@ -100,6 +108,8 @@ Entities can have any layer of nestable objects which thereby are **also** filte
 
 :::::{tab-set}
 ::::{tab-item} Relative Form
+:sync: relative
+
 ```{code-block} python
 :class: thebe
 sg.query_df(
@@ -112,6 +122,8 @@ sg.query_df(
 ```
 ::::
 ::::{tab-item} Raw Form
+:sync: raw
+
 ```{code-block} python
 :class: thebe
 sg.query_df(
