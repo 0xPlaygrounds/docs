@@ -2,7 +2,7 @@
 
 We are Playgrounds, a data solutions company providing easy and reliable tools for blockchain data analytics using Subgraphs.
 
-Our goal simple - provide the **easiest** way to do data analytics with Subgraphs
+Our goal is simple - provide the **easiest** way to do data analytics with Subgraphs
 
 Dive into our extensive documentation and get started with our innovative products.
 
