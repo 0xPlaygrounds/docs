@@ -14,13 +14,13 @@ sphinx-thebe = "^0.2.1"
 sphinxext-opengraph = "^0.8.1"
 sphinx-copybutton = "^0.5.1"
 sphinxcontrib-repl = "^0.4.1"
-subgrounds = {extras = ["all"], version = "^1.7.0"}
+subgrounds = { extras = ["all"], version = "^1.7.0" }
 sphinxcontrib-sass = "^0.3.4"
 sphinx_tippy = "^0.4.1"
 sphinx-jinja = "^2.0.2"
 sphinxcontrib-youtube = "^1.2.0"
 sphinx-code-include = "^1.1.1"
-pygments = { git = "https://github.com/pygments/pygments" }
+pygments = "^2.16.0"
 blacken-docs = "^1.15.0"
 
 [tool.poe.tasks]
