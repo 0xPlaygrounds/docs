@@ -71,4 +71,5 @@ Extra features in the `subgrounds.contrib` subpackage
 exporting
 more_data
 setup/index
+logger
 ```
