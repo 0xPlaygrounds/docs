@@ -41,6 +41,17 @@ How to manage your python environment
 ```
 
 ```{grid-item-card}
+:link: logger
+:link-type: doc
+
+<h3 class='gradient-text card-heading'>
+Adjusting Subgrounds Logging
+</h3>
+
+How to silence INFO logging from subgrounds
+```
+
+```{grid-item-card}
 :link: ../advanced_topics/contrib/index
 :link-type: doc
 

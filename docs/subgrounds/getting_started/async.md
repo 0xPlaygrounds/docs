@@ -10,7 +10,7 @@
 
 ## The World of Async
 
-Asynchronous programming in python allows us to **concurrently** perform operations. In the context of `Subgrounds`, it allows us to perform multiple queries at the same time -- we won't need to wait for 1 query to finish before producing another one.
+Asynchronous programming in python allows us to **concurrently** perform operations. In the context of `Subgrounds`, it allows us to perform multiple queries at the same time -- we won't need to wait for one query to finish before producing another one.
 
 ```{code-block} python
 :class: thebe

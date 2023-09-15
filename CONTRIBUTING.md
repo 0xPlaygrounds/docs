@@ -19,7 +19,7 @@ Our docs are managed by [mudkip](https://github.com/vberlier/mudkip), a wrapper 
 
 
 ```bash
-$ poe develop
+$ poe dev
 ```
 
 This will launch a development web server on `localhost:5500` which loads the locally built docs. The process will also watch the `docs` folder for any changes and will trigger a rebuild which reloads your page with your changes implemented.
