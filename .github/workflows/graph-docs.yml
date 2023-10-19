@@ -1,13 +1,11 @@
-name: Docs
+name: Graph Docs
 
 on:
-  repository_dispatch:
-    types: [ trigger-rebuild ]
-  workflow_dispatch:
   push:
     branches: [ main ]
     paths:
       - "docs/**"
+      - "src/**"
       - "poetry.lock"
       - "pyproject.toml"
 
@@ -63,8 +61,22 @@ jobs:
     #  -----       build & deploy docs       -----
     #----------------------------------------------
 
+    - name: Checkout 'graph-docs'
+      uses: actions/checkout@v3
+      with:
+          path: 'graph_docs'
+          ref: 'graph-docs'
+          fetch-depth: 0
+
     - name: Build graph-docs
       if: github.repository == '0xPlaygrounds/docs'
       run: |
         python src/main.py
-        
+        cp -r graph_docs_output/ graph_docs/
+        SHORT_HASH=$(git rev-parse --short HEAD)
+        cd graph_docs
+        git config --global user.name "github-actions"
+        git config --global user.email "action@github.com"
+        git add .
+        git commit -m "🤖 Generated from $SHORT_HASH"
+        git push

@@ -14,6 +14,8 @@ from mistune.directives import Admonition, FencedDirective, TableOfContents
 from mistune.directives._base import DirectivePlugin
 from mistune.renderers.markdown import MarkdownRenderer
 
+OUTPUT = "graph_docs_output"
+
 
 def remove_jinja(md: Markdown):
     JINJA_PATTERN = r"\{\{ \w+ \}\}"
@@ -389,7 +391,7 @@ markdown = mistune.create_markdown(
 )
 
 data = json.loads(Path("src/paths.json").read_text())
-output = Path("graph_docs_output")
+output = Path(OUTPUT)
 
 raw_paths = (Path(file) for file in data.get("files", []))
 
