@@ -49,7 +49,7 @@ jobs:
       if: github.repository == '0xPlaygrounds/docs'
       run: |
         python src/main.py
-        cp -r graph_docs_output/ graph_docs/
+        cp -r graph_docs_output/* graph_docs/docs
         SHORT_HASH=$(git rev-parse --short HEAD)
         cd graph_docs
         git config --global user.name "github-actions"
