@@ -1,0 +1,70 @@
+import { Tabs } from 'nextra/components'
+
+import { Callout } from 'nextra/components'
+
+# Merging
+
+When passing a list of `FieldPaths` to any `query` function, subgrounds will merge them into a single query.
+
+<Callout type="warning">
+This is **only** true if the `FieldPaths` originate from the **same subgraph**.
+
+</Callout>
+
+
+
+<Tabs items={['Python', 'GraphQL']}>
+<Tabs.Tab>
+```python copy
+# "In this query, we are taking the **top 4 curve pools** by **cumulative volume** and analyzing the **top 3 days by daily total revenue**"
+from subgrounds import Subgrounds
+sg = Subgrounds()
+
+curve = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/curve-finance-ethereum")
+
+# Partial FieldPath selecting the top 4 most traded pools on Curve
+most_traded_pools = curve.Query.liquidityPools(
+    orderBy=curve.LiquidityPool.cumulativeVolumeUSD,
+    orderDirection="desc",
+    first=4,
+)
+
+# Partial FieldPath selecting the top 2 pools by daily total revenue of
+#  the top 4 most traded tokens.
+# Mote that reuse of `most_traded_pools` in the partial FieldPath
+most_traded_snapshots = most_traded_pools.dailySnapshots(
+    orderBy=curve.LiquidityPoolDailySnapshot.dailyTotalRevenue,
+    orderDirection="desc",
+    first=3,
+) 
+
+# Querying:
+#  - the name of the top 4 most traded pools, their 2 most liquid 
+# pools' token symbols and their 2 most liquid pool's TVL in USD
+sg.query_df([
+    most_traded_pools.name,
+    most_traded_snapshots.dailyVolumeUSD,
+    most_traded_snapshots.dailyTotalRevenueUSD,
+])
+```
+</Tabs.Tab>
+<Tabs.Tab>
+```graphql copy
+# "In this query, we are taking the **top 4 curve pools** by **cumulative volume** and analyzing the **top 3 days by daily total revenue**"
+query {
+  liquidityPools(first: 4, orderBy: cumulativeVolumeUSD, orderDirection: desc) {
+    name
+    dailySnapshots(first: 3, orderBy: dailyTotalRevenueUSD, orderDirection: desc) {
+      dailyVolumeUSD
+      dailyTotalRevenueUSD
+    }
+  }
+}
+```
+</Tabs.Tab>
+</Tabs>
+<Callout type="info">
+This becomes very helpful when chaining partial `FieldPaths` together since you can leverage normal python constructs to help organize the data as you want to access and `query` will handle the rest!
+
+</Callout>

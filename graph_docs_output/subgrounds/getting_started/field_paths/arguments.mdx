@@ -1,0 +1,106 @@
+import { Tabs } from 'nextra/components'
+
+import { Callout } from 'nextra/components'
+
+# Arguments
+
+Some `FieldPaths` can be parameterized with certain arguments such as specific token ids, sorting by certain fields, etc. These arguments can be configured by "calling" said function (e.g. `aave_v2.Query.market(first=10)`).
+
+
+
+```python copy
+# Loading a curve subgraph
+from subgrounds import Subgrounds
+sg = Subgrounds()
+
+curve = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/curve-finance-ethereum")
+```
+
+<Tabs items={['Python', 'GraphQL']}>
+<Tabs.Tab>
+```python copy
+# Analyzing curve pool data via the `curve.Query.pools` {class}`~subgrounds.FieldPath`
+# `curve.Query.pools` is a field path
+#  we "call it to add arguments!
+curve_pools = curve.Query.liquidityPools(
+    first=10,
+    orderBy=curve.LiquidityPool.totalValueLockedUSD,
+    orderDirection="desc",
+    where=[
+        curve.LiquidityPool.createdBlockNumber > 14720000
+    ]
+)
+
+# We can then query based on the routing of these objects
+sg.query_df([
+    curve_pools.outputToken.name,
+    curve_pools.totalValueLockedUSD,
+])
+```
+</Tabs.Tab>
+<Tabs.Tab>
+```graphql copy
+# Analyzing curve pool data via the `curve.Query.pools` {class}`~subgrounds.FieldPath`
+query {
+  liquidityPools(
+    first: 10
+    orderBy: totalValueLockedUSD
+    orderDirection: desc
+    where: {createdBlockNumber_gt: 14720000}
+  ) {
+    outputToken{
+      name
+    }
+    totalValueLockedUSD
+  }
+}
+```
+</Tabs.Tab>
+</Tabs>
+<Callout type="info">
+Notice that the values for the `orderBy` and `where` arguments are `FieldPath` themselves. This allows users to construct complex queries in pure Python by using the `Subgraph` object returned when loading an API.
+
+The `FieldPaths` *here* are used as in their relative form, i.e.: they do not start from the root `Query` entity, but rather start from an entity type (in this case the `Pool` entity).
+
+</Callout>
+
+<Callout type="warning">
+It is important to make sure that the relative `FieldPath` used as values for the `orderBy` and `where` arguments match the entity type of the field on which the arguments are applied (in our example, the `pools` field is of type `Pool`). If this is not respected, a type error exception will be thrown.
+
+</Callout>
+
+Argument values can *also* be supplied in their "raw" form, without the use of relative `FieldPaths`:
+
+<Tabs items={['Raw Form', 'Relative Form']}>
+<Tabs.Tab>
+```python copy
+curve_pools = curve.Query.liquidityPools(
+    first=10,
+    orderBy="totalValueLockedUSD",
+    orderDirection="desc",
+    where={
+        "createdBlockNumber_gt": 14720000
+    }
+)
+```
+</Tabs.Tab>
+<Tabs.Tab>
+```python copy
+curve_pools = curve.Query.liquidityPools(
+    first=10,
+    orderBy=curve.LiquidityPool.totalValueLockedUSD,
+    orderDirection="desc",
+    where=[
+        curve.LiquidityPool.createdBlockNumber > 14720000
+    ]
+)
+```
+</Tabs.Tab>
+</Tabs>
+<Callout type="warning">
+When using raw form instead of relative form, you lose out on any type validation. This means, errors will only surface when using `query` rather than surfacing when building the `FieldPaths`.
+
+We **highly** recommend sticking with relative form, even if it seems more verbose!
+
+</Callout>

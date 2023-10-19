@@ -1,0 +1,50 @@
+import { Callout } from 'nextra/components'
+
+# The Basics
+
+
+
+## Subgrounds
+
+The `Subgrounds` class provides the top level API and most users will be using this class exclusively. This class is used to load (i.e.: introspect) GraphQL APIs (subgraph **or** vanilla GraphQL APIs) as well as execute querying operations. Moreover, this class is meant to be used as a singleton, i.e.: initialized once and reused throughout a project.
+
+The code cell below demonstrates how to initialize your `Subgrounds` object and load a GraphQL API.
+
+<Callout type="info">
+Both `load_subgraph` and `load_api` result in similar structures except subgraphs provide better optics since there's more schema data to explore.
+
+</Callout>
+
+```python copy
+# Loading Aave v2 and snapshot api sources
+from subgrounds import Subgrounds
+
+# Initialize Subgrounds
+sg = Subgrounds()
+
+# Load a subgraph using its API URL
+aave_v2 = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/aave-v2-ethereum")
+
+# Load a vanilla GraphQL API using its API URL
+snapshot = sg.load_api("https://hub.snapshot.org/graphql")
+```
+
+## Getting the Data
+
+Once you load in your subgraphs (or vanilla APIs), you can start gathering data via `query`.
+
+```python copy
+# Gathering the names of the latest markets in Aave
+sg.query([
+    aave_v2.Query.markets.name
+])
+```
+
+```python copy
+# Gathering the titles and scores of the latest proposals from snapshot
+sg.query([
+    snapshot.Query.proposals.title,
+    snapshot.Query.proposals.scores_total,
+])
+```

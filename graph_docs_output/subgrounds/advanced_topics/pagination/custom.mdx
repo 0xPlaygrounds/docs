@@ -1,0 +1,81 @@
+# Custom Strategies
+
+Subgrounds allows developers to create their own pagination strategy by creating a class that implements the `PaginationStrategy` protocol:
+
+```python copy
+class PaginationStrategy(Protocol):
+    def __init__(self, schema: SchemaMeta, document: Document) -> None:
+        """Initializes the pagination strategy. If there is no need for pagination given
+        the provided :class:`Document` ``document``, then the constructor should raise a
+        :class:`SkipPagination` exception.
+
+        Args:
+            schema: The schema of the API against which ``document`` will be executed
+            document: The query document
+        """
+        ...
+
+    def step(
+        self, page_data: dict[str, Any] | None = None
+    ) -> tuple[Document, dict[str, Any]]:
+        """Returns the new query document and its variables which will be executed to
+        get the next page of data.
+
+        If this is the first query made as part of the pagination strategy, then
+          ``page_data`` will be ``None``.
+
+        If pagination should be interupted (e.g.: if enough entities have been queried),
+        then this method should raise a :class:`StopPagination` exception.
+
+        Args:
+            page_data: The previous query's response data. If this is the first query
+              (i.e.: the first page of data), then it will be `None`. Defaults to None.
+
+        Returns:
+            tuple: A tuple `(doc, vars)` where `doc` is the query document that will be
+              executed to fetch the next page of data and `vars` are the variables for
+              that document.
+        """
+        ...
+```
+
+The class's constructor should accept a `SchemaMeta` argument which represents the schema of the subgraph API that the query is directed to and a `Document` argument which represents the query to be paginated on. If no pagination is required for the given document, then the constructor should raise a `SkipPagination` exception.
+
+The class's `step` method is where the main logic of the pagination strategy is located. The method accepts a single argument, `page_data` which is a dictionary containing the response data of the previous query (i.e.: the previous page of data). The `step` method should return a tuple `(doc, vars)`, where `doc` is a `Document` representing the query to be made to fetch the next page of data. When pagination is over (e.g.: when all pages of data have been fetched), the `step` method should raise a `StopPagination` exception.
+
+Below is the algorithm used by `Subgrounds` to paginate over a query document given a pagination strategy:
+
+```python copy
+def paginate(
+    schema: SchemaMeta, doc: Document, pagination_strategy: type[PaginationStrategy]
+) -> PaginateGenerator:
+    """Evaluates a :class:`PaginationStrategy` against a document based upon a schema.
+
+    Produces a stream of :class:`Document`s until pagination is completed. Documents are
+     executed outside the this function and data is transfered via the generator scheme.
+
+    Args:
+      schema (SchemaMeta): The GraphQL schema on which the request document is based
+      doc (Document): The request document
+
+    Returns:
+      dict[str, Any]: The response data as a JSON dictionary
+    """
+
+    try:
+        strategy = pagination_strategy(schema, doc)
+        doc, args = strategy.step()
+
+        while True:
+            page = yield replace(doc, variables=doc.variables | args)
+
+            try:
+                doc, args = strategy.step(page.data)
+            except StopPagination:
+                break
+            except Exception as exn:
+                raise PaginationError(exn.args[0], strategy) from exn
+
+    except SkipPagination:
+        _ = yield doc  # consistency
+```

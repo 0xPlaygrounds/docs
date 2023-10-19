@@ -1,0 +1,66 @@
+import { Tabs } from 'nextra/components'
+
+import { Callout } from 'nextra/components'
+
+# Querying
+
+Subgrounds provides 3 main ways to query data, which provide different data structures and typing:
+
+<Callout type="default">
+`query_df` will likely the best choice for you!
+
+</Callout>
+
+## Quick Example
+
+The following code blocks present a comparison between all methods using the `aave-v2` market data:
+
+
+
+```python copy
+# Setup for the following examples of the query methods using the Aave V2 data from Ethereum
+from subgrounds import Subgrounds
+
+sg = Subgrounds()
+aave_v2 = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/aave-v2-ethereum")
+
+aave_markets = aave_v2.Query.markets(
+    first=3,
+    orderBy=aave_v2.Market.totalValueLockedUSD,
+    orderDirection="desc",
+    where=[
+        aave_v2.Market.createdBlockNumber > 14720000
+    ]
+)
+```
+
+<Tabs items={['query', 'query_json', 'query_df']}>
+<Tabs.Tab>
+```python copy
+# A list of names and a matching list TVL values gets returned
+sg.query([
+    aave_markets.name,
+    aave_markets.totalValueLockedUSD,
+])
+```
+</Tabs.Tab>
+<Tabs.Tab>
+```python copy
+# A more complex JSON data structure gets returned
+sg.query_json([
+    aave_markets.name,
+    aave_markets.totalValueLockedUSD,
+])
+```
+</Tabs.Tab>
+<Tabs.Tab>
+```python copy
+# ✨ A simple {class}`~pandas.DataFrame` gets returned
+sg.query_df([
+    aave_markets.name,
+    aave_markets.totalValueLockedUSD,
+])
+```
+</Tabs.Tab>
+</Tabs>

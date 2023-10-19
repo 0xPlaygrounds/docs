@@ -1,0 +1,80 @@
+import { Callout } from 'nextra/components'
+
+# Layers
+
+<Callout type="default">
+# 🚧 **IN CONSTRUCTION** 🚧
+
+This doc is **incomplete**, check back soon!
+
+</Callout>
+
+Transformations in `subgrounds` operate via layers, where one is applied after another. There are two types of transforms:
+
+<dl style={{margin:'revert'}}>
+	<dt style={{margin:'revert'}}>
+	`RequestTransform`
+	</dt>
+	<dd style={{margin:'revert'}}>
+	This transform operates on a `DataRequest` and `DataResponse` which represent the total query being made via one operation of `_execute`.
+	</dd>
+	<dt style={{margin:'revert'}}>
+	`DocumentTransform`
+	</dt>
+	<dd style={{margin:'revert'}}>
+	This transform operates on a `Document` and `DocumentResponse` which (ignoring [pagination](/subgrounds/advanced_topics/pagination)) represent a part of the total query that will be made. Each `Document` cooresponds to a single subgraph server.
+	</dd>
+</dl>
+
+Each layer contains two important functions:
+
+<dl style={{margin:'revert'}}>
+	<dt style={{margin:'revert'}}>
+	`transform_request` / `transform_document`
+	</dt>
+	<dd style={{margin:'revert'}}>
+	This transforms requests on-the-way towards `pagination`.
+	</dd>
+	<dt style={{margin:'revert'}}>
+	`transform_response` / `transform_response`
+	</dt>
+	<dd style={{margin:'revert'}}>
+	This transforms responses backwards from `pagination`.
+	</dd>
+</dl>
+
+When fully assembled, the layers act like an onion.
+
+## The Pipeline
+
+`Subgrounds` supports any number of transformations for every query produced — something that ends up being quite complex to fufill! Generally, here are the steps we take when executing the transforms:
+
+1. Convert all `DocumentTransforms` to `DocumentRequestTransform`.
+
+   - This *greatly* simplifies the transform pipeline.
+
+2. Convert all transformation layers into a generator sandwich.
+
+   - These "sandwiches" essentially create an generator that hold the context of `DataRequest` making it easier for us to transform both `DataRequest` and `DataResponse`.
+   - Essentially, we store these in a stack allowing us to easily iterate through them.
+
+3. Waterfall the first `DataRequest` through all of the generators in the stack.
+
+   - The first request gets transformed through each generators within the stack.
+
+4. Forward the final transformed `DataRequest` to pagination (and eventually execution).
+
+5. Receive the raw `DataResponse` from pagination / execution.
+
+6. In reverse, waterfall this `DataResponse` up the generator stack.
+
+7. Return this `DataResponse` as the result of the transformation pipeline.
+
+## Visual Guide
+
+<figcaption>This is the general flow of how a request gets tranformed through the pipeline.</figcaption>
+
+
+
+
+<img src="https://app.eraser.io/workspace/CtIBJDofsGNpuNWBuMbP/preview?elements=e1GFA8BLmiF-rHdNsncf6g&type=embed" class="only-light"/>

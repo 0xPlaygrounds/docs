@@ -1,0 +1,148 @@
+import { Callout } from 'nextra/components'
+
+#  Custom Clients
+
+<Callout type="warning">
+This API is unstable and *may* change in the future!
+
+</Callout>
+
+## Writing your own `Subgrounds` Client
+
+Subclassing `SubgroundsBase` provides all the utlities for spinning up your *own* `Subgrounds` client. All of the business logic is handled, while you can define your own preferred API or bring your own IO solution (such as using `requests` or `aiohttp` instead of `httpx`).
+
+<Callout type="info">
+You can *also* choose to subclass `Subgrounds` or `AsyncSubgrounds` as they contain a more natural interface to work with, especially for simply swapping the implementation of the http client.
+
+In the future, we may define a `Protocol` to help define a unified sync and async client structure!
+
+</Callout>
+
+## Methodology
+
+The `SubgroundsBase` class streamlines the all of the business logic neccessary to manage and make subgraph queries. Inheriting this class allows you to **purely** implement IO logic (making the actual request to the server). There's two main functions that allow you to
+
+<dl style={{margin:'revert'}}>
+	<dt style={{margin:'revert'}}>
+	`_load`
+	</dt>
+	<dd style={{margin:'revert'}}>
+	This deals with caching and loading subgraph schema data. If subgraph data is successfully loaded from a cache, the actual request execution will be skipped (via a StopIteration exception).
+	</dd>
+	<dt style={{margin:'revert'}}>
+	`_execute`
+	</dt>
+	<dd style={{margin:'revert'}}>
+	This is the main entry point for executing queries via `DataRequest` and returning responses via `DataResponse`. Implementing `execute` allows you to
+	</dd>
+</dl>
+
+Both of these methods are implemented as [**generators**](custom_clients/https://docs.python.org/3.11/tutorial/classes.html#generators) as they provide us the utilities to lazily produce and consume values. The business logic produces objects to send to IO functions and then data is sent back into the business logic to continually transform until finally returned.
+
+## Usage
+
+Most implementations using these generators will match the following pattern:
+
+```python copy
+# "`next` and `.send` essentially wrap the IO work in `do_something` here"
+try:
+    my_generator = self.generator(...)
+
+    values = next(my_generator)
+    new_values = do_something(values)
+    my_generator.send(new_values)
+
+except StopIteration as e:
+    return e.value
+```
+
+| Step | Description                                                         |
+| ---- | ------------------------------------------------------------------- |
+| 2    | We instantiate our generator object                                 |
+| 3-5  | We produce a value, transform it, and send it back to the generator |
+| 1-8  | Every thing is wrapped in a `try-except` to catch `StopIteration`   |
+| 9    | `StopIteration.value` is our *actual* return value!                 |
+
+Alternatively, you can host a `while` loop if you have an unknown number of producing and consuming to do:
+
+```python copy
+# "Infinite generators, `.send` will also advance the generator like `next`."
+try:
+    my_generator = self.generator(...)
+
+    values = next(my_generator)
+
+    while True:
+        new_values = do_something(values)
+        values = my_generator.send(new_values)
+
+except StopIteration as e:
+    return e.value
+```
+
+### `load`
+
+Here is an example for implementing `load` from `Subgrounds.load`
+
+```python copy
+def load(
+    self,
+    url: str,
+    save_schema: bool = False,
+    cache_dir: str | None = None,
+    is_subgraph: bool = True,
+) -> Subgraph:
+    if cache_dir is not None:
+        warnings.warn("This will be depreciated", DeprecationWarning)
+
+    try:
+        loader = self._load(url, save_schema, is_subgraph)
+        url, query = next(loader)  # if this fails, schema is loaded from cache
+        data = self._fetch(url, {"query": query})
+        loader.send(data)
+
+    except StopIteration as e:
+        return e.value
+
+    assert False
+```
+
+### `execute`
+
+Here is an example for implementing `execute` from `Subgrounds.execute`
+
+```python copy
+def execute(
+    self,
+    req: DataRequest,
+    pagination_strategy: Type[PaginationStrategy] | None = LegacyStrategy,
+) -> DataResponse:
+    """Executes a :class:`DataRequest` and returns a :class:`DataResponse`.
+
+    Args:
+      req: The :class:`DataRequest` object to be executed.
+      pagination_strategy: A Class implementing the :class:`PaginationStrategy`
+        ``Protocol``. If ``None``, then automatic pagination is disabled.
+        Defaults to :class:`LegacyStrategy`.
+
+    Returns:
+      A :class:`DataResponse` object representing the response
+    """
+
+    try:
+        executor = self._execute(req, pagination_strategy)
+
+        doc = next(executor)
+        while True:
+            data = self._fetch(
+                doc.url, {"query": doc.graphql, "variables": doc.variables}
+            )
+            doc = executor.send(DocumentResponse(url=doc.url, data=data))
+
+    except StopIteration as e:
+        return e.value
+```
+
+## More on Sans-IO
+
+Read forwards to get a bit more of an insight on our implementation of the [sans-io](custom_clients/https://sans-io.readthedocs.io/) technique.

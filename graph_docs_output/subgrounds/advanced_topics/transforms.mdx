@@ -1,0 +1,12 @@
+# Transforms
+
+The `subgrounds` leverages an internal transformation pipeline that allows us to manipulate the GraphQL AST alongside responses returned from the subgraph — serving as the backbone of [synthetic fields](transforms//subgrounds/getting_started/synthetic_fields). Currently, only a small percentage of the functionalty is exposed via our top-level API, but we are working on leverage this toolchain to it's fullest potential!
+
+## A Visual Intro
+
+<figcaption>A simple example of how a <code>subgrounds</code> query gets transformed from a high-level point of view. Here, <code class="literal">timestamp</code> gets transformed into a synthetic <code class="literal">datetime</code>. </figcaption>
+
+
+
+
+<img src="https://app.eraser.io/workspace/CtIBJDofsGNpuNWBuMbP/preview?elements=uFEznbs0RcPKxT5mc3Wdyw&type=embed" class="only-light"/>

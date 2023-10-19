@@ -1,0 +1,42 @@
+import { Callout } from 'nextra/components'
+
+# Exporting to Disk
+
+Once you've done your work with `subgrounds`, it might be time to export your CSV to another platform. This is simply handled by pandas via pandas.DataFrame.to_csv.
+
+
+
+## Example
+
+In this example, we'll export some curve data for further analysis.
+
+```python copy
+# Gathering some daily snapshots from the aave-v2 subgraph
+from subgrounds import Subgrounds
+
+sg = Subgrounds()
+aave_v2 = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/aave-v2-ethereum")
+
+df = sg.query_df(aave_v2.Query.marketDailySnapshots(first=1000))
+df.head()  # show the first 5 rows
+```
+
+```python copy
+# "Save this data into a CSV (won't be available through the docs)"
+df.to_csv("my_data.csv")
+```
+
+<Callout type="default">
+There are several other formats that can be exported described [here](https://pandas.pydata.org/docs/user_guide/io.html).
+
+</Callout>
+
+You can also easily load CSV files back into a pandas.DataFrame.
+
+```python copy
+import pandas as pd
+
+df2 = pd.read_csv("my_data.csv")
+df2.head()
+```

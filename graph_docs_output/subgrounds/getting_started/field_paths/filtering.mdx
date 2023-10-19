@@ -1,0 +1,126 @@
+import { Tabs } from 'nextra/components'
+
+import { Callout } from 'nextra/components'
+
+# Filtering
+
+Filtering subgraphs in `subgrounds` is done via the `where` argument in `FieldPath`. A subgraph's GraphQL provides several options to filter based on nearly any field path.
+
+
+
+```python copy
+# We will be using curve as the base subgraph for the following examples
+from subgrounds import Subgrounds
+
+sg = Subgrounds()
+
+curve = sg.load_subgraph(
+    "https://api.thegraph.com/subgraphs/name/messari/curve-finance-ethereum")
+
+pool = curve.LiquidityPool  # shorthand for examples
+```
+
+<Callout type="info">
+In some of the following examples, multiple conditions are stacked on top of each other. This would **not** result in any data being returned since the multiple conditions would likely conflict with each other.
+
+</Callout>
+
+## Matching Values
+
+Using the `==` and `=!` operators in Python, matching exact or negated values on field paths is pretty straight forward:
+
+<Tabs items={['Relative Form', 'Raw Form']}>
+<Tabs.Tab>
+```python copy
+sg.query_df(
+    curve.Query.liquidityPools(
+        where=[
+            isSingleSided == False,
+            # or
+            isSingleSided != True,
+        ]
+    )
+)
+```
+</Tabs.Tab>
+<Tabs.Tab>
+```python copy
+sg.query_df(
+    curve.Query.liquidityPools(
+        where={
+            "isSingleSided": False,
+            # or
+            "isSingleSided_not": False,
+        }
+    )
+)
+```
+</Tabs.Tab>
+</Tabs>
+## Comparisons
+
+Filtering can also be based on standard comparison logic on any field path, such as "greater than", "less than", etc — generally more useful for numeric fields.
+
+<Tabs items={['Relative Form', 'Raw Form']}>
+<Tabs.Tab>
+```python copy
+sg.query_df(
+    curve.Query.liquidityPools(
+        where=[
+            pool.cumulativeVolumeUSD > 150000000,
+            pool.cumulativeVolumeUSD >= 150000000,
+            pool.cumulativeVolumeUSD < 150000000,
+            pool.cumulativeVolumeUSD <= 150000000,
+        ]
+    )
+)
+```
+</Tabs.Tab>
+<Tabs.Tab>
+```python copy
+sg.query_df(
+    curve.Query.liquidityPools(
+        where={
+            "cumulativeVolumeUSD_gt": 150000000,
+            "cumulativeVolumeUSD_gte": 150000000,
+            "cumulativeVolumeUSD_lt": 150000000,
+            "cumulativeVolumeUSD_lte": 150000000,
+        }
+    )
+)
+```
+</Tabs.Tab>
+</Tabs>
+## Nested Filtering
+
+Entities can have any layer of nestable objects which thereby are **also** filterable in the `where` clause:
+
+<Tabs items={['Relative Form', 'Raw Form']}>
+<Tabs.Tab>
+```python copy
+sg.query_df(
+    curve.Query.liquidityPools(
+        where=[
+            pool.hourlySnapshots.hourlyVolumeUSD > 1000
+        ]
+    )
+)
+```
+</Tabs.Tab>
+<Tabs.Tab>
+```python copy
+sg.query_df(
+    curve.Query.liquidityPools(
+        where={
+            "hourlySnapshots_": {"hourlyVolumeUSD_gt": 14720000}
+        }
+    )
+)
+```
+
+<Callout type="info">
+The trailing `_` prefix is needed in the GraphQL form since without it, GraphQL assumes you are matching the exact value!
+
+</Callout>
+</Tabs.Tab>
+</Tabs>
