@@ -1,4 +1,5 @@
 __pycache__/
+graph_docs_output/
 dist/
 docs/build
 .coverage

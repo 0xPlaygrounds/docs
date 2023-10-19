@@ -56,17 +56,6 @@ Plotly {bdg-light}`INVIS`
 The easiest path from `FieldPath` to visualization
 ```
 
-<!--```{grid-item-card}
-:link: dash
-:link-type: doc
-
-<h3 class='gradient-text card-heading'>
-Contrib - Dash
-</h3>
-
-Create live dashboards w/ Subgrounds
-```
--->
 ::::
 
 ---

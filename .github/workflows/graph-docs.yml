@@ -1,0 +1,70 @@
+name: Docs
+
+on:
+  repository_dispatch:
+    types: [ trigger-rebuild ]
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - "docs/**"
+      - "poetry.lock"
+      - "pyproject.toml"
+
+env:
+  POETRY_VERSION: "1.3.2"
+  PYTHON_VERSION: "3.10"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # ---------------------------------------------
+    # -----           gather repo             -----
+    # ---------------------------------------------
+    - uses: actions/checkout@v3
+
+    # ---------------------------------------------
+    # -----      setup and cache python       -----
+    # ---------------------------------------------
+    - uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+
+    - name: Cache poetry
+      id: cache-poetry
+      uses: actions/cache@v3
+      with:
+        path: ~/.local
+        key: poetry-${{ runner.os }}-${{ env.POETRY_VERSION }}
+
+    - name: Install poetry
+      if: steps.cache-poetry.outputs.cache-hit != 'true'
+      uses: snok/install-poetry@v1
+      with:
+        version: ${{ env.POETRY_VERSION }}
+        virtualenvs-in-project: true
+
+    - name: Cache venv
+      id: cache-venv
+      uses: actions/cache@v3
+      with:
+        path: .venv
+        key: venv-${{ runner.os }}-${{ env.PYTHON_VERSION }}-${{ env.POETRY_VERSION }}-${{ hashFiles('poetry.lock') }}
+        restore-keys: |
+          venv-${{ runner.os }}-${{ env.PYTHON_VERSION }}-${{ env.POETRY_VERSION }}-
+
+    - name: Install dependencies
+      if: steps.cache-venv.outputs.cache-hit != 'true'
+      run: poetry install --no-root
+
+    #----------------------------------------------
+    #  -----       build & deploy docs       -----
+    #----------------------------------------------
+
+    - name: Build graph-docs
+      if: github.repository == '0xPlaygrounds/docs'
+      run: |
+        python src/main.py
+        
