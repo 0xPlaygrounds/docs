@@ -30,6 +30,7 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip' # caching pip dependencies
 
     - name: Install dependencies
       run: pip install subgrounds mistune
@@ -49,6 +50,7 @@ jobs:
       if: github.repository == '0xPlaygrounds/docs'
       run: |
         rm -rf graph_docs/docs
+        mkdir -pv graph_docs/docs
         python src/main.py
         cp -r graph_docs_output/* graph_docs/docs
         SHORT_HASH=$(git rev-parse --short HEAD)
