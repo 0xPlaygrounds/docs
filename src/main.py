@@ -409,7 +409,7 @@ for path in raw_paths:
         paths.append(path)
 
 for path in paths:
-    file_path = output / str(path).replace("docs/", "")
+    file_path = output / str(path).replace("docs/subgrounds/", "")
     file_path.parent.mkdir(parents=True, exist_ok=True)
 
     if file_path.stem == "index":
@@ -433,3 +433,5 @@ for path in paths:
             text = "import { Tabs } from 'nextra/components'\n\n" + text
 
     file_path.with_suffix(".mdx").write_text(text)
+
+(output / "README.mdx").write_text(Path("src/README.mdx").read_text())

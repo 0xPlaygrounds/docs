@@ -48,6 +48,7 @@ jobs:
     - name: Build graph-docs
       if: github.repository == '0xPlaygrounds/docs'
       run: |
+        rm -rf graph_docs/docs
         python src/main.py
         cp -r graph_docs_output/* graph_docs/docs
         SHORT_HASH=$(git rev-parse --short HEAD)
