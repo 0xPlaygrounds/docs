@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 from re import Match
 from textwrap import dedent
-from typing import Any, ClassVar
+from typing import Any, ClassVar, Dict
 
 import mistune
 from mistune import BlockParser, BlockState, InlineParser, InlineState, Markdown
@@ -286,6 +286,12 @@ class MDXRenderer(MarkdownRenderer):
     def codespan(self, token: dict[str, Any], state: BlockState):
         token["raw"] = html.unescape(token["raw"])
         return super().codespan(token, state)
+
+    def heading(self, token: Dict[str, Any], state: BlockState) -> str:
+        if token["attrs"].get("level", 0) == 1:
+            title = token["children"][0]["raw"]
+            return f"---\ntitle: {title}\n---\n\n"
+        return super().heading(token, state)
 
     def tab_set(self, token: dict[str, Any], state: BlockState):
         inner = self.render_children(token, state)
