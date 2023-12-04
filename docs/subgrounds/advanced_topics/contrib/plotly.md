@@ -31,10 +31,12 @@ aave_v2 = sg.load_subgraph("https://api.thegraph.com/subgraphs/name/messari/aave
 Now, you can create a Figure instance with the appropriate traces:
 
 ```python
+market = aave_v2.Query.market(id="0x030ba81f1c18d280636f32af80b9aad02cf0854e")
+
 Figure(
     subgrounds=sg,
     traces=[
-        Indicator(value=pair.token0Price),
+        Indicator(value=market.inputToken.lastPriceUSD),
     ],
 )
 ```
@@ -51,12 +53,15 @@ from subgrounds import Subgrounds
 from subgrounds.contrib.plotly import Figure, Indicator
 
 sg = Subgrounds()
-aave_v2 = sg.load_subgraph("https://api.thegraph.com/subgraphs/name/messari/aave-v2-ethereum")
+aave_v2 = sg.load_subgraph(
+  "https://api.thegraph.com/subgraphs/name/messari/aave-v2-ethereum")
+
+market = aave_v2.Query.market(id="0x030ba81f1c18d280636f32af80b9aad02cf0854e")
 
 Figure(
     subgrounds=sg,
     traces=[
-        Indicator(value=pair.token0Price),
+        Indicator(value=market.inputToken.lastPriceUSD),
     ],
 )
 ```
