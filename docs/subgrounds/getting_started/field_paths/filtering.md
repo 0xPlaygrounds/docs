@@ -35,9 +35,9 @@ Using the `==` and `=!` operators in Python, matching exact or negated values on
 sg.query_df(
     curve.Query.liquidityPools(
         where=[
-            isSingleSided == False,
+            pool.isSingleSided == False,
             # or
-            isSingleSided != True,
+            pool.isSingleSided != True,
         ]
     )
 )
@@ -60,6 +60,49 @@ sg.query_df(
 ```
 ::::
 :::::
+
+### Null Values
+
+For null values, you can swap values like `True` and `False` with `None`.
+
+:::::{tab-set}
+::::{tab-item} Relative Form
+:sync: relative
+
+```{code-block} python
+:class: thebe
+sg.query_df(
+    curve.Query.liquidityPools(
+        where=[
+            pool.name == None,
+            # or
+            pool.name != None,
+        ]
+    )
+)
+```
+::::
+::::{tab-item} Raw Form
+:sync: raw
+
+```{code-block} python
+:class: thebe
+sg.query_df(
+    curve.Query.liquidityPools(
+        where={
+            "name": None,
+            # or
+            "name_not": None,
+        }
+    )
+)
+```
+::::
+:::::
+
+```{warning}
+You might be tempted to write `pool.name is None` which is recommended by linters for checking `None` values. This is incorrect, as it'll directly return `True` or `False` as there is no special generative code for `is`. You can add `# noqa: E711` at the end of these lines to inform your linter to ignore this specific rule as it doesn't apply to this specific operation.
+```
 
 ## Comparisons
 
