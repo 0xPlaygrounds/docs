@@ -1,0 +1,971 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<meta property="og:title" content="Sync" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.playgrounds.network/subgrounds/api_reference/internal/client/sync/" />
+<meta property="og:site_name" content="Playgrounds Documentation" />
+<meta property="og:description" content="Toplevel Subgrounds module This module implements the toplevel API that most developers will be using when querying The Graph with Subgrounds." />
+<meta property="og:image" content="https://raw.githubusercontent.com/0xPlaygrounds/docs/main/docs/_static/assets/pg-logotype-primary.svg" />
+<meta property="og:image:alt" content="Playgrounds Documentation" />
+<meta name="description" content="Toplevel Subgrounds module This module implements the toplevel API that most developers will be using when querying The Graph with Subgrounds." />
+<link rel="index" title="Index" href="../../../../../genindex/" /><link rel="search" title="Search" href="../../../../../search/" /><link rel="next" title="Async_" href="../async_/" /><link rel="prev" title="Base" href="../base/" />
+        <link rel="canonical" href="https://docs.playgrounds.network/subgrounds/api_reference/internal/client/sync.html" />
+
+    <link rel="shortcut icon" href="../../../../../_static/icon.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>Sync - Playgrounds</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/furo-extensions.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/colors.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/weights.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theming.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mudkip_furo.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-foreground-primary: #040019;
+  --color-foreground-secondary: #191F2E;
+  --color-foreground-muted: #4F6291;
+  --color-background-primary: #EFF6FF;
+  --color-background-secondary: #E4EBFE;
+  --color-brand-primary: var(--color-foreground-secondary);
+  --color-code-background: #9CCDFF;
+  --color-inline-code-background: #E4EBFE25;
+  --color-code-foreground: var(--color-foreground-secondary);
+  --color-sidebar-background: linear-gradient(180deg, #86E7FB 0%, #548BF8 100%);
+  --color-sidebar-search-background: transparent;
+  --color-sidebar-caption-text: #304881;
+  --color-background-border: #548BF8BB;
+  --color-guilabel-border: #548BF8BB;
+  --color-guilabel-background: #548BF822;
+  --color-background-hover: #B6F0FD;
+  --color-sidebar-item-background--current: transparent;
+  --color-sidebar-search-background--focus: var(--color-sidebar-item-background--hover);
+  --sd-color-card-background: var(--color-background-secondary);
+  --sd-color-card-border-hover: var(--color-brand-primary);
+  --color-admonition-background: white;
+  --color-admonition-title: var(--color-code-foreground);
+  --color-announcement-background: var(--color-background-secondary);
+  --color-announcement-text: var(--color-foreground-secondary);
+  --color-link: #004DE5;
+  --sd-color-success: #5CC653;
+  --sd-color-success-text: var(--color-foreground-primary);
+  --sd-color-warning: #F1C21B;
+  --sd-color-warning-text: var(--color-foreground-primary);
+  --sd-color-info: #548BF8;
+  --sd-color-info-text: var(--color-foreground-primary);
+  --sd-color-danger: #D54A44;
+  --sd-color-danger-text: var(--color-foreground-primary);
+  --sd-color-secondary: #548BF8;
+  --sd-color-secondary-text: var(--color-foreground-primary);
+  --color-admonition-title--important: var(--sd-color-success);
+  --color-admonition-title--caution: var(--sd-color-warning);
+  --color-admonition-title--warning: var(--sd-color-warning);
+  --color-admonition-title--info: var(--sd-color-info);
+  --color-admonition-title--seealso: var(--sd-color-info);
+  --color-admonition-title--attention: var(--sd-color-danger);
+  --color-admonition-title--danger: var(--sd-color-danger);
+  --color-admonition-title--error: var(--sd-color-danger);
+  --sd-color-tabs-underline: transparent;
+  --sd-color-tabs-overline: transparent;
+  --sd-color-tabs-underline-inactive: transparent;
+  --font-stack: sofia-pro, sans-serif;
+  --font-stack--monospace: carbona-variable, monospace;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-foreground-primary: #E6E6E6;
+  --color-foreground-secondary: #CCCCCC;
+  --color-foreground-muted: #A9ACAC;
+  --color-background-primary: #040019;
+  --color-background-secondary: #191F2E;
+  --color-background-hover: #0A1F4F;
+  --color-code-background: #2A4179;
+  --color-inline-code-background: #191F2E25;
+  --color-code-foreground: #C2CBDB;
+  --color-header-text: #54DDF8;
+  --color-sidebar-link-text--top-level: var(--color-foreground-muted);
+  --color-sidebar-caption-text: var(--color-foreground-primary);
+  --color-sidebar-background: linear-gradient(180deg, #000E19 36.39%, #0C263B 100%);
+  --color-sidebar-item-background--current: transparent;
+  --color-sidebar-search-background--focus: var(--color-sidebar-item-background--hover);
+  --color-brand-primary: #54DDF8;
+  --color-brand-content: #0083CF;
+  --color-table-header-background: var(--color-background-secondary);
+  --color-table-border: #525252;
+  --sd-color-card-background: var(--color-background-secondary);
+  --sd-color-card-border-hover: var(--color-brand-primary);
+  --sd-color-success: #5CC653;
+  --sd-color-success-text: var(--color-foreground-primary);
+  --sd-color-warning: #F1C21B;
+  --sd-color-warning-text: var(--color-foreground-primary);
+  --sd-color-info: #54DDF8;
+  --sd-color-info-text: var(--color-foreground-primary);
+  --sd-color-danger: #D54A44;
+  --sd-color-danger-text: var(--color-foreground-primary);
+  --sd-color-secondary: var(--color-brand-primary);
+  --sd-color-secondary-text: var(--color-foreground-primary);
+  --color-admonition-background: #121526;
+  --color-admonition-title: var(--color-code-foreground);
+  --color-announcement-background: var(--sd-color-card-background);
+  --color-link: #62A9FF;
+  --color-admonition-title--important: var(--sd-color-success);
+  --color-admonition-title--caution: var(--sd-color-warning);
+  --color-admonition-title--warning: var(--sd-color-warning);
+  --color-admonition-title--info: var(--sd-color-info);
+  --color-admonition-title--seealso: var(--sd-color-info);
+  --color-admonition-title--attention: var(--sd-color-danger);
+  --color-admonition-title--danger: var(--sd-color-danger);
+  --color-admonition-title--error: var(--sd-color-danger);
+  --sd-color-tabs-underline: transparent;
+  --sd-color-tabs-overline: transparent;
+  --sd-color-tabs-underline-inactive: transparent;
+  --font-stack: sofia-pro, sans-serif;
+  --font-stack--monospace: carbona-variable, monospace;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-foreground-primary: #E6E6E6;
+  --color-foreground-secondary: #CCCCCC;
+  --color-foreground-muted: #A9ACAC;
+  --color-background-primary: #040019;
+  --color-background-secondary: #191F2E;
+  --color-background-hover: #0A1F4F;
+  --color-code-background: #2A4179;
+  --color-inline-code-background: #191F2E25;
+  --color-code-foreground: #C2CBDB;
+  --color-header-text: #54DDF8;
+  --color-sidebar-link-text--top-level: var(--color-foreground-muted);
+  --color-sidebar-caption-text: var(--color-foreground-primary);
+  --color-sidebar-background: linear-gradient(180deg, #000E19 36.39%, #0C263B 100%);
+  --color-sidebar-item-background--current: transparent;
+  --color-sidebar-search-background--focus: var(--color-sidebar-item-background--hover);
+  --color-brand-primary: #54DDF8;
+  --color-brand-content: #0083CF;
+  --color-table-header-background: var(--color-background-secondary);
+  --color-table-border: #525252;
+  --sd-color-card-background: var(--color-background-secondary);
+  --sd-color-card-border-hover: var(--color-brand-primary);
+  --sd-color-success: #5CC653;
+  --sd-color-success-text: var(--color-foreground-primary);
+  --sd-color-warning: #F1C21B;
+  --sd-color-warning-text: var(--color-foreground-primary);
+  --sd-color-info: #54DDF8;
+  --sd-color-info-text: var(--color-foreground-primary);
+  --sd-color-danger: #D54A44;
+  --sd-color-danger-text: var(--color-foreground-primary);
+  --sd-color-secondary: var(--color-brand-primary);
+  --sd-color-secondary-text: var(--color-foreground-primary);
+  --color-admonition-background: #121526;
+  --color-admonition-title: var(--color-code-foreground);
+  --color-announcement-background: var(--sd-color-card-background);
+  --color-link: #62A9FF;
+  --color-admonition-title--important: var(--sd-color-success);
+  --color-admonition-title--caution: var(--sd-color-warning);
+  --color-admonition-title--warning: var(--sd-color-warning);
+  --color-admonition-title--info: var(--sd-color-info);
+  --color-admonition-title--seealso: var(--sd-color-info);
+  --color-admonition-title--attention: var(--sd-color-danger);
+  --color-admonition-title--danger: var(--sd-color-danger);
+  --color-admonition-title--error: var(--sd-color-danger);
+  --sd-color-tabs-underline: transparent;
+  --sd-color-tabs-overline: transparent;
+  --sd-color-tabs-underline-inactive: transparent;
+  --font-stack: sofia-pro, sans-serif;
+  --font-stack--monospace: carbona-variable, monospace;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript">
+    !function () {
+        var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+            analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware", "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"]; analytics.factory = function (e) { return function () { if (window.analytics.initialized) return window.analytics[e].apply(window.analytics, arguments); var i = Array.prototype.slice.call(arguments); i.unshift(e); analytics.push(i); return analytics } }; for (var i = 0; i < analytics.methods.length; i++) { var key = analytics.methods[i]; analytics[key] = analytics.factory(key) } analytics.load = function (key, i) { var t = document.createElement("script"); t.type = "text/javascript"; t.async = !0; t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(t, n); analytics._loadOptions = i }; analytics._writeKey = "gsbTPzmazRCmKtX34wpuT7i0YFndByH9";; analytics.SNIPPET_VERSION = "4.16.1";
+            analytics.load("gsbTPzmazRCmKtX34wpuT7i0YFndByH9");
+            analytics.page();
+        }
+    }();
+</script>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<div class="announcement">
+  <aside class="announcement-content">
+     Give us a ⭐️ on <a href='https://github.com/0xPlaygrounds/subgrounds'> Github </a> 
+  </aside>
+</div>
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../../"><div class="brand">Playgrounds</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" target="_self" href="https://playgrounds.network">
+    
+    <div class="sidebar-logo-container">
+        <img class="sidebar-logo only-light" src="../../../../../_static/assets/pg-logotype-dark.svg" alt="Light Logo" />
+        <img class="sidebar-logo only-dark" src="../../../../../_static/assets/pg-logotype-primary.svg" alt="Dark Logo" />
+    </div>
+    
+    
+</a><form class="sidebar-search-container" method="get" action="../../../../../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Playgrounds API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api/">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api/key/">Getting an API Key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api/subgraph-proxy/">Subgraph Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api/subgrounds/">Subgrounds Integration</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../api/faq/">FAQ</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../api/faq/query/">What is a Query?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../api/faq/environment/">Environment Vars</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../api/api-reference/">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../api/reference/proxy/">Subgraph Proxy</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/reference/proxy/subgraph_id/">Subgraph ID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/reference/proxy/deployment_id/">Deployment ID</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Subgrounds</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../getting_started/">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../getting_started/basics/">The Basics</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../getting_started/field_paths/">Field Paths</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../getting_started/field_paths/arguments/">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../getting_started/field_paths/filtering/">Filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../getting_started/field_paths/sorting/">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../getting_started/field_paths/merging/">Merging</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../getting_started/querying/">Querying</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../getting_started/querying/grouping/"><span class="light-only"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">NEW</span></span><span class="dark-only"><span class="sd-sphinx-override sd-badge sd-outline-success sd-text-success">NEW</span></span> Grouping</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../getting_started/synthetic_fields/">Synthetic Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../getting_started/async/"><span class="light-only"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">NEW</span></span><span class="dark-only"><span class="sd-sphinx-override sd-badge sd-outline-success sd-text-success">NEW</span></span> Async</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../advanced_topics/">Advanced Topics</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../advanced_topics/contrib/">Contrib</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced_topics/contrib/plotly/">Plotly</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../advanced_topics/pagination/">Pagination</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced_topics/pagination/custom/">Custom Strategies</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../advanced_topics/transforms/">Transforms</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced_topics/transforms/layers/">Layers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../advanced_topics/custom_clients/"><span class="light-only"><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">LAB</span></span><span class="dark-only"><span class="sd-sphinx-override sd-badge sd-outline-warning sd-text-warning">LAB</span></span> Custom Clients</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced_topics/custom_clients/sans-io/">Sans-IO</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../faq/">FAQ</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../faq/exporting/">Exporting to Disk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../faq/more_data/">Getting More Data</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../faq/setup/">Python Setup</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../faq/setup/version_management/">Python Versioning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../faq/logger/">Adjusting Subgrounds Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../examples/">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../examples/exchanges/">Exchanges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../examples/bridges/">Bridges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../examples/liquid_staking/">Liquid Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../examples/governance/">Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../examples/advanced_research/">Advanced Research</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../examples/vaults/">Vaults</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../videos/">Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog/">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/">Contributing</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../top_level/">Top Level APIs</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../">Internal</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../">Client</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../base/">Base</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../async_/">Async_</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../contrib/">Contrib</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../contrib/plotly/">Plotly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../contrib/dash/">Dash</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../pagination/">Pagination</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../pagination/strategies/">Strategies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../pagination/preprocess/">Preprocess</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../pagination/pagination/">Pagination</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../pagination/utils/">Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../transform/">Transform</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../transform/abcs/">ABCs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../transform/apply/">Apply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../transform/defaults/">Defaults</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../transform/transforms/">Transforms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../transform/utils/">Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../subgraph/">Subgraph</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../subgraph/fieldpath/">Fieldpath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../subgraph/filter/">Filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../subgraph/object/">Object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../subgraph/subgraph/">Subgraph</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../errors/">Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../query/">Query</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../schema/">Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../utils/">Utils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Meta</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../meta/contributing/">Improving the Docs</a></li>
+</ul>
+
+</div></div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="module-subgrounds.client.sync">
+<span id="sync"></span><h1>Sync<a class="headerlink" href="#module-subgrounds.client.sync" title="Permalink to this heading">#</a></h1>
+<p>Toplevel Subgrounds module</p>
+<p>This module implements the toplevel API that most developers will be using when
+querying The Graph with Subgrounds.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="subgrounds.client.sync.Subgrounds">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">subgrounds.client.sync.</span></span><span class="sig-name descname"><span class="pre">Subgrounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout=30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_transforms=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subgraphs=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema_cache=PosixPath('schemas')</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#subgrounds.client.sync.Subgrounds" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="subgrounds.client.sync.Subgrounds._client">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_client</span></span><a class="headerlink" href="#subgrounds.client.sync.Subgrounds._client" title="Permalink to this definition">#</a></dt>
+<dd><p>Cached client</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subgrounds.client.sync.Subgrounds.load_subgraph">
+<span class="sig-name descname"><span class="pre">load_subgraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#subgrounds.client.sync.Subgrounds.load_subgraph" title="Permalink to this definition">#</a></dt>
+<dd><p>Performs introspection on the provided GraphQL API <code class="docutils literal notranslate"><span class="pre">url</span></code> to get the
+schema, stores the schema if <code class="docutils literal notranslate"><span class="pre">save_schema</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> and returns a
+generated class representing the subgraph with all its entities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>API.</strong> (<em>url The url</em><em> of </em><em>the</em>) -- </p></li>
+<li><p><strong>save_schema</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- Flag indicating whether or not the schema should be cached to
+disk.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A generated class representing the subgraph and its entities</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../../top_level/#subgrounds.Subgraph" title="subgrounds.Subgraph">Subgraph</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subgrounds.client.sync.Subgrounds.load_api">
+<span class="sig-name descname"><span class="pre">load_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#subgrounds.client.sync.Subgrounds.load_api" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Performs introspection on the provided GraphQL API <code class="docutils literal notranslate"><span class="pre">url</span></code> to get the</dt><dd><p>schema, stores the schema if <code class="docutils literal notranslate"><span class="pre">save_schema</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> and returns a
+generated class representing the GraphQL endpoint with all its entities.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- The url of the API.</p></li>
+<li><p><strong>save_schema</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- Flag indicating whether or not the schema should be saved
+to disk.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A generated class representing the subgraph and its entities</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../subgraph/subgraph/#subgrounds.subgraph.subgraph.Subgraph" title="subgrounds.subgraph.subgraph.Subgraph"><em>Subgraph</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subgrounds.client.sync.Subgrounds.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">req</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pagination_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">LegacyStrategy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#subgrounds.client.sync.Subgrounds.execute" title="Permalink to this definition">#</a></dt>
+<dd><p>Executes a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataRequest</span></code> and returns a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataResponse</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>req</strong> (<a class="reference internal" href="../../query/#subgrounds.query.DataRequest" title="subgrounds.query.DataRequest"><em>DataRequest</em></a>) -- The <code class="xref py py-class docutils literal notranslate"><span class="pre">DataRequest</span></code> object to be executed.</p></li>
+<li><p><strong>pagination_strategy</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><em>Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><em>Type</em></a><em>[</em><a class="reference internal" href="../../pagination/strategies/#subgrounds.pagination.strategies.PaginationStrategy" title="subgrounds.pagination.strategies.PaginationStrategy"><em>PaginationStrategy</em></a><em>]</em><em>]</em>) -- A Class implementing the <code class="xref py py-class docutils literal notranslate"><span class="pre">PaginationStrategy</span></code>
+<code class="docutils literal notranslate"><span class="pre">Protocol</span></code>. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, then automatic pagination is disabled.
+Defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyStrategy</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">DataResponse</span></code> object representing the response</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../query/#subgrounds.query.DataResponse" title="subgrounds.query.DataResponse"><em>DataResponse</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subgrounds.client.sync.Subgrounds.execute_iter">
+<span class="sig-name descname"><span class="pre">execute_iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">req</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pagination_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">LegacyStrategy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#subgrounds.client.sync.Subgrounds.execute_iter" title="Permalink to this definition">#</a></dt>
+<dd><p>Same as <cite>execute</cite>, except that an iterator is returned which will iterate
+the data pages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>req</strong> (<a class="reference internal" href="../../query/#subgrounds.query.DataRequest" title="subgrounds.query.DataRequest"><em>DataRequest</em></a>) -- The <code class="xref py py-class docutils literal notranslate"><span class="pre">DataRequest</span></code> object to be executed</p></li>
+<li><p><strong>pagination_strategy</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><em>Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><em>Type</em></a><em>[</em><a class="reference internal" href="../../pagination/strategies/#subgrounds.pagination.strategies.PaginationStrategy" title="subgrounds.pagination.strategies.PaginationStrategy"><em>PaginationStrategy</em></a><em>]</em><em>]</em>) -- A Class implementing the <code class="xref py py-class docutils literal notranslate"><span class="pre">PaginationStrategy</span></code>
+<code class="docutils literal notranslate"><span class="pre">Protocol</span></code>. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, then automatic pagination is disabled.
+Defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyStrategy</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An iterator over the <code class="xref py py-class docutils literal notranslate"><span class="pre">DocumentResponse</span></code> pages.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator" title="(in Python v3.12)"><em>Iterator</em></a>[<a class="reference internal" href="../../query/#subgrounds.query.DocumentResponse" title="subgrounds.query.DocumentResponse"><em>DocumentResponse</em></a>]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>⚠️ DOES NOT apply global transforms across multiple documents or their pages.</dt><dd><p>Since we yield each page as we get it, it's not possible to accurately perform
+the transforms since we don't collect the pages. This means transforms
+expecting multiple documents or pages of documents will be inaccurate.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subgrounds.client.sync.Subgrounds.query_json">
+<span class="sig-name descname"><span class="pre">query_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpaths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pagination_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">LegacyStrategy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#subgrounds.client.sync.Subgrounds.query_json" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Equivalent to</dt><dd><p><code class="docutils literal notranslate"><span class="pre">Subgrounds.execute(Subgrounds.mk_request(fpaths),</span> <span class="pre">pagination_strategy)</span></code>.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fpaths</strong> (<a class="reference internal" href="../../subgraph/fieldpath/#subgrounds.subgraph.fieldpath.FieldPath" title="subgrounds.subgraph.fieldpath.FieldPath"><em>subgrounds.subgraph.fieldpath.FieldPath</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>[</em><a class="reference internal" href="../../subgraph/fieldpath/#subgrounds.subgraph.fieldpath.FieldPath" title="subgrounds.subgraph.fieldpath.FieldPath"><em>subgrounds.subgraph.fieldpath.FieldPath</em></a><em>]</em>) -- One or more <code class="xref py py-class docutils literal notranslate"><span class="pre">FieldPath</span></code> objects
+that should be included in the request.</p></li>
+<li><p><strong>pagination_strategy</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><em>Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><em>Type</em></a><em>[</em><a class="reference internal" href="../../pagination/strategies/#subgrounds.pagination.strategies.PaginationStrategy" title="subgrounds.pagination.strategies.PaginationStrategy"><em>PaginationStrategy</em></a><em>]</em><em>]</em>) -- A Class implementing the <code class="xref py py-class docutils literal notranslate"><span class="pre">PaginationStrategy</span></code>
+<code class="docutils literal notranslate"><span class="pre">Protocol</span></code>. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, then automatic pagination is disabled.
+Defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyStrategy</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The reponse data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subgrounds.client.sync.Subgrounds.query_json_iter">
+<span class="sig-name descname"><span class="pre">query_json_iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpaths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pagination_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">LegacyStrategy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#subgrounds.client.sync.Subgrounds.query_json_iter" title="Permalink to this definition">#</a></dt>
+<dd><p>Same as <cite>query_json</cite> returns an iterator over the response data pages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fpaths</strong> (<a class="reference internal" href="../../subgraph/fieldpath/#subgrounds.subgraph.fieldpath.FieldPath" title="subgrounds.subgraph.fieldpath.FieldPath"><em>subgrounds.subgraph.fieldpath.FieldPath</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>[</em><a class="reference internal" href="../../subgraph/fieldpath/#subgrounds.subgraph.fieldpath.FieldPath" title="subgrounds.subgraph.fieldpath.FieldPath"><em>subgrounds.subgraph.fieldpath.FieldPath</em></a><em>]</em>) -- One or more <code class="xref py py-class docutils literal notranslate"><span class="pre">FieldPath</span></code> objects that should be included
+in the request.</p></li>
+<li><p><strong>pagination_strategy</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><em>Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><em>Type</em></a><em>[</em><a class="reference internal" href="../../pagination/strategies/#subgrounds.pagination.strategies.PaginationStrategy" title="subgrounds.pagination.strategies.PaginationStrategy"><em>PaginationStrategy</em></a><em>]</em><em>]</em>) -- A Class implementing the <code class="xref py py-class docutils literal notranslate"><span class="pre">PaginationStrategy</span></code>
+<code class="docutils literal notranslate"><span class="pre">Protocol</span></code>. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, then automatic pagination is disabled.
+Defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyStrategy</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The reponse data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a>, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subgrounds.client.sync.Subgrounds.query_df">
+<span class="sig-name descname"><span class="pre">query_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpaths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pagination_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">LegacyStrategy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#subgrounds.client.sync.Subgrounds.query_df" title="Permalink to this definition">#</a></dt>
+<dd><p>Same as <a class="reference internal" href="#subgrounds.client.sync.Subgrounds.query" title="subgrounds.client.sync.Subgrounds.query"><code class="xref py py-func docutils literal notranslate"><span class="pre">Subgrounds.query()</span></code></a> but formats the response data into a
+Pandas DataFrame. If the response data cannot be flattened to a single query
+(e.g.: when querying multiple list fields that return different entities),
+then multiple dataframes are returned</p>
+<p><code class="docutils literal notranslate"><span class="pre">fpaths</span></code> is a list of <code class="xref py py-class docutils literal notranslate"><span class="pre">FieldPath</span></code> objects that indicate which
+data must be queried.</p>
+<p><code class="docutils literal notranslate"><span class="pre">columns</span></code> is an optional argument used to rename the dataframes(s)
+columns. The length of <code class="docutils literal notranslate"><span class="pre">columns</span></code> must be the same as the number of columns
+of <em>all</em> returned dataframes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">concat</span></code> indicates whether or not the resulting dataframes should be
+concatenated together. The dataframes must have the same number of columns,
+as well as the same column names and types (the names can be set using the
+<code class="docutils literal notranslate"><span class="pre">columns</span></code> argument).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fpaths</strong> (<a class="reference internal" href="../../subgraph/fieldpath/#subgrounds.subgraph.fieldpath.FieldPath" title="subgrounds.subgraph.fieldpath.FieldPath"><em>subgrounds.subgraph.fieldpath.FieldPath</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>[</em><a class="reference internal" href="../../subgraph/fieldpath/#subgrounds.subgraph.fieldpath.FieldPath" title="subgrounds.subgraph.fieldpath.FieldPath"><em>subgrounds.subgraph.fieldpath.FieldPath</em></a><em>]</em>) -- One or more <cite>FieldPath</cite> objects that should be included in the request</p></li>
+<li><p><strong>columns</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><em>Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>]</em><em>]</em>) -- The column labels. Defaults to None.</p></li>
+<li><p><strong>merge</strong> -- Whether or not to merge resulting dataframes.</p></li>
+<li><p><strong>pagination_strategy</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><em>Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><em>Type</em></a><em>[</em><a class="reference internal" href="../../pagination/strategies/#subgrounds.pagination.strategies.PaginationStrategy" title="subgrounds.pagination.strategies.PaginationStrategy"><em>PaginationStrategy</em></a><em>]</em><em>]</em>) -- A Class implementing the <code class="xref py py-class docutils literal notranslate"><span class="pre">PaginationStrategy</span></code>
+<code class="docutils literal notranslate"><span class="pre">Protocol</span></code>. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, then automatic pagination is disabled.
+Defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyStrategy</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <a class="reference external" href="http://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+1125.gc46fb76afa)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> containing the reponse data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.core.frame.DataFrame | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a>[pandas.core.frame.DataFrame]</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">subgrounds</span> <span class="kn">import</span> <span class="n">Subgrounds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sg</span> <span class="o">=</span> <span class="n">Subgrounds</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">univ3</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">load_subgraph</span><span class="p">(</span>
+<span class="gp">... </span>   <span class="s1">&#39;https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3&#39;</span><span class="p">)</span>
+
+<span class="go"># Define price SyntheticField</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">univ3</span><span class="o">.</span><span class="n">Swap</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">univ3</span><span class="o">.</span><span class="n">Swap</span><span class="o">.</span><span class="n">amount0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">univ3</span><span class="o">.</span><span class="n">Swap</span><span class="o">.</span><span class="n">amount1</span><span class="p">)</span>
+
+<span class="go"># Query last 10 swaps from the ETH/USDC pool</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eth_usdc</span> <span class="o">=</span> <span class="n">univ3</span><span class="o">.</span><span class="n">Query</span><span class="o">.</span><span class="n">swaps</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">orderBy</span><span class="o">=</span><span class="n">univ3</span><span class="o">.</span><span class="n">Swap</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">orderDirection</span><span class="o">=</span><span class="s1">&#39;desc&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">first</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">where</span><span class="o">=</span><span class="p">[</span>
+<span class="gp">... </span>        <span class="n">univ3</span><span class="o">.</span><span class="n">Swap</span><span class="o">.</span><span class="n">pool</span> <span class="o">==</span> <span class="s1">&#39;0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8&#39;</span>
+<span class="gp">... </span>    <span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sg</span><span class="o">.</span><span class="n">query_df</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="n">eth_usdc</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">eth_usdc</span><span class="o">.</span><span class="n">price</span>
+<span class="gp">... </span><span class="p">])</span>
+<span class="go">  swaps_timestamp  swaps_price</span>
+<span class="go">0       1643213811  2618.886394</span>
+<span class="go">1       1643213792  2618.814281</span>
+<span class="go">2       1643213792  2617.500494</span>
+<span class="go">3       1643213763  2615.458495</span>
+<span class="go">4       1643213763  2615.876574</span>
+<span class="go">5       1643213739  2615.352390</span>
+<span class="go">6       1643213678  2615.205713</span>
+<span class="go">7       1643213370  2614.115746</span>
+<span class="go">8       1643213210  2613.077301</span>
+<span class="go">9       1643213196  2610.686563</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subgrounds.client.sync.Subgrounds.query_df_iter">
+<span class="sig-name descname"><span class="pre">query_df_iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpaths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pagination_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">LegacyStrategy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#subgrounds.client.sync.Subgrounds.query_df_iter" title="Permalink to this definition">#</a></dt>
+<dd><p>Same as <cite>query_df</cite> except returns an iterator over the response data pages</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fpaths</strong> (<a class="reference internal" href="../../subgraph/fieldpath/#subgrounds.subgraph.fieldpath.FieldPath" title="subgrounds.subgraph.fieldpath.FieldPath"><em>subgrounds.subgraph.fieldpath.FieldPath</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>[</em><a class="reference internal" href="../../subgraph/fieldpath/#subgrounds.subgraph.fieldpath.FieldPath" title="subgrounds.subgraph.fieldpath.FieldPath"><em>subgrounds.subgraph.fieldpath.FieldPath</em></a><em>]</em>) -- One or more <cite>FieldPath</cite> objects that should be included in the request</p></li>
+<li><p><strong>columns</strong> -- The column labels. Defaults to None.</p></li>
+<li><p><strong>merge</strong> -- Whether or not to merge resulting dataframes.</p></li>
+<li><p><strong>pagination_strategy</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><em>Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><em>Type</em></a><em>[</em><a class="reference internal" href="../../pagination/strategies/#subgrounds.pagination.strategies.PaginationStrategy" title="subgrounds.pagination.strategies.PaginationStrategy"><em>PaginationStrategy</em></a><em>]</em><em>]</em>) -- A Class implementing the <code class="xref py py-class docutils literal notranslate"><span class="pre">PaginationStrategy</span></code>
+<code class="docutils literal notranslate"><span class="pre">Protocol</span></code>. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, then automatic pagination is disabled.
+Defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyStrategy</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An iterator over the response data pages, each as a <a class="reference external" href="http://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v3.0.0.dev0+1125.gc46fb76afa)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator" title="(in Python v3.12)"><em>Iterator</em></a>[pandas.core.frame.DataFrame | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a>[pandas.core.frame.DataFrame]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subgrounds.client.sync.Subgrounds.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpaths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unwrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pagination_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">LegacyStrategy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#subgrounds.client.sync.Subgrounds.query" title="Permalink to this definition">#</a></dt>
+<dd><p>Executes one or multiple <code class="docutils literal notranslate"><span class="pre">FieldPath</span></code> objects immediately and returns the
+data (as a tuple if multiple <code class="docutils literal notranslate"><span class="pre">FieldPath</span></code> objects are provided).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fpaths</strong> (<a class="reference internal" href="../../subgraph/fieldpath/#subgrounds.subgraph.fieldpath.FieldPath" title="subgrounds.subgraph.fieldpath.FieldPath"><em>subgrounds.subgraph.fieldpath.FieldPath</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>[</em><a class="reference internal" href="../../subgraph/fieldpath/#subgrounds.subgraph.fieldpath.FieldPath" title="subgrounds.subgraph.fieldpath.FieldPath"><em>subgrounds.subgraph.fieldpath.FieldPath</em></a><em>]</em>) -- One or more <code class="docutils literal notranslate"><span class="pre">FieldPath</span></code> object(s) to query.</p></li>
+<li><p><strong>unwrap</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- Flag indicating whether or not, in the case where the returned data
+is a list of one element, the element itself should be returned instead of
+the list. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>pagination_strategy</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><em>Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><em>Type</em></a><em>[</em><a class="reference internal" href="../../pagination/strategies/#subgrounds.pagination.strategies.PaginationStrategy" title="subgrounds.pagination.strategies.PaginationStrategy"><em>PaginationStrategy</em></a><em>]</em><em>]</em>) -- A Class implementing the <code class="xref py py-class docutils literal notranslate"><span class="pre">PaginationStrategy</span></code>
+<code class="docutils literal notranslate"><span class="pre">Protocol</span></code>. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, then automatic pagination is disabled.
+Defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyStrategy</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">FieldPath</span></code> object(s) data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)">tuple</a> | None</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">subgrounds</span> <span class="kn">import</span> <span class="n">Subgrounds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sg</span> <span class="o">=</span> <span class="n">Subgrounds</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">univ3</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">load_subgraph</span><span class="p">(</span>
+<span class="gp">... </span> <span class="s1">&#39;https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3&#39;</span><span class="p">)</span>
+
+<span class="go"># Define price SyntheticField</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">univ3</span><span class="o">.</span><span class="n">Swap</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">univ3</span><span class="o">.</span><span class="n">Swap</span><span class="o">.</span><span class="n">amount0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">univ3</span><span class="o">.</span><span class="n">Swap</span><span class="o">.</span><span class="n">amount1</span><span class="p">)</span>
+
+<span class="go"># Construct FieldPath to get price of last swap on ETH/USDC pool</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eth_usdc_last</span> <span class="o">=</span> <span class="n">univ3</span><span class="o">.</span><span class="n">Query</span><span class="o">.</span><span class="n">swaps</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">orderBy</span><span class="o">=</span><span class="n">univ3</span><span class="o">.</span><span class="n">Swap</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">orderDirection</span><span class="o">=</span><span class="s1">&#39;desc&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">first</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">where</span><span class="o">=</span><span class="p">[</span>
+<span class="gp">... </span>        <span class="n">univ3</span><span class="o">.</span><span class="n">Swap</span><span class="o">.</span><span class="n">pool</span> <span class="o">==</span> <span class="s1">&#39;0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8&#39;</span>
+<span class="gp">... </span>    <span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">price</span>
+
+<span class="go"># Query last price FieldPath</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sg</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">eth_usdc_last</span><span class="p">)</span>
+<span class="go">2628.975030015892</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="subgrounds.client.sync.Subgrounds.query_iter">
+<span class="sig-name descname"><span class="pre">query_iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpaths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unwrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pagination_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">LegacyStrategy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#subgrounds.client.sync.Subgrounds.query_iter" title="Permalink to this definition">#</a></dt>
+<dd><p>Same as <cite>query</cite> except an iterator over the resonse data pages is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fpath</strong> -- One or more <code class="docutils literal notranslate"><span class="pre">FieldPath</span></code> object(s) to query.</p></li>
+<li><p><strong>unwrap</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- Flag indicating whether or not, in the case where
+the returned data is a list of one element, the element itself should be
+returned instead of the list. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>pagination_strategy</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.12)"><em>Optional</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><em>Type</em></a><em>[</em><a class="reference internal" href="../../pagination/strategies/#subgrounds.pagination.strategies.PaginationStrategy" title="subgrounds.pagination.strategies.PaginationStrategy"><em>PaginationStrategy</em></a><em>]</em><em>]</em>) -- A Class implementing the <code class="xref py py-class docutils literal notranslate"><span class="pre">PaginationStrategy</span></code>
+<code class="docutils literal notranslate"><span class="pre">Protocol</span></code>. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, then automatic pagination is disabled.
+Defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyStrategy</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An iterator over the <code class="docutils literal notranslate"><span class="pre">FieldPath</span></code> object(s)' data pages</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator" title="(in Python v3.12)"><em>Iterator</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)">str</a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)">float</a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><em>Any</em></a>] | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)">tuple</a> | None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "0xPlaygrounds/jupyter-stacks-subgrounds",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./subgrounds/api_reference/internal/client"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../async_/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Async_</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../base/">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Base</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link fa-brands fa-github fa-l" href="https://github.com/0xPlaygrounds/subgrounds" aria-label="GitHub"></a>
+              <a class="muted-link fa-brands fa-discord fa-l" href="https://discord.gg/v4r4zhBAh2" aria-label="Discord"></a>
+              <a class="muted-link fa-brands fa-twitter fa-l" href="https://twitter.com/Playgrounds0x" aria-label="Twitter"></a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Sync</a><ul>
+<li><a class="reference internal" href="#subgrounds.client.sync.Subgrounds"><code class="docutils literal notranslate"><span class="pre">Subgrounds</span></code></a><ul>
+<li><a class="reference internal" href="#subgrounds.client.sync.Subgrounds._client"><code class="docutils literal notranslate"><span class="pre">Subgrounds._client</span></code></a></li>
+<li><a class="reference internal" href="#subgrounds.client.sync.Subgrounds.load_subgraph"><code class="docutils literal notranslate"><span class="pre">Subgrounds.load_subgraph()</span></code></a></li>
+<li><a class="reference internal" href="#subgrounds.client.sync.Subgrounds.load_api"><code class="docutils literal notranslate"><span class="pre">Subgrounds.load_api()</span></code></a></li>
+<li><a class="reference internal" href="#subgrounds.client.sync.Subgrounds.execute"><code class="docutils literal notranslate"><span class="pre">Subgrounds.execute()</span></code></a></li>
+<li><a class="reference internal" href="#subgrounds.client.sync.Subgrounds.execute_iter"><code class="docutils literal notranslate"><span class="pre">Subgrounds.execute_iter()</span></code></a></li>
+<li><a class="reference internal" href="#subgrounds.client.sync.Subgrounds.query_json"><code class="docutils literal notranslate"><span class="pre">Subgrounds.query_json()</span></code></a></li>
+<li><a class="reference internal" href="#subgrounds.client.sync.Subgrounds.query_json_iter"><code class="docutils literal notranslate"><span class="pre">Subgrounds.query_json_iter()</span></code></a></li>
+<li><a class="reference internal" href="#subgrounds.client.sync.Subgrounds.query_df"><code class="docutils literal notranslate"><span class="pre">Subgrounds.query_df()</span></code></a></li>
+<li><a class="reference internal" href="#subgrounds.client.sync.Subgrounds.query_df_iter"><code class="docutils literal notranslate"><span class="pre">Subgrounds.query_df_iter()</span></code></a></li>
+<li><a class="reference internal" href="#subgrounds.client.sync.Subgrounds.query"><code class="docutils literal notranslate"><span class="pre">Subgrounds.query()</span></code></a></li>
+<li><a class="reference internal" href="#subgrounds.client.sync.Subgrounds.query_iter"><code class="docutils literal notranslate"><span class="pre">Subgrounds.query_iter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../_static/scripts/furo.js"></script>
+    <script src="../../../../../_static/scripts/furo.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../../../_static/scripts/theme.js"></script>
+    </body>
+</html>

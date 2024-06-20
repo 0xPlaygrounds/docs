@@ -1,0 +1,1205 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<meta property="og:title" content="Changelog" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.playgrounds.network/subgrounds/changelog/" />
+<meta property="og:site_name" content="Playgrounds Documentation" />
+<meta property="og:description" content="v1.9.0 (2024-06-18): Feature: chore: Bump deps, might consider >= in the future ( 9e4a5b8). v1.8.3 (2024-06-10): Fix: Added test for null_filter condition. (#53) ( d022c85). v1.8.2 (2024-06-10): Fi..." />
+<meta property="og:image" content="https://raw.githubusercontent.com/0xPlaygrounds/docs/main/docs/_static/assets/pg-logotype-primary.svg" />
+<meta property="og:image:alt" content="Playgrounds Documentation" />
+<meta name="description" content="v1.9.0 (2024-06-18): Feature: chore: Bump deps, might consider >= in the future ( 9e4a5b8). v1.8.3 (2024-06-10): Fix: Added test for null_filter condition. (#53) ( d022c85). v1.8.2 (2024-06-10): Fi..." />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Contributing" href="../contributing/" /><link rel="prev" title="Videos" href="../videos/" />
+        <link rel="canonical" href="https://docs.playgrounds.network/subgrounds/changelog.html" />
+
+    <link rel="shortcut icon" href="../../_static/icon.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>Changelog - Playgrounds</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/colors.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/weights.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/theming.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mudkip_furo.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-foreground-primary: #040019;
+  --color-foreground-secondary: #191F2E;
+  --color-foreground-muted: #4F6291;
+  --color-background-primary: #EFF6FF;
+  --color-background-secondary: #E4EBFE;
+  --color-brand-primary: var(--color-foreground-secondary);
+  --color-code-background: #9CCDFF;
+  --color-inline-code-background: #E4EBFE25;
+  --color-code-foreground: var(--color-foreground-secondary);
+  --color-sidebar-background: linear-gradient(180deg, #86E7FB 0%, #548BF8 100%);
+  --color-sidebar-search-background: transparent;
+  --color-sidebar-caption-text: #304881;
+  --color-background-border: #548BF8BB;
+  --color-guilabel-border: #548BF8BB;
+  --color-guilabel-background: #548BF822;
+  --color-background-hover: #B6F0FD;
+  --color-sidebar-item-background--current: transparent;
+  --color-sidebar-search-background--focus: var(--color-sidebar-item-background--hover);
+  --sd-color-card-background: var(--color-background-secondary);
+  --sd-color-card-border-hover: var(--color-brand-primary);
+  --color-admonition-background: white;
+  --color-admonition-title: var(--color-code-foreground);
+  --color-announcement-background: var(--color-background-secondary);
+  --color-announcement-text: var(--color-foreground-secondary);
+  --color-link: #004DE5;
+  --sd-color-success: #5CC653;
+  --sd-color-success-text: var(--color-foreground-primary);
+  --sd-color-warning: #F1C21B;
+  --sd-color-warning-text: var(--color-foreground-primary);
+  --sd-color-info: #548BF8;
+  --sd-color-info-text: var(--color-foreground-primary);
+  --sd-color-danger: #D54A44;
+  --sd-color-danger-text: var(--color-foreground-primary);
+  --sd-color-secondary: #548BF8;
+  --sd-color-secondary-text: var(--color-foreground-primary);
+  --color-admonition-title--important: var(--sd-color-success);
+  --color-admonition-title--caution: var(--sd-color-warning);
+  --color-admonition-title--warning: var(--sd-color-warning);
+  --color-admonition-title--info: var(--sd-color-info);
+  --color-admonition-title--seealso: var(--sd-color-info);
+  --color-admonition-title--attention: var(--sd-color-danger);
+  --color-admonition-title--danger: var(--sd-color-danger);
+  --color-admonition-title--error: var(--sd-color-danger);
+  --sd-color-tabs-underline: transparent;
+  --sd-color-tabs-overline: transparent;
+  --sd-color-tabs-underline-inactive: transparent;
+  --font-stack: sofia-pro, sans-serif;
+  --font-stack--monospace: carbona-variable, monospace;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-foreground-primary: #E6E6E6;
+  --color-foreground-secondary: #CCCCCC;
+  --color-foreground-muted: #A9ACAC;
+  --color-background-primary: #040019;
+  --color-background-secondary: #191F2E;
+  --color-background-hover: #0A1F4F;
+  --color-code-background: #2A4179;
+  --color-inline-code-background: #191F2E25;
+  --color-code-foreground: #C2CBDB;
+  --color-header-text: #54DDF8;
+  --color-sidebar-link-text--top-level: var(--color-foreground-muted);
+  --color-sidebar-caption-text: var(--color-foreground-primary);
+  --color-sidebar-background: linear-gradient(180deg, #000E19 36.39%, #0C263B 100%);
+  --color-sidebar-item-background--current: transparent;
+  --color-sidebar-search-background--focus: var(--color-sidebar-item-background--hover);
+  --color-brand-primary: #54DDF8;
+  --color-brand-content: #0083CF;
+  --color-table-header-background: var(--color-background-secondary);
+  --color-table-border: #525252;
+  --sd-color-card-background: var(--color-background-secondary);
+  --sd-color-card-border-hover: var(--color-brand-primary);
+  --sd-color-success: #5CC653;
+  --sd-color-success-text: var(--color-foreground-primary);
+  --sd-color-warning: #F1C21B;
+  --sd-color-warning-text: var(--color-foreground-primary);
+  --sd-color-info: #54DDF8;
+  --sd-color-info-text: var(--color-foreground-primary);
+  --sd-color-danger: #D54A44;
+  --sd-color-danger-text: var(--color-foreground-primary);
+  --sd-color-secondary: var(--color-brand-primary);
+  --sd-color-secondary-text: var(--color-foreground-primary);
+  --color-admonition-background: #121526;
+  --color-admonition-title: var(--color-code-foreground);
+  --color-announcement-background: var(--sd-color-card-background);
+  --color-link: #62A9FF;
+  --color-admonition-title--important: var(--sd-color-success);
+  --color-admonition-title--caution: var(--sd-color-warning);
+  --color-admonition-title--warning: var(--sd-color-warning);
+  --color-admonition-title--info: var(--sd-color-info);
+  --color-admonition-title--seealso: var(--sd-color-info);
+  --color-admonition-title--attention: var(--sd-color-danger);
+  --color-admonition-title--danger: var(--sd-color-danger);
+  --color-admonition-title--error: var(--sd-color-danger);
+  --sd-color-tabs-underline: transparent;
+  --sd-color-tabs-overline: transparent;
+  --sd-color-tabs-underline-inactive: transparent;
+  --font-stack: sofia-pro, sans-serif;
+  --font-stack--monospace: carbona-variable, monospace;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-foreground-primary: #E6E6E6;
+  --color-foreground-secondary: #CCCCCC;
+  --color-foreground-muted: #A9ACAC;
+  --color-background-primary: #040019;
+  --color-background-secondary: #191F2E;
+  --color-background-hover: #0A1F4F;
+  --color-code-background: #2A4179;
+  --color-inline-code-background: #191F2E25;
+  --color-code-foreground: #C2CBDB;
+  --color-header-text: #54DDF8;
+  --color-sidebar-link-text--top-level: var(--color-foreground-muted);
+  --color-sidebar-caption-text: var(--color-foreground-primary);
+  --color-sidebar-background: linear-gradient(180deg, #000E19 36.39%, #0C263B 100%);
+  --color-sidebar-item-background--current: transparent;
+  --color-sidebar-search-background--focus: var(--color-sidebar-item-background--hover);
+  --color-brand-primary: #54DDF8;
+  --color-brand-content: #0083CF;
+  --color-table-header-background: var(--color-background-secondary);
+  --color-table-border: #525252;
+  --sd-color-card-background: var(--color-background-secondary);
+  --sd-color-card-border-hover: var(--color-brand-primary);
+  --sd-color-success: #5CC653;
+  --sd-color-success-text: var(--color-foreground-primary);
+  --sd-color-warning: #F1C21B;
+  --sd-color-warning-text: var(--color-foreground-primary);
+  --sd-color-info: #54DDF8;
+  --sd-color-info-text: var(--color-foreground-primary);
+  --sd-color-danger: #D54A44;
+  --sd-color-danger-text: var(--color-foreground-primary);
+  --sd-color-secondary: var(--color-brand-primary);
+  --sd-color-secondary-text: var(--color-foreground-primary);
+  --color-admonition-background: #121526;
+  --color-admonition-title: var(--color-code-foreground);
+  --color-announcement-background: var(--sd-color-card-background);
+  --color-link: #62A9FF;
+  --color-admonition-title--important: var(--sd-color-success);
+  --color-admonition-title--caution: var(--sd-color-warning);
+  --color-admonition-title--warning: var(--sd-color-warning);
+  --color-admonition-title--info: var(--sd-color-info);
+  --color-admonition-title--seealso: var(--sd-color-info);
+  --color-admonition-title--attention: var(--sd-color-danger);
+  --color-admonition-title--danger: var(--sd-color-danger);
+  --color-admonition-title--error: var(--sd-color-danger);
+  --sd-color-tabs-underline: transparent;
+  --sd-color-tabs-overline: transparent;
+  --sd-color-tabs-underline-inactive: transparent;
+  --font-stack: sofia-pro, sans-serif;
+  --font-stack--monospace: carbona-variable, monospace;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript">
+    !function () {
+        var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+            analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware", "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"]; analytics.factory = function (e) { return function () { if (window.analytics.initialized) return window.analytics[e].apply(window.analytics, arguments); var i = Array.prototype.slice.call(arguments); i.unshift(e); analytics.push(i); return analytics } }; for (var i = 0; i < analytics.methods.length; i++) { var key = analytics.methods[i]; analytics[key] = analytics.factory(key) } analytics.load = function (key, i) { var t = document.createElement("script"); t.type = "text/javascript"; t.async = !0; t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(t, n); analytics._loadOptions = i }; analytics._writeKey = "gsbTPzmazRCmKtX34wpuT7i0YFndByH9";; analytics.SNIPPET_VERSION = "4.16.1";
+            analytics.load("gsbTPzmazRCmKtX34wpuT7i0YFndByH9");
+            analytics.page();
+        }
+    }();
+</script>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<div class="announcement">
+  <aside class="announcement-content">
+     Give us a ⭐️ on <a href='https://github.com/0xPlaygrounds/subgrounds'> Github </a> 
+  </aside>
+</div>
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../"><div class="brand">Playgrounds</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" target="_self" href="https://playgrounds.network">
+    
+    <div class="sidebar-logo-container">
+        <img class="sidebar-logo only-light" src="../../_static/assets/pg-logotype-dark.svg" alt="Light Logo" />
+        <img class="sidebar-logo only-dark" src="../../_static/assets/pg-logotype-primary.svg" alt="Dark Logo" />
+    </div>
+    
+    
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Playgrounds API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/key/">Getting an API Key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/subgraph-proxy/">Subgraph Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/subgrounds/">Subgrounds Integration</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/faq/">FAQ</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/faq/query/">What is a Query?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/faq/environment/">Environment Vars</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/api-reference/">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/reference/proxy/">Subgraph Proxy</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/reference/proxy/subgraph_id/">Subgraph ID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/reference/proxy/deployment_id/">Deployment ID</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Subgrounds</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../getting_started/">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/basics/">The Basics</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../getting_started/field_paths/">Field Paths</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/field_paths/arguments/">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/field_paths/filtering/">Filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/field_paths/sorting/">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/field_paths/merging/">Merging</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../getting_started/querying/">Querying</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/querying/grouping/"><span class="light-only"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">NEW</span></span><span class="dark-only"><span class="sd-sphinx-override sd-badge sd-outline-success sd-text-success">NEW</span></span> Grouping</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/synthetic_fields/">Synthetic Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/async/"><span class="light-only"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">NEW</span></span><span class="dark-only"><span class="sd-sphinx-override sd-badge sd-outline-success sd-text-success">NEW</span></span> Async</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced_topics/">Advanced Topics</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../advanced_topics/contrib/">Contrib</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced_topics/contrib/plotly/">Plotly</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../advanced_topics/pagination/">Pagination</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced_topics/pagination/custom/">Custom Strategies</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../advanced_topics/transforms/">Transforms</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced_topics/transforms/layers/">Layers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../advanced_topics/custom_clients/"><span class="light-only"><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">LAB</span></span><span class="dark-only"><span class="sd-sphinx-override sd-badge sd-outline-warning sd-text-warning">LAB</span></span> Custom Clients</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced_topics/custom_clients/sans-io/">Sans-IO</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../faq/">FAQ</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faq/exporting/">Exporting to Disk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/more_data/">Getting More Data</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../faq/setup/">Python Setup</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../faq/setup/version_management/">Python Versioning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/logger/">Adjusting Subgrounds Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples/">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/exchanges/">Exchanges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/bridges/">Bridges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/liquid_staking/">Liquid Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/governance/">Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/advanced_research/">Advanced Research</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/vaults/">Vaults</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/">Videos</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/">Contributing</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api_reference/">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api_reference/top_level/">Top Level APIs</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api_reference/internal/">Internal</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api_reference/internal/client/">Client</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/client/base/">Base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/client/sync/">Sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/client/async_/">Async_</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api_reference/internal/contrib/">Contrib</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/contrib/plotly/">Plotly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/contrib/dash/">Dash</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api_reference/internal/pagination/">Pagination</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/pagination/strategies/">Strategies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/pagination/preprocess/">Preprocess</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/pagination/pagination/">Pagination</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/pagination/utils/">Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api_reference/internal/transform/">Transform</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/transform/abcs/">ABCs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/transform/apply/">Apply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/transform/defaults/">Defaults</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/transform/transforms/">Transforms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/transform/utils/">Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api_reference/internal/subgraph/">Subgraph</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/subgraph/fieldpath/">Fieldpath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/subgraph/filter/">Filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/subgraph/object/">Object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api_reference/internal/subgraph/subgraph/">Subgraph</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/internal/errors/">Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/internal/query/">Query</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/internal/schema/">Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api_reference/internal/utils/">Utils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Meta</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../meta/contributing/">Improving the Docs</a></li>
+</ul>
+
+</div></div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
+<!--next-version-placeholder-->
+<section id="v1-9-0-2024-06-18">
+<h2>v1.9.0 (2024-06-18)<a class="headerlink" href="#v1-9-0-2024-06-18" title="Permalink to this heading">#</a></h2>
+<section id="feature">
+<h3>Feature<a class="headerlink" href="#feature" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>chore:</strong> Bump deps, might consider &gt;= in the future (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/9e4a5b8a78dc4ddd8223946d04de025e3cb100f8"><code class="docutils literal notranslate"><span class="pre">9e4a5b8</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-8-3-2024-06-10">
+<h2>v1.8.3 (2024-06-10)<a class="headerlink" href="#v1-8-3-2024-06-10" title="Permalink to this heading">#</a></h2>
+<section id="fix">
+<h3>Fix<a class="headerlink" href="#fix" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Added test for null_filter condition. (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/53">#53</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/d022c8525e0fa88c55352376b754aaebfc2dec10"><code class="docutils literal notranslate"><span class="pre">d022c85</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-8-2-2024-06-10">
+<h2>v1.8.2 (2024-06-10)<a class="headerlink" href="#v1-8-2-2024-06-10" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>Fix<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Caching bug (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/55">#55</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/196b3a2d11a4852bb3c6aa6959b3c7564068baac"><code class="docutils literal notranslate"><span class="pre">196b3a2</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-8-1-2023-11-10">
+<h2>v1.8.1 (2023-11-10)<a class="headerlink" href="#v1-8-1-2023-11-10" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h3>Fix<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Critical fix that amends <code class="docutils literal notranslate"><span class="pre">__exit__</span></code> and <code class="docutils literal notranslate"><span class="pre">__aexit__</span></code> (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/49">#49</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/b60e3a9fb09a78384c9783b0ba677b98b3879216"><code class="docutils literal notranslate"><span class="pre">b60e3a9</span></code></a>)</p></li>
+</ul>
+</section>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Finally formatting changes to README.md (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/58201108f42d70d53bab9b88b2fabe6f2a2e1657"><code class="docutils literal notranslate"><span class="pre">5820110</span></code></a>)</p></li>
+<li><p>More formatting changes to README.md (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/71a66a81974e4632b4102fe4b5584c6d9136497b"><code class="docutils literal notranslate"><span class="pre">71a66a8</span></code></a>)</p></li>
+<li><p>Format code-block in README.md (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/0db22079329f40254ce51aa0d615f730cc4099f4"><code class="docutils literal notranslate"><span class="pre">0db2207</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-8-0-2023-10-10">
+<h2>v1.8.0 (2023-10-10)<a class="headerlink" href="#v1-8-0-2023-10-10" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>Feature<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Pydantic upgrade to v2, maintaining V1 API internally (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/45">#45</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/25570ae1f4d293f46312f195d5344473ad63e8fa"><code class="docutils literal notranslate"><span class="pre">25570ae</span></code></a>)</p></li>
+<li><p>Pandas upgrade to v2 (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/44">#44</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/5d1670bc1077c0f81fc2426e512118006f07f81b"><code class="docutils literal notranslate"><span class="pre">5d1670b</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-7-1-2023-09-22">
+<h2>v1.7.1 (2023-09-22)<a class="headerlink" href="#v1-7-1-2023-09-22" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h3>Fix<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Nested filters (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/40">#40</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/3f3f5753bf5dba9ac39664156b76f81697055a23"><code class="docutils literal notranslate"><span class="pre">3f3f575</span></code></a>)</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>Documentation<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Update CHANGELOG.md (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/7ef08764cd27478ab9797f2823a823cbbe095ec2"><code class="docutils literal notranslate"><span class="pre">7ef0876</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-7-0-2023-09-05">
+<h2>v1.7.0 (2023-09-05)<a class="headerlink" href="#v1-7-0-2023-09-05" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h3>Feature<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Async support for subgrounds (+ more) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/36">#36</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/929a88221ac571b1a45b5877e62d6d4cb2d1a91e"><code class="docutils literal notranslate"><span class="pre">929a882</span></code></a>)</p></li>
+<li><p>Ability to create custom clients via <code class="docutils literal notranslate"><span class="pre">SubgroundsBase</span></code></p></li>
+</ul>
+</section>
+<section id="changes">
+<h3>Changes<a class="headerlink" href="#changes" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The entirety of how subgrounds coordinates the production, transformation, and pagination of requests has been completely reworked from the ground up.</p>
+<ul>
+<li><p>Instead of a recursive call stack, transformation and pagination is lazily computed.</p></li>
+<li><p>Then, a client (implementing <code class="docutils literal notranslate"><span class="pre">SubgroundsBase</span></code>), <em>drives</em> the actual processing of requests/responses until completion.</p></li>
+</ul>
+</li>
+<li><p>Subgrounds models the <a class="reference external" href="https://sans-io.readthedocs.io/">sans-io</a> approach to handling requests</p>
+<ul>
+<li><p>This means subgrounds is untangled from actually making IO</p></li>
+<li><p>This has enabled custom clients, allowing anyone to customize subgrounds interface.</p></li>
+</ul>
+</li>
+<li><p>Various rewrites, reworks, and improvements to documentation.</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-6-1-2023-08-01">
+<h2>v1.6.1 (2023-08-01)<a class="headerlink" href="#v1-6-1-2023-08-01" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h3>Fix<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">add</span></code> method of <code class="docutils literal notranslate"><span class="pre">Selection</span></code> class (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/39">#39</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/5c18dec14fb78176238d3bda2c0e6a3016de0b4e"><code class="docutils literal notranslate"><span class="pre">5c18dec</span></code></a>)</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>Documentation<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Update README links (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/f271706fee42c90ab99840bac65952217a5aaf1a"><code class="docutils literal notranslate"><span class="pre">f271706</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-6-0-2023-05-25">
+<h2>v1.6.0 (2023-05-25)<a class="headerlink" href="#v1-6-0-2023-05-25" title="Permalink to this heading">#</a></h2>
+<section id="id9">
+<h3>Feature<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Add helpers for accessing the playgrounds gateway (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/21">#21</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/e44aee65649bff192321cfd82436b65da236d870"><code class="docutils literal notranslate"><span class="pre">e44aee6</span></code></a>)</p></li>
+</ul>
+</section>
+<section id="id10">
+<h3>Documentation<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Add open in colab button (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/02ff7226e54920f411a9817f1eb26c757e4a2a32"><code class="docutils literal notranslate"><span class="pre">02ff722</span></code></a>)</p></li>
+<li><p>Add gateway notebook as another example (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/98eab32d4bb9fcae072dcceefae94a8692e10852"><code class="docutils literal notranslate"><span class="pre">98eab32</span></code></a>)</p></li>
+<li><p>Adjust example notebook for colab (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/62105568b61c3a155ee07c6077b4b1e1d81f27fd"><code class="docutils literal notranslate"><span class="pre">6210556</span></code></a>)</p></li>
+<li><p>Adjust wording in example notebook (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/357c6d859aea36d680cfde7d728a24a66ae67193"><code class="docutils literal notranslate"><span class="pre">357c6d8</span></code></a>)</p></li>
+<li><p>Add example notebook + swap binder for colab (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/06cc72860e2d83fc200b1198519da5963a85b0c1"><code class="docutils literal notranslate"><span class="pre">06cc728</span></code></a>)</p></li>
+<li><p>Add CI status badge to README.md (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/4c6dca90174cbbfd990dbf7906bf75ee50f4d65a"><code class="docutils literal notranslate"><span class="pre">4c6dca9</span></code></a>)</p></li>
+<li><p>Broken link in README (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/19">#19</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/211f965331225fb7287cff027c5dd01e8a4e5784"><code class="docutils literal notranslate"><span class="pre">211f965</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-5-2-2023-05-17">
+<h2>v1.5.2 (2023-05-17)<a class="headerlink" href="#v1-5-2-2023-05-17" title="Permalink to this heading">#</a></h2>
+<section id="id11">
+<h3>Fix<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Nested orderBy working with DSL (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/7e320e8c77c12ad3fcfa64f3aad4428ad1068539"><code class="docutils literal notranslate"><span class="pre">7e320e8</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-5-1-2023-05-15">
+<h2>v1.5.1 (2023-05-15)<a class="headerlink" href="#v1-5-1-2023-05-15" title="Permalink to this heading">#</a></h2>
+<section id="id12">
+<h3>Fix<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Nested OrderBy (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/17">#17</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/b8073193ddeee2cde2d795382ef8523d87a7ca71"><code class="docutils literal notranslate"><span class="pre">b807319</span></code></a>)</p></li>
+</ul>
+</section>
+<section id="id13">
+<h3>Documentation<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Fix broken links (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/24bd4987b98960d97d711a05fa12dc2c91e903db"><code class="docutils literal notranslate"><span class="pre">24bd498</span></code></a>)</p></li>
+<li><p>LICENSE update (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/c4c4b3b16b1bcaa96a4d236534092d760ff5b7de"><code class="docutils literal notranslate"><span class="pre">c4c4b3b</span></code></a>)</p></li>
+<li><p>Adjust twitter badge (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/95218d1c5947bfe54665db1c8e1a4e138865d5f4"><code class="docutils literal notranslate"><span class="pre">95218d1</span></code></a>)</p></li>
+<li><p>Fix codespace badge link (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/cd5841d3da9cda45ea74fb1c9e68ae80b63168d3"><code class="docutils literal notranslate"><span class="pre">cd5841d</span></code></a>)</p></li>
+<li><p>Cleanup and improve README.md (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/5e524bdc5d5bed52cd596ea7f569ce5e9d1e193e"><code class="docutils literal notranslate"><span class="pre">5e524bd</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-5-0-2023-04-25">
+<h2>v1.5.0 (2023-04-25)<a class="headerlink" href="#v1-5-0-2023-04-25" title="Permalink to this heading">#</a></h2>
+<section id="id14">
+<h3>Feature<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">all</span></code> as an extra install (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/f1adacf8162e711a8395cd75c9726350ec67c0c5"><code class="docutils literal notranslate"><span class="pre">f1adacf</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subgrounds[pyodide]</span></code> patching for requests (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/7293262bed062932a6ca52ae69cf0545850ed470"><code class="docutils literal notranslate"><span class="pre">7293262</span></code></a>)</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">plotly</span></code> as an extra (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/058e28d2f4170fabd0558313be50137ecd8c4972"><code class="docutils literal notranslate"><span class="pre">058e28d</span></code></a>)</p></li>
+</ul>
+</section>
+<section id="id15">
+<h3>Fix<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/5e365e09e63e5a077fcca861b6ecb0cbb494cc0f"><code class="docutils literal notranslate"><span class="pre">5e365e0</span></code></a>)</p></li>
+<li><p>Enable <code class="docutils literal notranslate"><span class="pre">pyodide</span></code> patch on import (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/dd5193b2a46ff16ed4e7c7ca8f5d708bfa65d63b"><code class="docutils literal notranslate"><span class="pre">dd5193b</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-4-0-2023-04-13">
+<h2>v1.4.0 (2023-04-13)<a class="headerlink" href="#v1-4-0-2023-04-13" title="Permalink to this heading">#</a></h2>
+<section id="id16">
+<h3>Feature<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">subgrounds.contrib.dash</span></code> and <code class="docutils literal notranslate"><span class="pre">subgrounds.contrib.plotly</span></code> (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/f1d79e89f1594bc31d443fa2b248f745974dd468"><code class="docutils literal notranslate"><span class="pre">f1d79e8</span></code></a>)</p></li>
+</ul>
+</section>
+<section id="id17">
+<h3>Fix<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Headers bugs w/ non-subgraph apis (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/7749f8f378fd5dcad727e2b507a50ed99654fab3"><code class="docutils literal notranslate"><span class="pre">7749f8f</span></code></a>)</p></li>
+<li><p>Update examples to user modern subgrounds (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/6e14b89dd040d938210827d2defcfa80e397a896"><code class="docutils literal notranslate"><span class="pre">6e14b89</span></code></a>)</p></li>
+</ul>
+</section>
+<section id="id18">
+<h3>Documentation<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Adjust wording (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/501b480a93834978faa063633060389ef82b5931"><code class="docutils literal notranslate"><span class="pre">501b480</span></code></a>)</p></li>
+<li><p>Add extra details about <code class="docutils literal notranslate"><span class="pre">contrib</span></code> and deprecation (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/6a7bbecbbd30d926ff7a9c8285b3c7be64b28722"><code class="docutils literal notranslate"><span class="pre">6a7bbec</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-3-0-2023-04-07">
+<h2>v1.3.0 (2023-04-07)<a class="headerlink" href="#v1-3-0-2023-04-07" title="Permalink to this heading">#</a></h2>
+<section id="id19">
+<h3>Feature<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Add specific error models (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/621807602c3467a3e729541f645d992d3e5b6297"><code class="docutils literal notranslate"><span class="pre">6218076</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-2-0-2023-04-02">
+<h2>v1.2.0 (2023-04-02)<a class="headerlink" href="#v1-2-0-2023-04-02" title="Permalink to this heading">#</a></h2>
+<section id="id20">
+<h3>Feature<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Headers Support (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/13">#13</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/8ff3c040a2c8c205b31566f1135e38a3c84293b2"><code class="docutils literal notranslate"><span class="pre">8ff3c04</span></code></a>)</p></li>
+</ul>
+</section>
+<section id="id21">
+<h3>Documentation<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Fix changelog formatting (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/7f8a6302871387042ffa0ea323284832f2611ea7"><code class="docutils literal notranslate"><span class="pre">7f8a630</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-1-2-2023-03-15">
+<h2>v1.1.2 (2023-03-15)<a class="headerlink" href="#v1-1-2-2023-03-15" title="Permalink to this heading">#</a></h2>
+<section id="id22">
+<h3>Fix<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Query.map</span></code> had no default value for <code class="docutils literal notranslate"><span class="pre">priority</span></code> (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/12">#12</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/82a5f293e4cf7398350d12e309cd3cff190c1318"><code class="docutils literal notranslate"><span class="pre">82a5f29</span></code></a>)</p></li>
+</ul>
+</section>
+<section id="id23">
+<h3>Documentation<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Update README.md (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/dcea87388020ef8465c0752e0ae79469d1f018e1"><code class="docutils literal notranslate"><span class="pre">dcea873</span></code></a>)</p></li>
+<li><p>Update design goals to features (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/6abecc68b3d9f573bf6feb6c14c0e0107fc7e8a7"><code class="docutils literal notranslate"><span class="pre">6abecc6</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-1-1-2023-03-03">
+<h2>v1.1.1 (2023-03-03)<a class="headerlink" href="#v1-1-1-2023-03-03" title="Permalink to this heading">#</a></h2>
+<section id="id24">
+<h3>Fix<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Bump version (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/40004c012e474a32c94812576e24069c8a4c5d51"><code class="docutils literal notranslate"><span class="pre">40004c0</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-1-0-2023-03-03">
+<h2>v1.1.0 (2023-03-03)<a class="headerlink" href="#v1-1-0-2023-03-03" title="Permalink to this heading">#</a></h2>
+<section id="id25">
+<h3>Feature<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Export more symbols to <code class="docutils literal notranslate"><span class="pre">subgrounds</span></code> (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/3c59fe9e0f96947d23905a0eab384c01cf8d42f7"><code class="docutils literal notranslate"><span class="pre">3c59fe9</span></code></a>)</p></li>
+</ul>
+</section>
+<section id="id26">
+<h3>Documentation<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Add description about testing (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/f2231c2b02fe0194409b91d865dedd6d45ecd92c"><code class="docutils literal notranslate"><span class="pre">f2231c2</span></code></a>)</p></li>
+<li><p>Migrated <code class="docutils literal notranslate"><span class="pre">docs/</span></code> and clean up (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/9deca3bc48a38018c9baa73ba625ec37decf1670"><code class="docutils literal notranslate"><span class="pre">9deca3b</span></code></a>)</p></li>
+<li><p>Add CONTRIBUTING.md + README.md edits (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/2218d47df13bf2cc5a43950f1106b62c20a16d5f"><code class="docutils literal notranslate"><span class="pre">2218d47</span></code></a>)</p></li>
+<li><p>Trigger docs flow (removed some files) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/1ee17e5129192c3c202830f929f284c8ca019650"><code class="docutils literal notranslate"><span class="pre">1ee17e5</span></code></a>)</p></li>
+<li><p>Simplify contributing cmds (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/issues/3">#3</a>) (<a class="reference external" href="https://github.com/0xPlaygrounds/subgrounds/commit/0b4f3a2590a3e916e614bff97b578bb32d5097e2"><code class="docutils literal notranslate"><span class="pre">0b4f3a2</span></code></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-0-3-2022-08-08">
+<h2>v1.0.3 (2022-08-08)<a class="headerlink" href="#v1-0-3-2022-08-08" title="Permalink to this heading">#</a></h2>
+<section id="id27">
+<h3>Fix<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Issue causing null object in <code class="docutils literal notranslate"><span class="pre">SyntheticField</span></code>s</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-0-2-2022-10-30">
+<h2>v1.0.2 (2022-10-30)<a class="headerlink" href="#v1-0-2-2022-10-30" title="Permalink to this heading">#</a></h2>
+<section id="id28">
+<h3>Fix<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">SchemaMeta</span></code> to <code class="docutils literal notranslate"><span class="pre">Pydantic</span></code> model for extra validation</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-0-1-2022-08-08">
+<h2>v1.0.1 (2022-08-08)<a class="headerlink" href="#v1-0-1-2022-08-08" title="Permalink to this heading">#</a></h2>
+<section id="id29">
+<h3>Fix<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Schema cache directory path</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">where</span></code> filter getting dropped during pagination</p></li>
+</ul>
+</section>
+</section>
+<section id="v1-0-0-2022-07-25">
+<h2>v1.0.0 (2022-07-25)<a class="headerlink" href="#v1-0-0-2022-07-25" title="Permalink to this heading">#</a></h2>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this heading">#</a></h3>
+<p>This release overhauls how pagination is performed in Subgrounds.</p>
+</section>
+<section id="breaking-changes">
+<h3>BREAKING CHANGES<a class="headerlink" href="#breaking-changes" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">auto_paginate</span></code> argument of toplevel querying functions has been replaced by the <code class="docutils literal notranslate"><span class="pre">pagination_strategy</span></code> argument (setting the latter to <code class="docutils literal notranslate"><span class="pre">None</span></code> disables pagination).</p></li>
+</ul>
+</section>
+<section id="id30">
+<h3>Feature<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>Subgrounds users can now define and use their own pagination strategy (see Custom pagination strategy for more details).</p></li>
+<li><p>Users select the pagination strategies to use when calling toplevel querying functions:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">query_df</span><span class="p">(</span><span class="n">field_paths</span><span class="p">,</span> <span class="n">pagination_strategy</span><span class="o">=</span><span class="n">MyPaginationStrategy</span><span class="p">)</span> 
+</pre></div>
+</div>
+</li>
+<li><p>Subgrounds provides two pagination strategies out of the box:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">LegacyStrategy</span></code> (the strategy used prior to this update)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ShallowStrategy</span></code>, which is much faster than <code class="docutils literal notranslate"><span class="pre">LegacyStrategy</span></code> in some cases, but does not support pagination on nested fields (see Available pagination strategies for more details).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id31">
+<h3>Fix<a class="headerlink" href="#id31" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Fix bug that would cause a crash when calling one of the toplevel querying functions with only one <code class="docutils literal notranslate"><span class="pre">FieldPath</span></code> object (e.g.: <code class="docutils literal notranslate"><span class="pre">sg.query_df(pairs.id)</span></code>).</p></li>
+</ul>
+</section>
+</section>
+<section id="v0-2-0-2023-06-23">
+<h2>v0.2.0 (2023-06-23)<a class="headerlink" href="#v0-2-0-2023-06-23" title="Permalink to this heading">#</a></h2>
+<section id="id32">
+<h3>Feature<a class="headerlink" href="#id32" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Iterative versions of toplevel querying functions to allow developers to process queried data page by page when automatic pagination returns more than one page</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">query_df</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">query_df_iter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">query</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">query_iter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">query_json</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">query_json_iter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">execute</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">execute_iter</span></code></p></li>
+</ul>
+</li>
+<li><p>Add option to set subgraph schema cache directory in <code class="docutils literal notranslate"><span class="pre">load_subgraph</span></code> and <code class="docutils literal notranslate"><span class="pre">load_api</span></code>.</p>
+<ul>
+<li><p>Defaults to <code class="docutils literal notranslate"><span class="pre">./schemas/</span></code></p></li>
+</ul>
+</li>
+<li><p>Add useful <code class="docutils literal notranslate"><span class="pre">SyntheticField</span></code> helper <code class="docutils literal notranslate"><span class="pre">datetime_of_timestamp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Subgrounds</span></code> class can now be imported from toplevel module: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">subgrounds</span> <span class="pre">import</span> <span class="pre">Subgrounds</span></code></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">SyntheticField.datetime_of_timestamp</span></code> helper function to easily create a <code class="docutils literal notranslate"><span class="pre">SyntheticField</span></code> that converts a Unix timestamp into a human readable datetime string</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">SyntheticField.map</span></code> helper function to easily create a &quot;map&quot; <code class="docutils literal notranslate"><span class="pre">SyntheticField</span></code> from a dictionary</p></li>
+</ul>
+</section>
+<section id="id33">
+<h3>Fix<a class="headerlink" href="#id33" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Fix bug that caused some queries to fail with automatic pagination enabled</p></li>
+</ul>
+</section>
+<section id="chore">
+<h3>Chore<a class="headerlink" href="#chore" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Migrate package manager from <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> to <code class="docutils literal notranslate"><span class="pre">poetry</span></code></p></li>
+<li><p>Migrate docs from plain <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> to <code class="docutils literal notranslate"><span class="pre">mudkip</span></code></p></li>
+<li><p>Made <code class="docutils literal notranslate"><span class="pre">dash</span></code> an optional extra dependency.</p>
+<ul>
+<li><p>To use Subgrounds <code class="docutils literal notranslate"><span class="pre">dash</span></code> and <code class="docutils literal notranslate"><span class="pre">plotly</span></code> wrappers, run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">subgrounds[dash]</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="v0-1-1-2022-04-29">
+<h2>v0.1.1 (2022-04-29)<a class="headerlink" href="#v0-1-1-2022-04-29" title="Permalink to this heading">#</a></h2>
+<section id="id34">
+<h3>Fix<a class="headerlink" href="#id34" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Scalar lists were not handled properly</p></li>
+</ul>
+</section>
+</section>
+<section id="v0-1-0-2022-04-27">
+<h2>v0.1.0 (2022-04-27)<a class="headerlink" href="#v0-1-0-2022-04-27" title="Permalink to this heading">#</a></h2>
+<section id="id35">
+<h3>Feature<a class="headerlink" href="#id35" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>Partial fieldpaths</p>
+<ul>
+<li><p>Querying partial fieldpaths will automatically select all non-list fields of the fieldpath leaf.</p></li>
+<li><p>For example, using the Ribbon V2 subgraph, the following Subgrounds query:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">sg</span><span class="o">.</span><span class="n">query_df</span><span class="p">([</span>
+    <span class="n">ribbon</span><span class="o">.</span><span class="n">Query</span><span class="o">.</span><span class="n">vaults</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+<p>will result in the following query being made to the subgraph:</p>
+<div class="highlight-graphql notranslate"><div class="highlight"><pre><span></span><span class="k">query</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">vaults</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">id</span>
+<span class="w">    </span><span class="n">name</span>
+<span class="w">    </span><span class="n">symbol</span>
+<span class="w">    </span><span class="n">underlyingAsset</span>
+<span class="w">    </span><span class="n">underlyingName</span>
+<span class="w">    </span><span class="n">underlyingSymbol</span>
+<span class="w">    </span><span class="n">underlyingDecimals</span>
+<span class="w">    </span><span class="n">totalPremiumEarned</span>
+<span class="w">    </span><span class="n">totalNominalVolume</span>
+<span class="w">    </span><span class="n">totalNotionalVolume</span>
+<span class="w">    </span><span class="n">numDepositors</span>
+<span class="w">    </span><span class="n">totalBalance</span>
+<span class="w">    </span><span class="n">cap</span>
+<span class="w">    </span><span class="n">round</span>
+<span class="w">    </span><span class="n">performanceFeeCollected</span>
+<span class="w">    </span><span class="n">managementFeeCollected</span>
+<span class="w">    </span><span class="n">totalFeeCollected</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Code completion</p>
+<ul class="simple">
+<li><p>When using Subgrounds in Jupyter notebooks and a subgraph has been loaded in a previous cell, fieldpaths will now autocomplete.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="v0-0-9-2023-03-29">
+<h2>v0.0.9 (2023-03-29)<a class="headerlink" href="#v0-0-9-2023-03-29" title="Permalink to this heading">#</a></h2>
+<section id="id36">
+<h3>Feature<a class="headerlink" href="#id36" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Subgrounds.load_api</span></code></p>
+<ul>
+<li><p>Allows you to safely query non-subgraph GrahpQL APIs with Subgrounds!</p></li>
+</ul>
+</li>
+<li><p>New boolean flag argument, <code class="docutils literal notranslate"><span class="pre">auto_paginate</span></code>, in <code class="docutils literal notranslate"><span class="pre">Subgrounds.query</span></code>, <code class="docutils literal notranslate"><span class="pre">Subgrounds.query_json</span></code> and <code class="docutils literal notranslate"><span class="pre">Subgrounds.query_df</span></code></p>
+<ul>
+<li><p>Selectively disable automatic pagination</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id37">
+<h3>Documentation<a class="headerlink" href="#id37" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Refactor, cleanup and add tons of docstrings</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "0xPlaygrounds/jupyter-stacks-subgrounds",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./subgrounds"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../contributing/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Contributing</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../videos/">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Videos</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link fa-brands fa-github fa-l" href="https://github.com/0xPlaygrounds/subgrounds" aria-label="GitHub"></a>
+              <a class="muted-link fa-brands fa-discord fa-l" href="https://discord.gg/v4r4zhBAh2" aria-label="Discord"></a>
+              <a class="muted-link fa-brands fa-twitter fa-l" href="https://twitter.com/Playgrounds0x" aria-label="Twitter"></a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#v1-9-0-2024-06-18">v1.9.0 (2024-06-18)</a><ul>
+<li><a class="reference internal" href="#feature">Feature</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-8-3-2024-06-10">v1.8.3 (2024-06-10)</a><ul>
+<li><a class="reference internal" href="#fix">Fix</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-8-2-2024-06-10">v1.8.2 (2024-06-10)</a><ul>
+<li><a class="reference internal" href="#id1">Fix</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-8-1-2023-11-10">v1.8.1 (2023-11-10)</a><ul>
+<li><a class="reference internal" href="#id2">Fix</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-8-0-2023-10-10">v1.8.0 (2023-10-10)</a><ul>
+<li><a class="reference internal" href="#id3">Feature</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-7-1-2023-09-22">v1.7.1 (2023-09-22)</a><ul>
+<li><a class="reference internal" href="#id4">Fix</a></li>
+<li><a class="reference internal" href="#id5">Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-7-0-2023-09-05">v1.7.0 (2023-09-05)</a><ul>
+<li><a class="reference internal" href="#id6">Feature</a></li>
+<li><a class="reference internal" href="#changes">Changes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-6-1-2023-08-01">v1.6.1 (2023-08-01)</a><ul>
+<li><a class="reference internal" href="#id7">Fix</a></li>
+<li><a class="reference internal" href="#id8">Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-6-0-2023-05-25">v1.6.0 (2023-05-25)</a><ul>
+<li><a class="reference internal" href="#id9">Feature</a></li>
+<li><a class="reference internal" href="#id10">Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-5-2-2023-05-17">v1.5.2 (2023-05-17)</a><ul>
+<li><a class="reference internal" href="#id11">Fix</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-5-1-2023-05-15">v1.5.1 (2023-05-15)</a><ul>
+<li><a class="reference internal" href="#id12">Fix</a></li>
+<li><a class="reference internal" href="#id13">Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-5-0-2023-04-25">v1.5.0 (2023-04-25)</a><ul>
+<li><a class="reference internal" href="#id14">Feature</a></li>
+<li><a class="reference internal" href="#id15">Fix</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-4-0-2023-04-13">v1.4.0 (2023-04-13)</a><ul>
+<li><a class="reference internal" href="#id16">Feature</a></li>
+<li><a class="reference internal" href="#id17">Fix</a></li>
+<li><a class="reference internal" href="#id18">Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-3-0-2023-04-07">v1.3.0 (2023-04-07)</a><ul>
+<li><a class="reference internal" href="#id19">Feature</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-2-0-2023-04-02">v1.2.0 (2023-04-02)</a><ul>
+<li><a class="reference internal" href="#id20">Feature</a></li>
+<li><a class="reference internal" href="#id21">Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-1-2-2023-03-15">v1.1.2 (2023-03-15)</a><ul>
+<li><a class="reference internal" href="#id22">Fix</a></li>
+<li><a class="reference internal" href="#id23">Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-1-1-2023-03-03">v1.1.1 (2023-03-03)</a><ul>
+<li><a class="reference internal" href="#id24">Fix</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-1-0-2023-03-03">v1.1.0 (2023-03-03)</a><ul>
+<li><a class="reference internal" href="#id25">Feature</a></li>
+<li><a class="reference internal" href="#id26">Documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-0-3-2022-08-08">v1.0.3 (2022-08-08)</a><ul>
+<li><a class="reference internal" href="#id27">Fix</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-0-2-2022-10-30">v1.0.2 (2022-10-30)</a><ul>
+<li><a class="reference internal" href="#id28">Fix</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-0-1-2022-08-08">v1.0.1 (2022-08-08)</a><ul>
+<li><a class="reference internal" href="#id29">Fix</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v1-0-0-2022-07-25">v1.0.0 (2022-07-25)</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#breaking-changes">BREAKING CHANGES</a></li>
+<li><a class="reference internal" href="#id30">Feature</a></li>
+<li><a class="reference internal" href="#id31">Fix</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v0-2-0-2023-06-23">v0.2.0 (2023-06-23)</a><ul>
+<li><a class="reference internal" href="#id32">Feature</a></li>
+<li><a class="reference internal" href="#id33">Fix</a></li>
+<li><a class="reference internal" href="#chore">Chore</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v0-1-1-2022-04-29">v0.1.1 (2022-04-29)</a><ul>
+<li><a class="reference internal" href="#id34">Fix</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v0-1-0-2022-04-27">v0.1.0 (2022-04-27)</a><ul>
+<li><a class="reference internal" href="#id35">Feature</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#v0-0-9-2023-03-29">v0.0.9 (2023-03-29)</a><ul>
+<li><a class="reference internal" href="#id36">Feature</a></li>
+<li><a class="reference internal" href="#id37">Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/scripts/theme.js"></script>
+    </body>
+</html>
